@@ -52,7 +52,7 @@ switch ($op) {
         $adminObject->addItemButton(\_AM_TROMBINOSCOPE_ADD_MEMBER, 'members.php?op=new', 'add');
         $GLOBALS['xoopsTpl']->assign('buttons', $adminObject->displayButton('left'));
         $membersCount = $membersHandler->getCountMembers();
-        $membersAll = $membersHandler->getAllMembers($start, $limit);
+        $membersAll = $membersHandler->getAllMembers($start, $limit, 'mbr_firstname,mbr_lastname,mbr_id');
         $GLOBALS['xoopsTpl']->assign('members_count', $membersCount);
         $GLOBALS['xoopsTpl']->assign('trombinoscope_url', \TROMBINOSCOPE_URL);
         $GLOBALS['xoopsTpl']->assign('trombinoscope_upload_url', \TROMBINOSCOPE_UPLOAD_URL);

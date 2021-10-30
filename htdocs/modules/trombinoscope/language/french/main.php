@@ -26,7 +26,7 @@
 require_once __DIR__ . '/admin.php';
 
 // ---------------- Main ----------------
-\define('_MA_TROMBINOSCOPE_INDEX', "Overview Trombinoscope");
+\define('_MA_TROMBINOSCOPE_INDEX', "Aperçu du trombinoscope");
 \define('_MA_TROMBINOSCOPE_TITLE', "Trombinoscope");
 \define('_MA_TROMBINOSCOPE_DESC', "Module de présentation d'un tromboniscope, et accessoirement de suivi des anniversaires");
 \define('_MA_TROMBINOSCOPE_INDEX_DESC', "Welcome to the homepage of your new module Trombinoscope!<br>
@@ -43,9 +43,9 @@ As you can see, you have created a page with a list of links at the top to navig
 \define('_MA_TROMBINOSCOPE_MEMBER_DELETE', "Delete Member");
 \define('_MA_TROMBINOSCOPE_MEMBER_CLONE', "Clone Member");
 \define('_MA_TROMBINOSCOPE_MEMBERS', "Members");
-\define('_MA_TROMBINOSCOPE_MEMBERS_LIST', "List of Members");
-\define('_MA_TROMBINOSCOPE_MEMBERS_TITLE', "Members title");
-\define('_MA_TROMBINOSCOPE_MEMBERS_DESC', "Members description");
+\define('_MA_TROMBINOSCOPE_MEMBERS_LIST', "Liste des membres");
+\define('_MA_TROMBINOSCOPE_MEMBERS_TITLE', "Membres");
+\define('_MA_TROMBINOSCOPE_MEMBERS_DESC', "Membres description");
 // Caption of Member
 \define('_MA_TROMBINOSCOPE_MEMBER_ID', "Id");
 \define('_MA_TROMBINOSCOPE_MEMBER_CAT_ID', "Cat_id");

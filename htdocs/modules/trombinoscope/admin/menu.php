@@ -45,11 +45,6 @@ $adminmenu[] = [
     'icon' => 'assets/icons/32/identity.png',
 ];
 $adminmenu[] = [
-    'title' => \_MI_TROMBINOSCOPE_ADMENU5,
-    'link' => 'admin/clone.php',
-    'icon' => $sysPathIcon32.'/page_copy.png',
-];
-$adminmenu[] = [
     'title' => \_MI_TROMBINOSCOPE_ADMENU6,
     'link' => 'admin/feedback.php',
     'icon' => $sysPathIcon32.'/mail_foward.png',

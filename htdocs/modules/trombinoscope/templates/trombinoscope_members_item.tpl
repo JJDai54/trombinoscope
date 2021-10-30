@@ -7,7 +7,7 @@
 </div>
 <center>
     <span class='' style="padding:5px;font-size:0.8em;"><{$member.firstname}>&nbsp;<{$member.lastname}></span><br>
-    <span class='col-sm-9 ' style="font-size:0.8em;"><{$member.fonctionsTA}></span>
+    <span class='' style="font-size:0.8em;"><{$member.fonctionsTA}></span>
 </center>
 <div class='panel-body'>
 </div>

@@ -155,7 +155,7 @@ class Members extends \XoopsObject
 //         $imageSelect->setExtra("onchange='showImgSelected(\"imglabel_mbr_photo\", \"mbr_photo\", \"" . $imageDirectory . '", "", "' . \XOOPS_URL . "\")'");
 //         $imageTray->addElement($imageSelect, false);
         $fImg = \XOOPS_URL . '/' . $imageDirectory . '/' . $mbrPhoto ;
-        echo "<hr>{$fImg}<hr>";
+//         echo "<hr>{$fImg}<hr>";
          $imageTray->addElement(new \XoopsFormLabel('', "<br><img src='" . $fImg . "' id='imglabel_mbr_photo' alt='' style='max-width:100px' >"));
         
         // Form Image mbrPhoto: Upload new image
@@ -250,7 +250,7 @@ class Members extends \XoopsObject
         $ret['fonctions']      = $this->getVar('mbr_fonctions');
         $ret['fonctionsTA']    = str_replace(",", "<br>", $this->getVar('mbr_fonctions'));
         $ret['photo']          = $this->getVar('mbr_photo');
-        //if($ret['photo'] == '') $ret['photo'] = TROMBINOSCOPE_IMAGE_URL . "/pingouin-orange.jpg";
+        if($ret['photo'] == '') $ret['photo'] = "pingouin-orange.jpg";
         //$ret['birthday']       = \formatTimestamp($this->getVar('mbr_birthday'), 's');
         if($this->getVar('mbr_birthday')=='1900-01-01'){
       		$ret['birthday']   = '';

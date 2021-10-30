@@ -11,8 +11,8 @@
                 <th class="center"><{$smarty.const._AM_TROMBINOSCOPE_MEMBER_CIVILITE}></th>
                 <th class="center"><{$smarty.const._AM_TROMBINOSCOPE_MEMBER_FIRSTNAME}></th>
                 <th class="center"><{$smarty.const._AM_TROMBINOSCOPE_MEMBER_LASTNAME}></th>
-                <th class="center"><{$smarty.const._AM_TROMBINOSCOPE_MEMBER_FONCTION}></th>
                 <th class="center"><{$smarty.const._AM_TROMBINOSCOPE_MEMBER_PHOTO}></th>
+                <th class="center"><{$smarty.const._AM_TROMBINOSCOPE_MEMBER_FONCTION}></th>
                 <th class="center"><{$smarty.const._AM_TROMBINOSCOPE_MEMBER_BIRTHDAY}></th>
                 <th class="center"><{$smarty.const._AM_TROMBINOSCOPE_MEMBER_EMAIL}></th>
                 <th class="center"><{$smarty.const._AM_TROMBINOSCOPE_MEMBER_TEL}></th>
@@ -43,20 +43,22 @@
                                     
                 
                 </td>
-                <td class='left'><{$member.fonctionsTA}></td>
                 <td class='center'>
+                  <div style='visibility:hidden;'><{$member.lastname}></div>
                   <{if $member.photo == ''}>
                     <img src="<{$smarty.const.TROMBINOSCOPE_IMAGE_URL}>/pingouin-orange.jpg" alt="members" style="max-width:100px" >
                   <{else}>
                     <img src="<{$trombinoscope_upload_url|default:false}>/images/members/<{$member.photo}>" alt="members" style="max-width:100px" >
                   <{/if}>
                 </td>
+                <td class='left'><{$member.fonctionsTA}></td>
                 <td class='center'><{$member.birthday}></td>
                 <td class='left'><{$member.email}></td>
                 <td class='center'><{$member.fixe}><br><{$member.mobile}></td>
                 <td class='left'><{$member.status}></td>
                 <td class='left'><{$member.comments_short}></td>
                 <td class='center'>
+                    <div style='visibility:hidden;'><{$member.mbr_actif}></div>
                     <a href="members.php?op=change_etat&cat_id=<{$member.cat_id}>&mbr_id=<{$member.id}>&field=mbr_actif" >
                         <img src="<{xoModuleIcons16}><{$member.mbr_actif}>.png" alt="member" title='<{$smarty.const._AM_TROMBINOSCOPER_IS_ACTIF}>' />
                         </a>
@@ -88,7 +90,7 @@
 
 <script>
 tth_set_value('last_asc', true);
-tth_trierTableau('trombinoscope_members', 2, '1-2-3-4-5-6-7-8-9');  
+tth_trierTableau('trombinoscope_members', 2);  
 </script>
 
 <!-- Footer -->
