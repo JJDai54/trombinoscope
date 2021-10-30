@@ -1,0 +1,277 @@
+[Config]
+Compilator.SaveAll=0
+Compilator.Capture=0
+Compilator.CompileOnBackground=0
+Compilator.ProgSaveAll=0
+Compilator.ProgRunSelection=0
+Compilator.LogType=0
+DefaultDir=J:\Xoops\modules-JJD\trombinoscope\projet\htdocs\modules\trombinoscope
+DefaultCP=0
+LogtoEnd=1
+DontOpen=0
+AbsolutePath=0
+FileFormat=0
+ProjectFilesOnly=0
+Extensions=*.*
+[Project tree]
+_trombinoscope
+	+trombinoscope
+		+admin
+			admin\about.php
+			admin\categories.php
+			admin\clone.php
+			admin\feedback.php
+			admin\footer.php
+			admin\header.php
+			admin\index.php
+			admin\members.php
+			admin\menu.php
+		-assets
+			-css
+				-admin
+					assets\css\admin\index.php
+					assets\css\admin\style.css
+				assets\css\index.php
+				assets\css\style.css
+			-icons
+				-16
+					assets\icons\16\index.php
+					assets\icons\16\status0.png
+					assets\icons\16\status1.png
+					assets\icons\16\status2.png
+					assets\icons\16\status3.png
+					assets\icons\16\status4.png
+				-32
+					assets\icons\32\broken.png
+					assets\icons\32\category.png
+					assets\icons\32\dashboard.png
+					assets\icons\32\identity.png
+					assets\icons\32\index.php
+				assets\icons\index.php
+			-images
+				assets\images\blank.gif
+				assets\images\blank.png
+				assets\images\index.php
+				assets\images\logoModule.png
+				assets\images\pingouin-orange.jpg
+			-js
+				assets\js\functions.js
+				assets\js\index.php
+			assets\index.php
+		-blocks
+			blocks\categories.php
+			blocks\index.php
+			blocks\members.php
+		-class
+			-Common
+				class\Common\Breadcrumb.php
+				class\Common\Configurator.php
+				class\Common\DirectoryChecker.php
+				class\Common\FileChecker.php
+				class\Common\FilesManagement.php
+				class\Common\Migrate.php
+				class\Common\ModuleFeedback.php
+				class\Common\ModuleStats.php
+				class\Common\Resizer.php
+				class\Common\ServerStats.php
+				class\Common\SysUtility.php
+				class\Common\TableChecker.php
+				class\Common\VersionChecks.php
+				class\Common\XoopsConfirm.php
+			class\Categories.php
+			class\CategoriesHandler.php
+			class\Constants.php
+			class\Helper.php
+			class\index.php
+			class\Members.php
+			class\MembersHandler.php
+			class\Utility.php
+		-config
+			config\admin.yml
+			config\config.php
+			config\icons.php
+			config\index.php
+			config\paths.php
+		-docs
+			docs\changelog.txt
+			docs\credits.txt
+			docs\index.php
+			docs\install.txt
+			docs\lang.diff
+			docs\license.txt
+			docs\readme.txt
+		+include
+			include\common.php
+			include\functions.php
+			include\index.php
+			include\install.php
+			include\search.inc.php
+			include\uninstall.php
+			include\update.php
+			include\xoops_version.inc.php
+		+language
+			-english
+				-help
+					language\english\help\help.html
+					language\english\help\index.php
+				language\english\admin.php
+				language\english\blocks.php
+				language\english\common.php
+				language\english\feedback.php
+				language\english\index.php
+				language\english\main.php
+				language\english\modinfo.php
+			+french
+				-help
+					language\french\help\help.html
+					language\french\help\index.php
+				language\french\admin.php
+				language\french\blocks.php
+				language\french\common.php
+				language\french\feedback.php
+				language\french\index.php
+				language\french\main.php
+				language\french\modinfo.php
+			language\index.php
+		-preloads
+			preloads\autoloader.php
+			preloads\core.php
+			preloads\index.php
+		-sql
+			sql\index.php
+			sql\mysql.sql
+		+templates
+			-admin
+				templates\admin\index.php
+				templates\admin\trombinoscope_admin_about.tpl
+				templates\admin\trombinoscope_admin_categories.tpl
+				templates\admin\trombinoscope_admin_clone.tpl
+				templates\admin\trombinoscope_admin_footer.tpl
+				templates\admin\trombinoscope_admin_header.tpl
+				templates\admin\trombinoscope_admin_index.tpl
+				templates\admin\trombinoscope_admin_members.tpl
+			-blocks
+				templates\blocks\trombinoscope_block_categories.tpl
+				templates\blocks\trombinoscope_block_members.tpl
+			templates\index.php
+			templates\trombinoscope_breadcrumbs.tpl
+			templates\trombinoscope_categories.tpl
+			templates\trombinoscope_categories_cat.tpl
+			templates\trombinoscope_categories_cat_list.tpl
+			templates\trombinoscope_categories_item.tpl
+			templates\trombinoscope_categories_list.tpl
+			templates\trombinoscope_footer.tpl
+			templates\trombinoscope_header.tpl
+			templates\trombinoscope_index.tpl
+			templates\trombinoscope_members.tpl
+			templates\trombinoscope_members_item.tpl
+			templates\trombinoscope_members_list.tpl
+		-testdata
+			-english
+			-french
+			-images
+				testdata\images\blank.gif
+				testdata\images\blank.png
+			testdata\index.php
+		.gitattributes
+		.gitignore
+		.scrutinizer.yml
+		_trombinoscope.ppr
+		categories.php
+		footer.php
+		header.php
+		index.php
+		members.php
+		xoops_version.php
+[Open project files]
+0=index.php
+1=header.php
+2=templates\trombinoscope_index.tpl
+3=templates\trombinoscope_categories_cat_list.tpl
+4=sql\mysql.sql
+5=preloads\core.php
+6=language\french\modinfo.php
+7=language\french\main.php
+8=language\french\admin.php
+9=language\english\modinfo.php
+10=language\english\main.php
+11=language\english\admin.php
+12=include\search.inc.php
+13=include\functions.php
+14=config\config.php
+15=class\Constants.php
+16=admin\index.php
+17=admin\header.php
+18=templates\trombinoscope_members_item.tpl
+19=templates\trombinoscope_members.tpl
+20=admin\members.php
+21=members.php
+[Selected Project Files]
+Main=
+Selected=members.php
+[index.php]
+TopLine=65
+Caret=35,71
+[header.php]
+TopLine=16
+Caret=1,34
+[templates\trombinoscope_index.tpl]
+TopLine=3
+Caret=1,21
+[templates\trombinoscope_categories_cat_list.tpl]
+TopLine=16
+Caret=1,35
+[sql\mysql.sql]
+TopLine=41
+Caret=1,58
+[preloads\core.php]
+TopLine=11
+Caret=1,29
+[language\french\modinfo.php]
+TopLine=17
+Caret=1,35
+[language\french\main.php]
+TopLine=71
+Caret=1,95
+[language\french\admin.php]
+TopLine=17
+Caret=1,34
+[language\english\modinfo.php]
+TopLine=17
+Caret=1,35
+[language\english\main.php]
+TopLine=68
+Caret=1,86
+[language\english\admin.php]
+TopLine=32
+Caret=1,49
+[include\search.inc.php]
+TopLine=109
+Caret=1,138
+[include\functions.php]
+TopLine=29
+Caret=1,47
+[config\config.php]
+TopLine=28
+Caret=1,46
+[class\Constants.php]
+TopLine=19
+Caret=1,37
+[admin\index.php]
+TopLine=20
+Caret=1,38
+[admin\header.php]
+TopLine=20
+Caret=1,38
+[templates\trombinoscope_members_item.tpl]
+TopLine=1
+Caret=6,6
+[templates\trombinoscope_members.tpl]
+TopLine=3
+Caret=56,8
+[admin\members.php]
+TopLine=92
+Caret=9,100
+[members.php]
+TopLine=47
+Caret=61,61
