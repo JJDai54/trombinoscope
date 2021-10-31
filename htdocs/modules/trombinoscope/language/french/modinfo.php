@@ -25,82 +25,82 @@
 
 require_once __DIR__ . '/common.php';
 
-// ---------------- Admin Main ----------------
+// ---------------- Administration principale ----------------
 \define('_MI_TROMBINOSCOPE_NAME', "Trombinoscope");
 \define('_MI_TROMBINOSCOPE_DESC', "Module de présentation d'un tromboniscope, et accessoirement de suivi des anniversaires");
-// ---------------- Admin Menu ----------------
-\define('_MI_TROMBINOSCOPE_ADMENU1', "Dashboard");
-\define('_MI_TROMBINOSCOPE_ADMENU2', "Categories");
-\define('_MI_TROMBINOSCOPE_ADMENU3', "Members");
-\define('_MI_TROMBINOSCOPE_ADMENU5', "Clone");
-\define('_MI_TROMBINOSCOPE_ADMENU6', "Feedback");
-\define('_MI_TROMBINOSCOPE_ABOUT', "About");
-// ---------------- Admin Nav ----------------
-\define('_MI_TROMBINOSCOPE_ADMIN_PAGER', "Admin pager");
-\define('_MI_TROMBINOSCOPE_ADMIN_PAGER_DESC', "Admin per page list");
-// User
-\define('_MI_TROMBINOSCOPE_USER_PAGER', "User pager");
-\define('_MI_TROMBINOSCOPE_USER_PAGER_DESC', "User per page list");
-// Submenu
-\define('_MI_TROMBINOSCOPE_SMNAME1', "Index page");
-\define('_MI_TROMBINOSCOPE_SMNAME2', "Members");
-\define('_MI_TROMBINOSCOPE_SMNAME3', "Submit Members");
-\define('_MI_TROMBINOSCOPE_SMNAME4', "Categories");
-\define('_MI_TROMBINOSCOPE_SMNAME5', "Submit Categories");
-\define('_MI_TROMBINOSCOPE_SMNAME8', "Search");
-// Blocks
-\define('_MI_TROMBINOSCOPE_MEMBERS_BLOCK', "Members block");
-\define('_MI_TROMBINOSCOPE_MEMBERS_BLOCK_DESC', "Members block description");
-\define('_MI_TROMBINOSCOPE_MEMBERS_BLOCK_MEMBER', "Members block  MEMBER");
-\define('_MI_TROMBINOSCOPE_MEMBERS_BLOCK_MEMBER_DESC', "Members block  MEMBER description");
-\define('_MI_TROMBINOSCOPE_MEMBERS_BLOCK_LAST', "Members block last");
-\define('_MI_TROMBINOSCOPE_MEMBERS_BLOCK_LAST_DESC', "Members block last description");
-\define('_MI_TROMBINOSCOPE_MEMBERS_BLOCK_NEW', "Members block new");
-\define('_MI_TROMBINOSCOPE_MEMBERS_BLOCK_NEW_DESC', "Members block new description");
-\define('_MI_TROMBINOSCOPE_MEMBERS_BLOCK_HITS', "Members block hits");
-\define('_MI_TROMBINOSCOPE_MEMBERS_BLOCK_HITS_DESC', "Members block hits description");
-\define('_MI_TROMBINOSCOPE_MEMBERS_BLOCK_TOP', "Members block top");
-\define('_MI_TROMBINOSCOPE_MEMBERS_BLOCK_TOP_DESC', "Members block top description");
-\define('_MI_TROMBINOSCOPE_MEMBERS_BLOCK_RANDOM', "Members block random");
-\define('_MI_TROMBINOSCOPE_MEMBERS_BLOCK_RANDOM_DESC', "Members block random description");
-\define('_MI_TROMBINOSCOPE_CATEGORIES_BLOCK', "Categories block");
-\define('_MI_TROMBINOSCOPE_CATEGORIES_BLOCK_DESC', "Categories block description");
-\define('_MI_TROMBINOSCOPE_CATEGORIES_BLOCK_CATEGORY', "Categories block CATEGORY");
-\define('_MI_TROMBINOSCOPE_CATEGORIES_BLOCK_CATEGORY_DESC', "Categories block CATEGORY description");
+// ---------------- Menu Admin ----------------
+\define('_MI_TROMBINOSCOPE_ADMENU1', "Tableau de bord");
+\define('_MI_TROMBINOSCOPE_ADMENU2', "Catégories");
+\define('_MI_TROMBINOSCOPE_ADMENU3', "Membres");
+\define('_MI_TROMBINOSCOPE_ADMENU5', "Cloner");
+\define('_MI_TROMBINOSCOPE_ADMENU6', "Commentaires");
+\define('_MI_TROMBINOSCOPE_ABOUT', "À propos");
+// ---------------- Nav Admin ----------------
+\define('_MI_TROMBINOSCOPE_ADMIN_PAGER', "Pager administrateur");
+\define('_MI_TROMBINOSCOPE_ADMIN_PAGER_DESC', "Admin par liste de pages");
+// Utilisateur
+\define('_MI_TROMBINOSCOPE_USER_PAGER', "Pager utilisateur");
+\define('_MI_TROMBINOSCOPE_USER_PAGER_DESC', "Liste d'utilisateurs par page");
+// Sous-menu
+\define('_MI_TROMBINOSCOPE_SMNAME1', "Page d'index");
+\define('_MI_TROMBINOSCOPE_SMNAME2', "Membres");
+\define('_MI_TROMBINOSCOPE_SMNAME3', "Soumettre les membres");
+\define('_MI_TROMBINOSCOPE_SMNAME4', "Catégories");
+\define('_MI_TROMBINOSCOPE_SMNAME5', "Soumettre les catégories");
+\define('_MI_TROMBINOSCOPE_SMNAME8', "Rechercher");
+// Blocs
+\define('_MI_TROMBINOSCOPE_MEMBERS_BLOCK', "Bloc des membres");
+\define('_MI_TROMBINOSCOPE_MEMBERS_BLOCK_DESC', "Description du bloc des membres");
+\define('_MI_TROMBINOSCOPE_MEMBERS_BLOCK_MEMBER', "Membres du bloc MEMBER");
+\define('_MI_TROMBINOSCOPE_MEMBERS_BLOCK_MEMBER_DESC', "Description du MEMBRE du bloc des membres");
+\define('_MI_TROMBINOSCOPE_MEMBERS_BLOCK_LAST', "Les membres bloquent en dernier");
+\define('_MI_TROMBINOSCOPE_MEMBERS_BLOCK_LAST_DESC', "Les membres bloquent la dernière description");
+\define('_MI_TROMBINOSCOPE_MEMBERS_BLOCK_NEW', "Les membres bloquent nouveau");
+\define('_MI_TROMBINOSCOPE_MEMBERS_BLOCK_NEW_DESC', "Les membres bloquent la nouvelle description");
+\define('_MI_TROMBINOSCOPE_MEMBERS_BLOCK_HITS', "Les membres bloquent les hits");
+\define('_MI_TROMBINOSCOPE_MEMBERS_BLOCK_HITS_DESC', "Description des occurrences du bloc de membres");
+\define('_MI_TROMBINOSCOPE_MEMBERS_BLOCK_TOP', "Les membres bloquent en haut");
+\define('_MI_TROMBINOSCOPE_MEMBERS_BLOCK_TOP_DESC', "Description du haut du bloc des membres");
+\define('_MI_TROMBINOSCOPE_MEMBERS_BLOCK_RANDOM', "Les membres bloquent au hasard");
+\define('_MI_TROMBINOSCOPE_MEMBERS_BLOCK_RANDOM_DESC', "Les membres bloquent la description aléatoire");
+\define('_MI_TROMBINOSCOPE_CATEGORIES_BLOCK', "Bloc de catégories");
+\define('_MI_TROMBINOSCOPE_CATEGORIES_BLOCK_DESC', "Description du bloc de catégories");
+\define('_MI_TROMBINOSCOPE_CATEGORIES_BLOCK_CATEGORY', "Catégories bloc CATEGORY");
+\define('_MI_TROMBINOSCOPE_CATEGORIES_BLOCK_CATEGORY_DESC', "Catégories bloc description CATÉGORIE");
 // Config
-\define('_MI_TROMBINOSCOPE_EDITOR_ADMIN', "Editor admin");
-\define('_MI_TROMBINOSCOPE_EDITOR_ADMIN_DESC', "Select the editor which should be used in admin area for text area fields");
-\define('_MI_TROMBINOSCOPE_EDITOR_USER', "Editor user");
-\define('_MI_TROMBINOSCOPE_EDITOR_USER_DESC', "Select the editor which should be used in user area for text area fields");
-\define('_MI_TROMBINOSCOPE_EDITOR_MAXCHAR', "Text max characters");
-\define('_MI_TROMBINOSCOPE_EDITOR_MAXCHAR_DESC', "Max characters for showing text of a textarea or editor field in admin area");
-\define('_MI_TROMBINOSCOPE_KEYWORDS', "Keywords");
-\define('_MI_TROMBINOSCOPE_KEYWORDS_DESC', "Insert here the keywords (separate by comma)");
-\define('_MI_TROMBINOSCOPE_SIZE_MB', "MB");
-\define('_MI_TROMBINOSCOPE_MAXSIZE_IMAGE', "Max size image");
-\define('_MI_TROMBINOSCOPE_MAXSIZE_IMAGE_DESC', "Define the max size for uploading images");
-\define('_MI_TROMBINOSCOPE_MIMETYPES_IMAGE', "Mime types image");
-\define('_MI_TROMBINOSCOPE_MIMETYPES_IMAGE_DESC', "Define the allowed mime types for uploading images");
-\define('_MI_TROMBINOSCOPE_MAXWIDTH_IMAGE', "Max width image");
-\define('_MI_TROMBINOSCOPE_MAXWIDTH_IMAGE_DESC', "Set the max width to which uploaded images should be scaled (in pixel)<br>0 means, that images keeps the original size. <br>If an image is smaller than maximum value then the image will be not enlarge, it will be save in original width.");
-\define('_MI_TROMBINOSCOPE_MAXHEIGHT_IMAGE', "Max height image");
-\define('_MI_TROMBINOSCOPE_MAXHEIGHT_IMAGE_DESC', "Set the max height to which uploaded images should be scaled (in pixel)<br>0 means, that images keeps the original size. <br>If an image is smaller than maximum value then the image will be not enlarge, it will be save in original height");
-\define('_MI_TROMBINOSCOPE_NUMB_COL', "Number Columns");
-\define('_MI_TROMBINOSCOPE_NUMB_COL_DESC', "Number Columns to View");
-\define('_MI_TROMBINOSCOPE_DIVIDEBY', "Divide By");
-\define('_MI_TROMBINOSCOPE_DIVIDEBY_DESC', "Divide by columns number");
-\define('_MI_TROMBINOSCOPE_TABLE_TYPE', "Table Type");
-\define('_MI_TROMBINOSCOPE_TABLE_TYPE_DESC', "Table Type is the bootstrap html table");
-\define('_MI_TROMBINOSCOPE_PANEL_TYPE', "Panel Type");
-\define('_MI_TROMBINOSCOPE_PANEL_TYPE_DESC', "Panel Type is the bootstrap html div");
-\define('_MI_TROMBINOSCOPE_IDPAYPAL', "Paypal ID");
-\define('_MI_TROMBINOSCOPE_IDPAYPAL_DESC', "Insert here your PayPal ID for donations");
-\define('_MI_TROMBINOSCOPE_SHOW_BREADCRUMBS', "Show breadcrumb navigation");
-\define('_MI_TROMBINOSCOPE_SHOW_BREADCRUMBS_DESC', "Show breadcrumb navigation which displays the current page in context within the site structure");
-\define('_MI_TROMBINOSCOPE_ADVERTISE', "Advertisement Code");
-\define('_MI_TROMBINOSCOPE_ADVERTISE_DESC', "Insert here the advertisement code");
-\define('_MI_TROMBINOSCOPE_MAINTAINEDBY', "Maintained By");
-\define('_MI_TROMBINOSCOPE_MAINTAINEDBY_DESC', "Allow url of support site or community");
-\define('_MI_TROMBINOSCOPE_BOOKMARKS', "Social Bookmarks");
-\define('_MI_TROMBINOSCOPE_BOOKMARKS_DESC', "Show Social Bookmarks in the single page");
-// ---------------- End ----------------
+\define('_MI_TROMBINOSCOPE_EDITOR_ADMIN', "Editeur administrateur");
+\define('_MI_TROMBINOSCOPE_EDITOR_ADMIN_DESC', "Sélectionnez l'éditeur qui doit être utilisé dans la zone d'administration pour les champs de zone de texte");
+\define('_MI_TROMBINOSCOPE_EDITOR_USER', "Éditeur utilisateur");
+\define('_MI_TROMBINOSCOPE_EDITOR_USER_DESC', "Sélectionnez l'éditeur qui doit être utilisé dans la zone utilisateur pour les champs de la zone de texte");
+\define('_MI_TROMBINOSCOPE_EDITOR_MAXCHAR', "Texte max caractères");
+\define('_MI_TROMBINOSCOPE_EDITOR_MAXCHAR_DESC', "Max caractères pour afficher le texte d'une zone de texte ou d'un champ d'éditeur dans la zone d'administration");
+\define('_MI_TROMBINOSCOPE_KEYWORDS', "Mots clés");
+\define('_MI_TROMBINOSCOPE_KEYWORDS_DESC', "Insérez ici les mots-clés (séparés par des virgules)");
+\define('_MI_TROMBINOSCOPE_SIZE_MB', "Mo");
+\define('_MI_TROMBINOSCOPE_MAXSIZE_IMAGE', "Taille max de l'image");
+\define('_MI_TROMBINOSCOPE_MAXSIZE_IMAGE_DESC', "Définir la taille maximale pour le téléchargement des images");
+\define('_MI_TROMBINOSCOPE_MIMETYPES_IMAGE', "Image de types Mime");
+\define('_MI_TROMBINOSCOPE_MIMETYPES_IMAGE_DESC', "Définir les types mime autorisés pour le téléchargement d'images");
+\define('_MI_TROMBINOSCOPE_MAXWIDTH_IMAGE', "Largeur max de l'image");
+\define('_MI_TROMBINOSCOPE_MAXWIDTH_IMAGE_DESC', "Définir la largeur maximale à laquelle les images téléchargées doivent être redimensionnées (en pixels)<br>0 signifie que les images conservent la taille d'origine. <br>Si une image est plus petite que la valeur maximale, alors l'image ne sera pas agrandi, il sera sauvegardé dans la largeur d'origine.");
+\define('_MI_TROMBINOSCOPE_MAXHEIGHT_IMAGE', "Hauteur max de l'image");
+\define('_MI_TROMBINOSCOPE_MAXHEIGHT_IMAGE_DESC', "Définir la hauteur maximale à laquelle les images téléchargées doivent être redimensionnées (en pixels)<br>0 signifie que les images conservent la taille d'origine. <br>Si une image est plus petite que la valeur maximale, alors l'image ne sera pas agrandi, il sera sauvegardé dans la hauteur d'origine");
+\define('_MI_TROMBINOSCOPE_NUMB_COL', "Nombre de colonnes");
+\define('_MI_TROMBINOSCOPE_NUMB_COL_DESC', "Nombre de colonnes à afficher");
+\define('_MI_TROMBINOSCOPE_DIVIDEBY', "Diviser par");
+\define('_MI_TROMBINOSCOPE_DIVIDEBY_DESC', "Diviser par le nombre de colonnes");
+\define('_MI_TROMBINOSCOPE_TABLE_TYPE', "Type de table");
+\define('_MI_TROMBINOSCOPE_TABLE_TYPE_DESC', "Le type de table est la table html d'amorçage");
+\define('_MI_TROMBINOSCOPE_PANEL_TYPE', "Type de panneau");
+\define('_MI_TROMBINOSCOPE_PANEL_TYPE_DESC', "Le type de panneau est la div html d'amorçage");
+\define('_MI_TROMBINOSCOPE_IDPAYPAL', "Identifiant Paypal");
+\define('_MI_TROMBINOSCOPE_IDPAYPAL_DESC', "Insérez ici votre identifiant PayPal pour les dons");
+\define('_MI_TROMBINOSCOPE_SHOW_BREADCRUMBS', "Afficher le fil d'Ariane");
+\define('_MI_TROMBINOSCOPE_SHOW_BREADCRUMBS_DESC', "Afficher le fil d'Ariane qui affiche la page actuelle en contexte dans la structure du site");
+\define('_MI_TROMBINOSCOPE_ADVERTISE', "Code d'annonce");
+\define('_MI_TROMBINOSCOPE_ADVERTISE_DESC', "Insérez ici le code de l'annonce");
+\define('_MI_TROMBINOSCOPE_MAINTAINEDBY', "Maintenu par");
+\define('_MI_TROMBINOSCOPE_MAINTAINEDBY_DESC', "Autoriser l'url du site de support ou de la communauté");
+\define('_MI_TROMBINOSCOPE_BOOKMARKS', "Signets sociaux");
+\define('_MI_TROMBINOSCOPE_BOOKMARKS_DESC', "Afficher les signets sociaux sur une seule page");
+// ---------------- Finir ----------------

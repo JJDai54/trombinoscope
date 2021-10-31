@@ -57,24 +57,24 @@ class FileChecker
         if (null === $original_file_path) {
             if (self::fileExists($file_path)) {
                 $path_status = "<img src='$pathIcon16/1.png' >";
-                $path_status .= "$file_path (" . \constant('CO_' . $moduleDirNameUpper . '_' . 'FC_AVAILABLE') . ') ';
+                $path_status .= "$file_path (" . \constant('CO_TROMBINOSCOPE_' . 'FC_AVAILABLE') . ') ';
             } else {
                 $path_status = "<img src='$pathIcon16/0.png' >";
-                $path_status .= "$file_path (" . \constant('CO_' . $moduleDirNameUpper . '_' . 'FC_NOTAVAILABLE') . ') ';
+                $path_status .= "$file_path (" . \constant('CO_TROMBINOSCOPE_' . 'FC_NOTAVAILABLE') . ') ';
             }
         } else {
             if (self::compareFiles($file_path, $original_file_path)) {
                 $path_status = "<img src='$pathIcon16/1.png' >";
-                $path_status .= "$file_path (" . \constant('CO_' . $moduleDirNameUpper . '_' . 'FC_AVAILABLE') . ') ';
+                $path_status .= "$file_path (" . \constant('CO_TROMBINOSCOPE_' . 'FC_AVAILABLE') . ') ';
             } else {
                 $path_status = "<img src='$pathIcon16/0.png' >";
-                $path_status .= "$file_path (" . \constant('CO_' . $moduleDirNameUpper . '_' . 'FC_NOTAVAILABLE') . ') ';
+                $path_status .= "$file_path (" . \constant('CO_TROMBINOSCOPE_' . 'FC_NOTAVAILABLE') . ') ';
                 $path_status .= "<form action='" . $_SERVER['SCRIPT_NAME'] . "' method='post'>";
                 $path_status .= "<input type='hidden' name='op' value='copyfile'>";
                 $path_status .= "<input type='hidden' name='file_path' value='$file_path'>";
                 $path_status .= "<input type='hidden' name='original_file_path' value='$original_file_path'>";
                 $path_status .= "<input type='hidden' name='redirect' value='$redirectFile'>";
-                $path_status .= "<button class='submit' onClick='this.form.submit();'>" . \constant('CO_' . $moduleDirNameUpper . '_' . 'FC_CREATETHEFILE') . '</button>';
+                $path_status .= "<button class='submit' onClick='this.form.submit();'>" . \constant('CO_TROMBINOSCOPE_' . 'FC_CREATETHEFILE') . '</button>';
                 $path_status .= '</form>';
             }
         }
@@ -155,7 +155,7 @@ switch ($op) {
         if (\Xmf\Request::hasVar('redirect', 'POST')) {
             $redirect = $_POST['redirect'];
         }
-        $msg = FileChecker::copyFile($original_file_path, $file_path) ? \constant('CO_' . $moduleDirNameUpper . '_' . 'FC_FILECOPIED') : \constant('CO_' . $moduleDirNameUpper . '_' . 'FC_FILENOTCOPIED');
+        $msg = FileChecker::copyFile($original_file_path, $file_path) ? \constant('CO_TROMBINOSCOPE_' . 'FC_FILECOPIED') : \constant('CO_TROMBINOSCOPE_' . 'FC_FILENOTCOPIED');
         \redirect_header($redirect, 2, $msg . ': ' . $file_path);
         break;
 }

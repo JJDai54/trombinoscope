@@ -55,6 +55,7 @@ class Categories extends \XoopsObject
         $this->initVar('cat_id', \XOBJ_DTYPE_INT);
         $this->initVar('cat_parent_id', \XOBJ_DTYPE_INT);
         $this->initVar('cat_name', \XOBJ_DTYPE_TXTBOX);
+        $this->initVar('cat_comments', \XOBJ_DTYPE_TXTAREA);
         $this->initVar('cat_weight', \XOBJ_DTYPE_INT);
         $this->initVar('cat_theme', \XOBJ_DTYPE_TXTBOX);
     }
@@ -134,7 +135,11 @@ class Categories extends \XoopsObject
         $form->addElement(new \XoopsFormText(\_AM_TROMBINOSCOPE_CATEGORY_WEIGHT, 'cat_weight', 20, 150, $catWeight));
         // Categories Handler
         $categoriesHandler = $helper->getHandler('Categories');
-        
+
+        // Form Editor TextArea mbrComments
+        $form->addElement(new \XoopsFormTextArea(\_AM_TROMBINOSCOPE_MEMBER_COMMENTS, 'cat_comments', $this->getVar('cat_comments', 'e'), 4, 47));
+
+/* pas géré pour l'instant 
         // Form Select catTheme
         $catThemeSelect = new \XoopsFormSelect(\_AM_TROMBINOSCOPE_CATEGORY_THEME, 'cat_theme', $this->getVar('cat_theme'), 5);
         $catThemeSelect->addOption('0', \_NONE);
@@ -142,6 +147,8 @@ class Categories extends \XoopsObject
         $catThemeSelect->addOption('2', \_AM_TROMBINOSCOPE_LIST_2);
         $catThemeSelect->addOption('3', \_AM_TROMBINOSCOPE_LIST_3);
         $form->addElement($catThemeSelect);
+*/        
+
         // To Save
         $form->addElement(new \XoopsFormHidden('op', 'save'));
         $form->addElement(new \XoopsFormHidden('start', $this->start));
@@ -163,6 +170,7 @@ class Categories extends \XoopsObject
         $ret['id']        = $this->getVar('cat_id');
         $ret['parent_id'] = $this->getVar('cat_parent_id');
         $ret['name']      = $this->getVar('cat_name');
+        $ret['comments']  = \strip_tags($this->getVar('cat_comments', 'e'));
         $ret['weight']    = $this->getVar('cat_weight');
         $ret['theme']     = $this->getVar('cat_theme');
         return $ret;

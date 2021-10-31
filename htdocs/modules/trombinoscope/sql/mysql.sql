@@ -15,6 +15,7 @@ CREATE TABLE `trombinoscope_categories` (
   `cat_id` INT(8) UNSIGNED NOT NULL AUTO_INCREMENT,
   `cat_parent_id` INT(10) NOT NULL DEFAULT '0',
   `cat_name` VARCHAR(255) NOT NULL DEFAULT '',
+  `cat_comments` TEXT NOT NULL ,
   `cat_weight` TINYINT(1) NOT NULL DEFAULT '0',
   `cat_theme` VARCHAR(50) NOT NULL DEFAULT '',
   PRIMARY KEY (`cat_id`),
@@ -23,10 +24,10 @@ CREATE TABLE `trombinoscope_categories` (
 ) ENGINE=InnoDB;
 
 INSERT INTO trombinoscope_categories (`cat_id`, `cat_parent_id`, `cat_name`, `cat_weight`, `cat_theme`) VALUES
-(1, 0, 'Bureau', 0, ''),
-(2, 0, 'Membre', 10, ''),
-(3, 0, 'Sympatisan', 20, ''),
-(4, 0, 'Donnateur', 30, '');
+(1, 0, 'Membres', 0, ''),
+(2, 0, 'Donnateurs', 10, ''),
+(3, 0, 'Partenaires', 20, ''),
+
 
 
 #

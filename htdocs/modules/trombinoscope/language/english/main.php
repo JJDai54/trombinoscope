@@ -90,3 +90,4 @@ As you can see, you have created a page with a list of links at the top to navig
 // Admin link
 \define('_MA_TROMBINOSCOPE_ADMIN', "Admin");
 // ---------------- End ----------------
+\define('_MA_TROMBINOSCOPE_MEMBER_FONCTIONS', "Fonctions");

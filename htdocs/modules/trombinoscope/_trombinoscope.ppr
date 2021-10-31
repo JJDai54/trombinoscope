@@ -12,6 +12,7 @@ DontOpen=0
 AbsolutePath=0
 FileFormat=0
 ProjectFilesOnly=0
+HTServer=localhost
 Extensions=*.*
 [Project tree]
 _trombinoscope
@@ -25,6 +26,7 @@ _trombinoscope
 			admin\header.php
 			admin\index.php
 			admin\members.php
+			admin\members_save.php
 			admin\menu.php
 		-assets
 			-css
@@ -92,7 +94,7 @@ _trombinoscope
 			config\icons.php
 			config\index.php
 			config\paths.php
-		-docs
+		+docs
 			docs\changelog.txt
 			docs\credits.txt
 			docs\index.php
@@ -100,6 +102,7 @@ _trombinoscope
 			docs\lang.diff
 			docs\license.txt
 			docs\readme.txt
+			docs\todo.txt
 		+include
 			include\common.php
 			include\functions.php
@@ -110,7 +113,7 @@ _trombinoscope
 			include\update.php
 			include\xoops_version.inc.php
 		+language
-			-english
+			+english
 				-help
 					language\english\help\help.html
 					language\english\help\index.php
@@ -137,7 +140,7 @@ _trombinoscope
 			preloads\autoloader.php
 			preloads\core.php
 			preloads\index.php
-		-sql
+		+sql
 			sql\index.php
 			sql\mysql.sql
 		+templates
@@ -164,6 +167,7 @@ _trombinoscope
 			templates\trombinoscope_header.tpl
 			templates\trombinoscope_index.tpl
 			templates\trombinoscope_members.tpl
+			templates\trombinoscope_members_fiche.tpl
 			templates\trombinoscope_members_item.tpl
 			templates\trombinoscope_members_list.tpl
 		-testdata
@@ -184,54 +188,62 @@ _trombinoscope
 		members.php
 		xoops_version.php
 [Open project files]
-0=admin\menu.php
-1=members.php
-2=admin\members.php
-3=class\MembersHandler.php
-4=class\Members.php
-5=templates\trombinoscope_members_item.tpl
-6=templates\trombinoscope_members.tpl
-7=language\french\main.php
-8=..\..\..\..\..\..\..\_Contacts\Conseil Des Sages\Membres\Trombinoscopes\photos-org\trombinoscope\.htaccess
-9=admin\categories.php
-10=language\english\main.php
-11=templates\admin\trombinoscope_admin_members.tpl
+0=class\Members.php
+1=admin\members.php
+2=admin\members_save.php
+3=categories.php
+4=class\Categories.php
+5=blocks\categories.php
+6=admin\categories.php
+7=templates\trombinoscope_members.tpl
+8=index.php
+9=admin\header.php
+10=header.php
+11=xoops_version.php
+12=admin\about.php
+13=docs\changelog.txt
 [Selected Project Files]
 Main=
-Selected=templates\admin\trombinoscope_admin_members.tpl
-[admin\menu.php]
-TopLine=35
-Caret=1,47
-[members.php]
-TopLine=51
-Caret=65,81
-[admin\members.php]
-TopLine=43
-Caret=107,55
-[class\MembersHandler.php]
-TopLine=29
-Caret=1,1
+Selected=docs\changelog.txt
 [class\Members.php]
-TopLine=223
-Caret=50,253
-[templates\trombinoscope_members_item.tpl]
+TopLine=41
+Caret=1,70
+[admin\members.php]
 TopLine=1
-Caret=9,8
+Caret=1,1
+[admin\members_save.php]
+TopLine=95
+Caret=42,113
+[categories.php]
+TopLine=91
+Caret=80,109
+[class\Categories.php]
+TopLine=40
+Caret=28,58
+[blocks\categories.php]
+TopLine=63
+Caret=96,91
+[admin\categories.php]
+TopLine=1
+Caret=30,98
 [templates\trombinoscope_members.tpl]
 TopLine=1
-Caret=1,1
-[language\french\main.php]
-TopLine=29
-Caret=49,47
-[..\..\..\..\..\..\..\_Contacts\Conseil Des Sages\Membres\Trombinoscopes\photos-org\trombinoscope\.htaccess]
+Caret=106,12
+[index.php]
+TopLine=19
+Caret=1,33
+[admin\header.php]
+TopLine=8
+Caret=1,35
+[header.php]
+TopLine=7
+Caret=1,32
+[xoops_version.php]
+TopLine=25
+Caret=40,36
+[admin\about.php]
+TopLine=128
+Caret=15,130
+[docs\changelog.txt]
 TopLine=1
-Caret=53,5
-[admin\categories.php]
-TopLine=94
-Caret=136,112
-[language\english\main.php]
-TopLine=29
-Caret=58,47
-[templates\admin\trombinoscope_admin_members.tpl]
-TopLine=37
-Caret=79,61
+Caret=100,10

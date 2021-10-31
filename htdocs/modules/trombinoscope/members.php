@@ -94,99 +94,109 @@ switch ($op) {
             $GLOBALS['xoopsTpl']->assign('panel_type', $helper->getConfig('panel_type'));
             $GLOBALS['xoopsTpl']->assign('divideby', $helper->getConfig('divideby'));
             $GLOBALS['xoopsTpl']->assign('numb_col', $helper->getConfig('numb_col'));
+            $GLOBALS['xoopsTpl']->assign('membersCount', $membersCount);
+        
+            $utility = new \XoopsModules\Trombinoscope\Utility();            
+            $GLOBALS['xoopsTpl']->assign('permEdit', $utility->getPermissions());
+            
+            
             if ('show' == $op && '' != $mbrUid) {
                 $GLOBALS['xoopsTpl']->assign('xoops_pagetitle', \strip_tags($mbrUid . ' - ' . $GLOBALS['xoopsModule']->getVar('name')));
             }
         }
         break;
     case 'save':
-        // Security Check
-        if (!$GLOBALS['xoopsSecurity']->check()) {
-            \redirect_header('members.php', 3, \implode(',', $GLOBALS['xoopsSecurity']->getErrors()));
-        }
-        if ($mbrId > 0) {
-            $membersObj = $membersHandler->get($mbrId);
-        } else {
-            $membersObj = $membersHandler->create();
-        }
-        $uploaderErrors = '';
-        $membersObj->setVar('mbr_cat_id', Request::getInt('mbr_cat_id', 0));
-        $membersObj->setVar('mbr_uid', Request::getInt('mbr_uid', 0));
-        $membersObj->setVar('mbr_civilite', Request::getString('mbr_civilite', ''));
-        $membersObj->setVar('mbr_firstname', Request::getString('mbr_firstname', ''));
-        $membersObj->setVar('mbr_lastname', Request::getString('mbr_lastname', ''));
-        $membersObj->setVar('mbr_fonctions', Request::getString('mbr_fonctions', ''));
-        // Set Var mbr_photo
-        require_once \XOOPS_ROOT_PATH . '/class/uploader.php';
-        $filename       = $_FILES['mbr_photo']['name'];
-        $imgMimetype    = $_FILES['mbr_photo']['type'];
-        $imgNameDef     = Request::getString('mbr_uid');
-        $uploader = new \XoopsMediaUploader(\TROMBINOSCOPE_UPLOAD_IMAGE_PATH . '/members/', 
-                                                    $helper->getConfig('mimetypes_image'), 
-                                                    $helper->getConfig('maxsize_image'), null, null);
-        if ($uploader->fetchMedia($_POST['xoops_upload_file'][0])) {
-            $extension = \preg_replace('/^.+\.([^.]+)$/sU', '', $filename);
-            $imgName = \str_replace(' ', '', $imgNameDef) . '.' . $extension;
-            $uploader->setPrefix($imgName);
-            $uploader->fetchMedia($_POST['xoops_upload_file'][0]);
-            if ($uploader->upload()) {
-                $savedFilename = $uploader->getSavedFileName();
-                $maxwidth  = (int)$helper->getConfig('maxwidth_image');
-                $maxheight = (int)$helper->getConfig('maxheight_image');
-                if ($maxwidth > 0 && $maxheight > 0) {
-                    // Resize image
-                    $imgHandler                = new Trombinoscope\Common\Resizer();
-                    $imgHandler->sourceFile    = \TROMBINOSCOPE_UPLOAD_IMAGE_PATH . '/members/' . $savedFilename;
-                    $imgHandler->endFile       = \TROMBINOSCOPE_UPLOAD_IMAGE_PATH . '/members/' . $savedFilename;
-                    $imgHandler->imageMimetype = $imgMimetype;
-                    $imgHandler->maxWidth      = $maxwidth;
-                    $imgHandler->maxHeight     = $maxheight;
-                    $result                    = $imgHandler->resizeImage();
-                }
-                $membersObj->setVar('mbr_photo', $savedFilename);
-            } else {
-                $uploaderErrors .= '<br>' . $uploader->getErrors();
-            }
-        } else {
-            if ($filename > '') {
-                $uploaderErrors .= '<br>' . $uploader->getErrors();
-            }
-            $membersObj->setVar('mbr_photo', Request::getString('mbr_photo'));
-        }
-        $memberBirthdayObj = \DateTime::createFromFormat(\_SHORTDATESTRING, Request::getString('mbr_birthday'));
-        $membersObj->setVar('mbr_birthday', $memberBirthdayObj->getTimestamp());
-        $membersObj->setVar('mbr_email', Request::getString('mbr_email', ''));
-        $membersObj->setVar('mbr_fixe', Request::getString('mbr_fixe', ''));
-        $membersObj->setVar('mbr_mobile', Request::getString('mbr_mobile', ''));
-        $membersObj->setVar('mbr_status', Request::getString('mbr_status', ''));
-        $membersObj->setVar('mbr_address', Request::getString('mbr_address', ''));
-        $membersObj->setVar('mbr_comments', Request::getString('mbr_comments', ''));
-        $membersObj->setVar('mbr_actif', Request::getInt('mbr_actif', 0));
-        $memberCreationArr = Request::getArray('mbr_creation');
-        $memberCreationObj = \DateTime::createFromFormat(\_SHORTDATESTRING, $memberCreationArr['date']);
-        $memberCreationObj->setTime(0, 0, 0);
-        $memberCreation = $memberCreationObj->getTimestamp() + (int)$memberCreationArr['time'];
-        $membersObj->setVar('mbr_creation', $memberCreation);
-        $memberUpdateArr = Request::getArray('mbr_update');
-        $memberUpdateObj = \DateTime::createFromFormat(\_SHORTDATESTRING, $memberUpdateArr['date']);
-        $memberUpdateObj->setTime(0, 0, 0);
-        $memberUpdate = $memberUpdateObj->getTimestamp() + (int)$memberUpdateArr['time'];
-        $membersObj->setVar('mbr_update', $memberUpdate);
-        // Insert Data
-        if ($membersHandler->insert($membersObj)) {
-            $newMbrId = $mbrId > 0 ? $mbrId : $membersObj->getNewInsertedIdMembers();
-            // redirect after insert
-            if ('' !== $uploaderErrors) {
-                \redirect_header('members.php?op=edit&mbr_id=' . $newMbrId, 5, $uploaderErrors);
-            } else {
-                \redirect_header('members.php?op=list&amp;start=' . $start . '&amp;limit=' . $limit, 2, \_MA_TROMBINOSCOPE_FORM_OK);
-            }
-        }
-        // Get Form Error
-        $GLOBALS['xoopsTpl']->assign('error', $membersObj->getHtmlErrors());
-        $form = $membersObj->getFormMembers();
-        $GLOBALS['xoopsTpl']->assign('form', $form->render());
-        break;
+                $office="frontoffice";
+                include_once("admin/members_save.php");
+                break;
+//         // Security Check
+//         if (!$GLOBALS['xoopsSecurity']->check()) {
+//             \redirect_header('members.php', 3, \implode(',', $GLOBALS['xoopsSecurity']->getErrors()));
+//         }
+//         if ($mbrId > 0) {
+//             $membersObj = $membersHandler->get($mbrId);
+//         } else {
+//             $membersObj = $membersHandler->create();
+//         }
+//         $uploaderErrors = '';
+//         $membersObj->setVar('mbr_cat_id', Request::getInt('mbr_cat_id', 0));
+//         $membersObj->setVar('mbr_uid', Request::getInt('mbr_uid', 0));
+//         $membersObj->setVar('mbr_civilite', Request::getString('mbr_civilite', ''));
+//         $membersObj->setVar('mbr_firstname', Request::getString('mbr_firstname', ''));
+//         $membersObj->setVar('mbr_lastname', Request::getString('mbr_lastname', ''));
+//         $membersObj->setVar('mbr_fonctions', Request::getString('mbr_fonctions', ''));
+//         // Set Var mbr_photo
+//         require_once \XOOPS_ROOT_PATH . '/class/uploader.php';
+//         $filename       = $_FILES['mbr_photo']['name'];
+//         $imgMimetype    = $_FILES['mbr_photo']['type'];
+//         $imgNameDef     = Request::getString('mbr_uid');
+//         $uploader = new \XoopsMediaUploader(\TROMBINOSCOPE_UPLOAD_IMAGE_PATH . '/members/', 
+//                                                     $helper->getConfig('mimetypes_image'), 
+//                                                     $helper->getConfig('maxsize_image'), null, null);
+//         if ($uploader->fetchMedia($_POST['xoops_upload_file'][0])) {
+//             $extension = \preg_replace('/^.+\.([^.]+)$/sU', '', $filename);
+//             $imgName = \str_replace(' ', '', $imgNameDef) . '.' . $extension;
+//             $uploader->setPrefix($imgName);
+//             $uploader->fetchMedia($_POST['xoops_upload_file'][0]);
+//             if ($uploader->upload()) {
+//                 $savedFilename = $uploader->getSavedFileName();
+//                 $maxwidth  = (int)$helper->getConfig('maxwidth_image');
+//                 $maxheight = (int)$helper->getConfig('maxheight_image');
+//                 if ($maxwidth > 0 && $maxheight > 0) {
+//                     // Resize image
+//                     $imgHandler                = new Trombinoscope\Common\Resizer();
+//                     $imgHandler->sourceFile    = \TROMBINOSCOPE_UPLOAD_IMAGE_PATH . '/members/' . $savedFilename;
+//                     $imgHandler->endFile       = \TROMBINOSCOPE_UPLOAD_IMAGE_PATH . '/members/' . $savedFilename;
+//                     $imgHandler->imageMimetype = $imgMimetype;
+//                     $imgHandler->maxWidth      = $maxwidth;
+//                     $imgHandler->maxHeight     = $maxheight;
+//                     $result                    = $imgHandler->resizeImage();
+//                 }
+//                 $membersObj->setVar('mbr_photo', $savedFilename);
+//             } else {
+//                 $uploaderErrors .= '<br>' . $uploader->getErrors();
+//             }
+//         } else {
+//             if ($filename > '') {
+//                 $uploaderErrors .= '<br>' . $uploader->getErrors();
+//             }
+//             $membersObj->setVar('mbr_photo', Request::getString('mbr_photo'));
+//         }
+//         $memberBirthdayObj = \DateTime::createFromFormat(\_SHORTDATESTRING, Request::getString('mbr_birthday'));
+//         $membersObj->setVar('mbr_birthday', $memberBirthdayObj->getTimestamp());
+//         $membersObj->setVar('mbr_email', Request::getString('mbr_email', ''));
+//         $membersObj->setVar('mbr_fixe', Request::getString('mbr_fixe', ''));
+//         $membersObj->setVar('mbr_mobile', Request::getString('mbr_mobile', ''));
+//         $membersObj->setVar('mbr_status', Request::getString('mbr_status', ''));
+//         $membersObj->setVar('mbr_address', Request::getString('mbr_address', ''));
+//         $membersObj->setVar('mbr_comments', Request::getString('mbr_comments', ''));
+//         $membersObj->setVar('mbr_actif', Request::getInt('mbr_actif', 0));
+//         $memberCreationArr = Request::getArray('mbr_creation');
+//         $memberCreationObj = \DateTime::createFromFormat(\_SHORTDATESTRING, $memberCreationArr['date']);
+//         $memberCreationObj->setTime(0, 0, 0);
+//         $memberCreation = $memberCreationObj->getTimestamp() + (int)$memberCreationArr['time'];
+//         $membersObj->setVar('mbr_creation', $memberCreation);
+//         $memberUpdateArr = Request::getArray('mbr_update');
+//         $memberUpdateObj = \DateTime::createFromFormat(\_SHORTDATESTRING, $memberUpdateArr['date']);
+//         $memberUpdateObj->setTime(0, 0, 0);
+//         $memberUpdate = $memberUpdateObj->getTimestamp() + (int)$memberUpdateArr['time'];
+//         $membersObj->setVar('mbr_update', $memberUpdate);
+//         // Insert Data
+//         if ($membersHandler->insert($membersObj)) {
+//             $newMbrId = $mbrId > 0 ? $mbrId : $membersObj->getNewInsertedIdMembers();
+//             // redirect after insert
+//             if ('' !== $uploaderErrors) {
+//                 \redirect_header('members.php?op=edit&mbr_id=' . $newMbrId, 5, $uploaderErrors);
+//             } else {
+//                 \redirect_header('members.php?op=list&amp;start=' . $start . '&amp;limit=' . $limit, 2, \_MA_TROMBINOSCOPE_FORM_OK);
+//             }
+//         }
+//         // Get Form Error
+//         $GLOBALS['xoopsTpl']->assign('error', $membersObj->getHtmlErrors());
+//         $form = $membersObj->getFormMembers();
+//         $GLOBALS['xoopsTpl']->assign('form', $form->render());
+//         break;
+
     case 'new':
         // Breadcrumbs
         $xoBreadcrumbs[] = ['title' => \_MA_TROMBINOSCOPE_MEMBER_ADD];

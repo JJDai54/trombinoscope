@@ -46,7 +46,7 @@
                 <td class='center'>
                   <div style='visibility:hidden;'><{$member.lastname}></div>
                   <{if $member.photo == ''}>
-                    <img src="<{$smarty.const.TROMBINOSCOPE_IMAGE_URL}>/pingouin-orange.jpg" alt="members" style="max-width:100px" >
+                    <img src="<{$smarty.const.TROMBINOSCOPE_IMAGE_URL}>/<{$smarty.const.TROMBINOSCOPE_NO_PICTURE}>" alt="members" style="max-width:100px" >
                   <{else}>
                     <img src="<{$trombinoscope_upload_url|default:false}>/images/members/<{$member.photo}>" alt="members" style="max-width:100px" >
                   <{/if}>

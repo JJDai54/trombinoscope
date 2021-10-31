@@ -17,7 +17,11 @@
                 <{foreach item=member from=$members name=member}>
                 <td width='100px'>
                     <div class='panel panel-<{$panel_type|default:false}>'>
-                        <{include file='db:trombinoscope_members_item.tpl' }>
+                        <{if $membersCount == 1}>
+                            <{include file='db:trombinoscope_members_fiche.tpl' }>
+                        <{else}>
+                            <{include file='db:trombinoscope_members_item.tpl' }>
+                        <{/if}>
                     </div>
                 </td>
                 <{if $smarty.foreach.member.iteration is div by $divideby}>

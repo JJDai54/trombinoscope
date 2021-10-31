@@ -1,0 +1,8 @@
+
+## -------------------------------------------
+## MAJ uid dans la table "members"
+## -------------------------------------------
+UPDATE x251_trombinoscope_members  , x251_users tu 
+right join x251_trombinoscope_members tm ON  tm.mbr_email = tu.email
+SET tm.mbr_uid = tu.uid
+

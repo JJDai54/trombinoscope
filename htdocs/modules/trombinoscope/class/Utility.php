@@ -252,4 +252,17 @@ var hasSelected = false; var selectBox = myform.item[A][amount];for (i = 0; i < 
     {
         return \ucfirst(\mb_strtolower(\trim($str)));
     }
-}
+    
+    // JJDai ------------------------------------
+function getPermissions($permName = 'module_admin'){
+global $xoopsUser;
+/* @var  XoopsGroupPermHandler $gperm_handler */
+    $gperm_handler = xoops_getHandler('groupperm');
+    $groups        = is_object($xoopsUser) ? $xoopsUser->getGroups() : XOOPS_GROUP_ANONYMOUS;
+    $moduleDirName      = $GLOBALS['xoopsModule']->getVar('dirname');
+        $mid       = Helper::getHelper($moduleDirName)->getModule()->getVar('mid');
+    
+    return ($gperm_handler->checkRight($permName, $mid, $groups));
+}    
+
+} // fin de la classe

@@ -109,3 +109,10 @@ require_once __DIR__ . '/main.php';
 \define('_AM_TROMBINOSCOPE_DONATION_AMOUNT', "Donation Amount");
 \define('_AM_TROMBINOSCOPE_MAINTAINEDBY', " is maintained by ");
 // ---------------- End ----------------
+\ define ('_ AM_TROMBINOSCOPE_CATEGORIE', "Category");
+
+\ define ('_ AM_TROMBINOSCOPE_FORMAT_DATE_SHORT', "Y-m-j");
+\ define ('_ AM_TROMBINOSCOPE_FORMAT_DATE_LONG', "Y-j-m-j H: i: s");
+\ define ('_ AM_TROMBINOSCOPE_MEMBER_ADDRESS', "Address");
+\ define ('_ AM_TROMBINOSCOPE_MEMBER_CIVILITE', "Civility");
+\ define ('_ AM_TROMBINOSCOPE_MEMBER_TEL', "Phones");

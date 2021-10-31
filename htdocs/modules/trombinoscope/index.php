@@ -28,6 +28,8 @@ use XoopsModules\Trombinoscope;
 use XoopsModules\Trombinoscope\Constants;
 
 require __DIR__ . '/header.php';
+\redirect_header("members.php",0,'');
+/////////////////////////////////////////////////////////
 $GLOBALS['xoopsOption']['template_main'] = 'trombinoscope_index.tpl';
 require_once \XOOPS_ROOT_PATH . '/header.php';
 // Define Stylesheet

@@ -106,6 +106,7 @@ switch ($op) {
         }
         $categoriesObj->setVar('cat_parent_id', Request::getInt('cat_parent_id', 0));
         $categoriesObj->setVar('cat_name', Request::getString('cat_name', ''));
+        $categoriesObj->setVar('cat_comments', Request::getString('cat_comments', ''));
         $categoriesObj->setVar('cat_weight', Request::getInt('cat_weight', 0));
         $categoriesObj->setVar('cat_theme', Request::getString('cat_theme', ''));
         // Insert Data

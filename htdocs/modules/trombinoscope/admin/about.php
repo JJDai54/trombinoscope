@@ -11,25 +11,25 @@ namespace XoopsModules\Slider;
 */
 
 /**
- * quizmaker - Slides management module for xoops
+ * trombinoscope - Slides management module for xoops
  *
  * @copyright      2020 XOOPS Project (https://xooops.org)
  * @license        GPL 2.0 or later
- * @package        quizmaker
+ * @package        trombinoscope
  * @since          1.0
  * @min_xoops      2.5.9
  * @author         JJDai - Email:<jjdelalandre@orange.fr> - Website:<http://jubile.fr>
  */
-use XoopsModules\Quizmaker;
-use XoopsModules\Quizmaker\Helper;
-use XoopsModules\Quizmaker\Constants;
+use XoopsModules\trombinoscope;
+use XoopsModules\trombinoscope\Helper;
+use XoopsModules\trombinoscope\Constants;
 
 require __DIR__ . '/header.php';
-$templateMain = 'quizmaker_admin_about.tpl';
+$templateMain = 'trombinoscope_admin_about.tpl';
 
 define('_AM_JJD_DESCRIPTION','zzzzz');
 define('_AM_JJD_ID','yyyyy');
-// include_once XOOPS_ROOT_PATH . "/modules/quizmaker/class/About.php";
+// include_once XOOPS_ROOT_PATH . "/modules/trombinoscope/class/About.php";
 
 
 $box = array();
@@ -112,34 +112,36 @@ function contribution(){
  * 
  * ****************************** */
 function localHeaderInfo(){
-global    $helper;
+global $xoopsModuleConfig;
+$helper = \XoopsModules\Trombinoscope\Helper::getInstance();
 $module_dir = basename(dirname(dirname(__FILE__)));
+$module = $helper->getModule();
 
-    $license_url = $helper->getModule()->getInfo('license_url');
+    $license_url = $module->getInfo('license_url');
     $license_url = preg_match('%^(https?:)?//%', $license_url) ? $license_url : 'http://' . $license_url;
 
 
     $html = array();
     
     $html[] = "<table>\n<tr>\n<td style=\"width: 100px;\">";
-    $html[] = "<img src=\"" . XOOPS_URL . '/modules/' . $module_dir . '/' . $helper->getModule()->getInfo('image') . "\" alt=\"" . $module_dir . "\" style=\"float: left; margin-right: 10px;\">";
+    $html[] = "<img src=\"" . XOOPS_URL . '/modules/' . $module_dir . '/' . $module->getInfo('image') . "\" alt=\"" . $module_dir . "\" style=\"float: left; margin-right: 10px;\">";
     $html[] = "</td><td>";
     $html[] = "<div style=\"margin-top: 1px; margin-itemRound-bottom: 4px; font-size: 18px; line-height: 18px; color: #2F5376; font-weight: bold;\">";
-    $html[] = $helper->getModule()->getInfo('name');
+    $html[] = $module->getInfo('name'); // $xoopsModuleConfig['name'];
     $html[] = " - ";
-    $html[] = $helper->getModule()->getInfo('version');
+    $html[] = $module->getInfo('version');
     $html[] = " - ";
-    $html[] = $helper->getModule()->getInfo('module_status');
+    $html[] = $module->getInfo('module_status');
     $html[] = "</div>";
     
     
     $html[] = "<div style=\"line-height: 16px; font-weight: bold;\">";
-    $html[] = _AM_JJD_ABOUT_BY . " ".  $helper->getModule()->getInfo('author');
+    $html[] = _AM_JJD_ABOUT_BY . " ".  $module->getInfo('author');
     $html[] = "</div>";
     $html[] = "<div style=\"line-height: 16px;\">";
-    $html[] = "<a href=\"$license_url\" target=\"_blank\" rel=\"external\">" . $helper->getModule()->getInfo('license') . "</a>";
+    $html[] = "<a href=\"$license_url\" target=\"_blank\" rel=\"external\">" . $module->getInfo('license') . "</a>";
     $html[] = "<br>";
-    $html[] = "<a href=\"" . $helper->getModule()->getInfo('author_website_url') . "\" target=\"_blank\">" . $helper->getModule()->getInfo('author_website_name') . "</a>";
+    $html[] = "<a href=\"" . $module->getInfo('author_website_url') . "\" target=\"_blank\">" . $module->getInfo('author_website_name') . "</a>";
     $html[] = "</div>";
 
     $html[] = "</td></tr></table>";
@@ -151,33 +153,35 @@ $module_dir = basename(dirname(dirname(__FILE__)));
  * 
  * ****************************** */
 function moduleInfo(){
-global    $helper;
+$helper = \XoopsModules\Trombinoscope\Helper::getInstance();
+$module_dir = basename(dirname(dirname(__FILE__)));
+$module = $helper->getModule();
     
   $lines = array();
   
   $lines[] = ['title' => 'Auteur',
-              'value' => $helper->getModule()->getInfo('author'),
+              'value' => $module->getInfo('author'), //$module->getInfo('author'),
               'color' => 'red',
               'bold'  => true];
     
   $lines[] = ['title' => 'author_mail',
-              'value' => $helper->getModule()->getInfo('author_mail'),
+              'value' => $module->getInfo('author_mail'),
               'color' => '',
               'bold'  => true];
      
   $lines[] = ['title' => 'author_website_url',
-              'value' => $helper->getModule()->getInfo('author_website_url'),
+              'value' => $module->getInfo('author_website_url'),
               'color' => '',
               'bold'  => true];
              
      
   $lines[] = ['title' => 'author_website_name',
-              'value' => $helper->getModule()->getInfo('author_website_name'),
+              'value' => $module->getInfo('author_website_name'),
               'color' => '',
               'bold'  => true];
 
  $lines[] = ['title' => 'module',
-              'value' => $helper->getModule()->getInfo('name'),
+              'value' => $module->getInfo('name'),
               'color' => 'red',
               'bold'  => true];
   
@@ -187,37 +191,37 @@ global    $helper;
               'bold'  => true];
     
   $lines[] = ['title' => 'version',
-              'value' => $helper->getModule()->getInfo('version'),
+              'value' => $module->getInfo('version'),
               'color' => '',
               'bold'  => true];
     
   $lines[] = ['title' => 'release_info',
-              'value' => $helper->getModule()->getInfo('release_info'),
+              'value' => $module->getInfo('release_info'),
               'color' => '',
               'bold'  => true];
     
   $lines[] = ['title' => 'release_file',
-              'value' => $helper->getModule()->getInfo('release_file'),
+              'value' => $module->getInfo('release_file'),
               'color' => '',
               'bold'  => true];
     
   $lines[] = ['title' => 'release_date',
-              'value' => $helper->getModule()->getInfo('release_date'),
+              'value' => $module->getInfo('release_date'),
               'color' => '',
               'bold'  => true];
     
   $lines[] = ['title' => 'description',
-              'value' => $helper->getModule()->getInfo(''),
+              'value' => $module->getInfo(''),
               'color' => '',
               'bold'  => true];
     
   $lines[] = ['title' => 'license',
-              'value' => $helper->getModule()->getInfo('license'),
+              'value' => $module->getInfo('license'),
               'color' => '',
               'bold'  => true];
     
   $lines[] = ['title' => 'credits',
-              'value' => $helper->getModule()->getInfo('credits'),
+              'value' => $module->getInfo('credits'),
               'color' => '',
               'bold'  => true];
  return $lines;   

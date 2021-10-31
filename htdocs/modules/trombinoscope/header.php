@@ -45,4 +45,4 @@ $modPathIcon32 = $GLOBALS['xoopsModule']->getInfo('modicons16');
 \xoops_loadLanguage('main');
 \xoops_loadLanguage('modinfo');
 //$xoTheme->addScript(XOOPS_URL . '/Frameworks/trierTableauHTML/trierTableau.js');
-include_once (XOOPS_ROOT_PATH . "/Frameworks/JJD-04.01/back_office.php");
+include_once (XOOPS_ROOT_PATH . "/Frameworks/JJD-Framework/back_office.php");

@@ -31,7 +31,7 @@ $modversion = [
     'name'                => \_MI_TROMBINOSCOPE_NAME,
     'version'             => 1.0,
     'description'         => \_MI_TROMBINOSCOPE_DESC,
-    'author'              => 'JJDai',
+    'author'              => 'JJDai (Jean-Jacques Delalandre)',
     'author_mail'         => 'jjdelalandre@orange.fr',
     'author_website_url'  => 'http://jubile.fr',
     'author_website_name' => 'Jubile',
@@ -88,6 +88,7 @@ $modversion['templates'] = [
     ['file' => 'trombinoscope_members.tpl', 'description' => ''],
     ['file' => 'trombinoscope_members_list.tpl', 'description' => ''],
     ['file' => 'trombinoscope_members_item.tpl', 'description' => ''],
+    ['file' => 'trombinoscope_members_fiche.tpl', 'description' => ''],
     ['file' => 'trombinoscope_categories.tpl', 'description' => ''],
     ['file' => 'trombinoscope_categories_list.tpl', 'description' => ''],
     ['file' => 'trombinoscope_categories_item.tpl', 'description' => ''],
@@ -138,6 +139,7 @@ if ($currdirname == $moduleDirName) {
 }
 // ------------------- Blocks ------------------- //
 // Members last
+/* pas géré pour l'instant
 $modversion['blocks'][] = [
     'file'        => 'members.php',
     'name'        => \_MI_TROMBINOSCOPE_MEMBERS_BLOCK_LAST,
@@ -187,6 +189,8 @@ $modversion['blocks'][] = [
     'template'    => 'trombinoscope_block_members.tpl',
     'options'     => 'random|5|25|0',
 ];
+*/
+
 // ------------------- Config ------------------- //
 // Editor Admin
 \xoops_load('xoopseditorhandler');
@@ -401,8 +405,8 @@ $modversion['config'][] = [
 // Make Sample button visible?
 $modversion['config'][] = [
     'name'        => 'displaySampleButton',
-    'title'       => 'CO_' . $moduleDirNameUpper . '_' . 'SHOW_SAMPLE_BUTTON',
-    'description' => 'CO_' . $moduleDirNameUpper . '_' . 'SHOW_SAMPLE_BUTTON_DESC',
+    'title'       => 'CO_TROMBINOSCOPE_' . 'SHOW_SAMPLE_BUTTON',
+    'description' => 'CO_TROMBINOSCOPE_' . 'SHOW_SAMPLE_BUTTON_DESC',
     'formtype'    => 'yesno',
     'valuetype'   => 'int',
     'default'     => 1,

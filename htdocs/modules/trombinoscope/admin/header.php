@@ -66,4 +66,4 @@ $adminObject = \Xmf\Module\Admin::getInstance();
 $style = \TROMBINOSCOPE_URL . '/assets/css/admin/style.css';
 
 $xoTheme->addScript(XOOPS_URL . '/Frameworks/trierTableauHTML/trierTableau.js');
-include_once (XOOPS_ROOT_PATH . "/Frameworks/JJD-04.01/back_office.php");
+include_once (XOOPS_ROOT_PATH . "/Frameworks/JJD-Framework/back_office.php");

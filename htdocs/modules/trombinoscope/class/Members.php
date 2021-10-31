@@ -103,6 +103,7 @@ class Members extends \XoopsObject
     public function getFormMembers($action = false)
     {
         global $categoriesHandler;
+
         $helper = \XoopsModules\Trombinoscope\Helper::getInstance();
         if (!$action) {
             $action = $_SERVER['REQUEST_URI'];
@@ -123,7 +124,10 @@ class Members extends \XoopsObject
 //         foreach($allCat as $cat){
 //             $mbrCat_idSelect->addOption($cat->getVar('cat_id'), $cat->getVar('cat_name'));        
 //         }
-        $mbrCat_idSelect->addOptionArray($categoriesHandler->getList());
+        $criteria = new \criteriaCompo();
+        $criteria->setOrder("ASC");
+        $criteria->setSort("cat_weight");
+        $mbrCat_idSelect->addOptionArray($categoriesHandler->getList($criteria));
         $form->addElement($mbrCat_idSelect);
         //--------------------------------------------------------
         // Form Table members
@@ -144,7 +148,7 @@ class Members extends \XoopsObject
         // Form Image mbrPhoto
         // Form Image mbrPhoto: Select Uploaded Image 
         $getMbrPhoto = $this->getVar('mbr_photo');
-        $mbrPhoto = $getMbrPhoto ?: 'pingouin-orange.jpg'; //blank.gif
+        $mbrPhoto = $getMbrPhoto ?: TROMBINOSCOPE_NO_PICTURE; //blank.gif
         $imageDirectory = '/uploads/trombinoscope/images/members';
         $imageTray = new \XoopsFormElementTray(_AM_TROMBINOSCOPE_MEMBRE_PHOTO, '<br>');
 //         $imageSelect = new \XoopsFormSelect(\sprintf(\_AM_TROMBINOSCOPE_MEMBRE_PHOTO_UPLOADS, ".{$imageDirectory}/"), 'mbr_photo', $mbrPhoto, 5);
@@ -236,21 +240,35 @@ class Members extends \XoopsObject
      */
     public function getValuesMembers($keys = null, $format = null, $maxDepth = null)
     {
+        global $categoriesHandler;
+        $cat = $categoriesHandler->getList();
+        $member_handler = xoops_getHandler('member');
+//                 $groups         = empty($_POST['mail_to_group']) ? array() : array_map('intval', $_POST['mail_to_group']);
+//                 $getusers       = $member_handler->getUsersByGroupLink($groups, $criteria_object, true);
+//                 $count_criteria = $member_handler->getUserCountByGroupLink($groups, $criteria_object);
+$user=$member_handler->getUser($this->getVar('mbr_uid'));
+
+        
         $helper  = \XoopsModules\Trombinoscope\Helper::getInstance();
         $utility = new \XoopsModules\Trombinoscope\Utility();
         $ret = $this->getValues($keys, $format, $maxDepth);
         $ret['id']             = $this->getVar('mbr_id');
         $ret['cat_id']         = $this->getVar('mbr_cat_id');
+        $ret['cat_name']         = $cat[$this->getVar('mbr_cat_id')];
         $membersHandler = $helper->getHandler('Members');
-        $membersObj = $membersHandler->get($this->getVar('mbr_uid'));
-        $ret['uid']            = $membersObj->getVar('mbr_uid');
+        //$membersObj = $membersHandler->get($this->getVar('mbr_uid'));
+        $ret['uid']            = $this->getVar('mbr_uid');
+        $ret['pseudo']         = $user->getVar('uname');
         $ret['civilite']       = $this->getVar('mbr_civilite');
         $ret['firstname']      = $this->getVar('mbr_firstname');
         $ret['lastname']       = $this->getVar('mbr_lastname');
+        $ret['fullname']       = $this->getVar('mbr_civilite') . " " . $this->getVar('mbr_firstname') . " " . $this->getVar('mbr_lastname');
+        
+        
         $ret['fonctions']      = $this->getVar('mbr_fonctions');
         $ret['fonctionsTA']    = str_replace(",", "<br>", $this->getVar('mbr_fonctions'));
         $ret['photo']          = $this->getVar('mbr_photo');
-        if($ret['photo'] == '') $ret['photo'] = "pingouin-orange.jpg";
+        if($ret['photo'] == '') $ret['photo'] = TROMBINOSCOPE_NO_PICTURE;
         //$ret['birthday']       = \formatTimestamp($this->getVar('mbr_birthday'), 's');
         if($this->getVar('mbr_birthday')=='1900-01-01'){
       		$ret['birthday']   = '';

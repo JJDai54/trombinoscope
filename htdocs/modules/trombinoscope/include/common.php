@@ -30,7 +30,7 @@ if (!\defined('XOOPS_ICONS32_URL')) {
 }
 
 \define('TROMBINOSCOPE_SHOW_TPL_NAME', false);
-
+\define('TROMBINOSCOPE_NO_PICTURE', "no-picture-01.jpg");
 
 \define('TROMBINOSCOPE_DIRNAME', 'trombinoscope');
 \define('TROMBINOSCOPE_PATH', \XOOPS_ROOT_PATH . '/modules/' . \TROMBINOSCOPE_DIRNAME);

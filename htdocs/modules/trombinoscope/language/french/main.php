@@ -25,71 +25,71 @@
 
 require_once __DIR__ . '/admin.php';
 
-// ---------------- Main ----------------
+// ---------------- Principale ----------------
 \define('_MA_TROMBINOSCOPE_INDEX', "Aperçu du trombinoscope");
 \define('_MA_TROMBINOSCOPE_TITLE', "Trombinoscope");
 \define('_MA_TROMBINOSCOPE_DESC', "Module de présentation d'un tromboniscope, et accessoirement de suivi des anniversaires");
-\define('_MA_TROMBINOSCOPE_INDEX_DESC', "Welcome to the homepage of your new module Trombinoscope!<br>
-As you can see, you have created a page with a list of links at the top to navigate between the pages of your module. This description is only visible on the homepage of this module, the other pages you will see the content you created when you built this module with the module ModuleBuilder, and after creating new content in admin of this module. In order to expand this module with other resources, just add the code you need to extend the functionality of the same. The files are grouped by type, from the header to the footer to see how divided the source code.<br><br>If you see this message, it is because you have not created content for this module. Once you have created any type of content, you will not see this message.<br><br>If you liked the module ModuleBuilder and thanks to the long process for giving the opportunity to the new module to be created in a moment, consider making a donation to keep the module ModuleBuilder and make a donation using this button <a href='https://xoops.org/modules/xdonations/index.php' title='Donation To Txmod Xoops'><img src='https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif' alt='Button Donations' ></a><br>Thanks!<br><br>Use the link below to go to the admin and create content.");
-\define('_MA_TROMBINOSCOPE_NO_PDF_LIBRARY', "Libraries TCPDF not there yet, upload them in root/Frameworks");
-\define('_MA_TROMBINOSCOPE_NO', "No");
-\define('_MA_TROMBINOSCOPE_DETAILS', "Show details");
-\define('_MA_TROMBINOSCOPE_BROKEN', "Notify broken");
-// ---------------- Contents ----------------
-// Member
-\define('_MA_TROMBINOSCOPE_MEMBER', "Member");
-\define('_MA_TROMBINOSCOPE_MEMBER_ADD', "Add Member");
-\define('_MA_TROMBINOSCOPE_MEMBER_EDIT', "Edit Member");
-\define('_MA_TROMBINOSCOPE_MEMBER_DELETE', "Delete Member");
+\define('_MA_TROMBINOSCOPE_INDEX_DESC', "Bienvenue sur la page d'accueil de votre nouveau module Trombinoscope !<br>
+Comme vous pouvez le voir, vous avez créé une page avec une liste de liens en haut pour naviguer entre les pages de votre module. Cette description n'est visible que sur la page d'accueil de ce module, les autres pages vous verrez le contenu que vous avez créé lorsque vous avez construit ce module avec le module ModuleBuilder, et après avoir créé un nouveau contenu dans l'admin de ce module. Afin d'étendre ce module avec d'autres ressources, ajoutez simplement le code dont vous avez besoin pour étendre les fonctionnalités de celui-ci. Les fichiers sont regroupés par type, de l'en-tête au pied de page pour voir comment se divise le code source.<br><br>Si vous voyez ce message, c'est que vous n'avez pas créé de contenu pour ce module. Une fois que vous avez créé tout type de contenu, vous ne verrez plus ce message.<br><br>Si vous avez aimé le module ModuleBuilder et grâce au long processus pour donner la possibilité au nouveau module d'être créé en un instant, pensez faire un don pour conserver le module ModuleBuilder et faire un don en utilisant ce bouton <a href='https://xoops.org/modules/xdonations/index.php' title='Donation To Txmod Xoops'><img src=' https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif' alt='Button Donations' ></a><br>Merci !<br><br>Utilisez le lien ci-dessous pour accéder au admin et créer du contenu.");
+\define('_MA_TROMBINOSCOPE_NO_PDF_LIBRARY', "Les bibliothèques TCPDF ne sont pas encore là, téléchargez-les dans root/Frameworks");
+\define('_MA_TROMBINOSCOPE_NO', "Non");
+\define('_MA_TROMBINOSCOPE_DETAILS', "Afficher les détails");
+\define('_MA_TROMBINOSCOPE_BROKEN', "Notifier cassé");
+// ---------------- Contenu ----------------
+// Membre
+\define('_MA_TROMBINOSCOPE_MEMBER', "Membre");
+\define('_MA_TROMBINOSCOPE_MEMBER_ADD', "Ajouter un membre");
+\define('_MA_TROMBINOSCOPE_MEMBER_EDIT', "Modifier le membre");
+\define('_MA_TROMBINOSCOPE_MEMBER_DELETE', "Supprimer un membre");
 \define('_MA_TROMBINOSCOPE_MEMBER_CLONE', "Clone Member");
-\define('_MA_TROMBINOSCOPE_MEMBERS', "Members");
+\define('_MA_TROMBINOSCOPE_MEMBERS', "Membres");
 \define('_MA_TROMBINOSCOPE_MEMBERS_LIST', "Liste des membres");
 \define('_MA_TROMBINOSCOPE_MEMBERS_TITLE', "Membres");
-\define('_MA_TROMBINOSCOPE_MEMBERS_DESC', "Membres description");
-// Caption of Member
+\define('_MA_TROMBINOSCOPE_MEMBERS_DESC', "Description des membres");
+// Légende du membre
 \define('_MA_TROMBINOSCOPE_MEMBER_ID', "Id");
 \define('_MA_TROMBINOSCOPE_MEMBER_CAT_ID', "Cat_id");
 \define('_MA_TROMBINOSCOPE_MEMBER_UID', "Uid");
-\define('_MA_TROMBINOSCOPE_MEMBER_FIRSTNAME', "Firstname");
+\define('_MA_TROMBINOSCOPE_MEMBER_FIRSTNAME', "Prénom");
 \define('_MA_TROMBINOSCOPE_MEMBER_LASTNAME', "Lastname");
 \define('_MA_TROMBINOSCOPE_MEMBER_FONCTION', "Fonction");
 \define('_MA_TROMBINOSCOPE_MEMBER_PHOTO', "Photo");
-\define('_MA_TROMBINOSCOPE_MEMBER_BIRTHDAY', "Birthday");
+\define('_MA_TROMBINOSCOPE_MEMBER_BIRTHDAY', "Anniversaire");
 \define('_MA_TROMBINOSCOPE_MEMBER_EMAIL', "Email");
 \define('_MA_TROMBINOSCOPE_MEMBER_FIXE', "Fixe");
 \define('_MA_TROMBINOSCOPE_MEMBER_MOBILE', "Mobile");
-\define('_MA_TROMBINOSCOPE_MEMBER_STATUS', "Status");
-\define('_MA_TROMBINOSCOPE_MEMBER_COMMENTS', "Comments");
+\define('_MA_TROMBINOSCOPE_MEMBER_STATUS', "Statut");
+\define('_MA_TROMBINOSCOPE_MEMBER_COMMENTS', "Commentaires");
 \define('_MA_TROMBINOSCOPE_MEMBER_ACTIF', "Actif");
-\define('_MA_TROMBINOSCOPE_MEMBER_CREATION', "Creation");
-\define('_MA_TROMBINOSCOPE_MEMBER_UPDATE', "Update");
-// Category
-\define('_MA_TROMBINOSCOPE_CATEGORY', "Category");
-\define('_MA_TROMBINOSCOPE_CATEGORY_ADD', "Add Category");
-\define('_MA_TROMBINOSCOPE_CATEGORY_EDIT', "Edit Category");
-\define('_MA_TROMBINOSCOPE_CATEGORY_DELETE', "Delete Category");
-\define('_MA_TROMBINOSCOPE_CATEGORY_CLONE', "Clone Category");
-\define('_MA_TROMBINOSCOPE_CATEGORIES', "Categories");
-\define('_MA_TROMBINOSCOPE_CATEGORIES_LIST', "List of Categories");
-\define('_MA_TROMBINOSCOPE_CATEGORIES_TITLE', "Categories title");
-\define('_MA_TROMBINOSCOPE_CATEGORIES_DESC', "Categories description");
-// Caption of Category
+\define('_MA_TROMBINOSCOPE_MEMBER_CREATION', "Création");
+\define('_MA_TROMBINOSCOPE_MEMBER_UPDATE', "Mise à jour");
+// Catégorie
+\define('_MA_TROMBINOSCOPE_CATEGORY', "Catégorie");
+\define('_MA_TROMBINOSCOPE_CATEGORY_ADD', "Ajouter une catégorie");
+\define('_MA_TROMBINOSCOPE_CATEGORY_EDIT', "Modifier la catégorie");
+\define('_MA_TROMBINOSCOPE_CATEGORY_DELETE', "Supprimer la catégorie");
+\define('_MA_TROMBINOSCOPE_CATEGORY_CLONE', "Catégorie de clone");
+\define('_MA_TROMBINOSCOPE_CATEGORIES', "Catégories");
+\define('_MA_TROMBINOSCOPE_CATEGORIES_LIST', "Liste des catégories");
+\define('_MA_TROMBINOSCOPE_CATEGORIES_TITLE', "Titre des catégories");
+\define('_MA_TROMBINOSCOPE_CATEGORIES_DESC', "Description des catégories");
+// Légende de la catégorie
 \define('_MA_TROMBINOSCOPE_CATEGORY_ID', "Id");
 \define('_MA_TROMBINOSCOPE_CATEGORY_PARENT_ID', "Parent_id");
-\define('_MA_TROMBINOSCOPE_CATEGORY_NAME', "Name");
-\define('_MA_TROMBINOSCOPE_CATEGORY_WEIGHT', "Weight");
-\define('_MA_TROMBINOSCOPE_CATEGORY_THEME', "Theme");
-// Submit
-\define('_MA_TROMBINOSCOPE_SUBMIT', "Submit");
-// Form
-\define('_MA_TROMBINOSCOPE_FORM_OK', "Successfully saved");
-\define('_MA_TROMBINOSCOPE_FORM_DELETE_OK', "Successfully deleted");
-\define('_MA_TROMBINOSCOPE_FORM_SURE_DELETE', "Are you sure to delete: <b><span style='color : Red;'>%s </span></b>");
-\define('_MA_TROMBINOSCOPE_FORM_SURE_RENEW', "Are you sure to update: <b><span style='color : Red;'>%s </span></b>");
-\define('_MA_TROMBINOSCOPE_INVALID_PARAM', 'Invalid parameter');
-// Admin link
+\define('_MA_TROMBINOSCOPE_CATEGORY_NAME', "Nom");
+\define('_MA_TROMBINOSCOPE_CATEGORY_WEIGHT', "Poids");
+\define('_MA_TROMBINOSCOPE_CATEGORY_THEME', "Thème");
+// Soumettre
+\define('_MA_TROMBINOSCOPE_SUBMIT', "Soumettre");
+// Former
+\define('_MA_TROMBINOSCOPE_FORM_OK', "Enregistré avec succès");
+\define('_MA_TROMBINOSCOPE_FORM_DELETE_OK', "Supprimé avec succès");
+\define('_MA_TROMBINOSCOPE_FORM_SURE_DELETE', "Êtes-vous sûr de supprimer : <b><span style='color : Red;'>%s </span></b>");
+\define('_MA_TROMBINOSCOPE_FORM_SURE_RENEW', "Êtes-vous sûr de mettre à jour : <b><span style='color : Red;'>%s </span></b>");
+\define('_MA_TROMBINOSCOPE_INVALID_PARAM', 'Paramètre invalide');
+// Lien administrateur
 \define('_MA_TROMBINOSCOPE_ADMIN', "Admin");
-// ---------------- End ----------------
-\define('_MA_TROMBINOSCOPE_INDEX_THEREARE', "There are %s Events");
-\define('_MA_TROMBINOSCOPE_INDEX_LATEST_LIST', "Last Trombinoscope");
-
+// ---------------- Finir ----------------
+\define('_MA_TROMBINOSCOPE_INDEX_THEREARE', "Il y a %s événements");
+\define('_MA_TROMBINOSCOPE_INDEX_LATEST_LIST', "Dernier trombinoscope");
+\define('_MA_TROMBINOSCOPE_MEMBER_FONCTIONS', "Fonctions");
