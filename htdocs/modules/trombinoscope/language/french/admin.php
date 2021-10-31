@@ -52,7 +52,7 @@ require_once __DIR__ . '/main.php';
 \define('_AM_TROMBINOSCOPE_MEMBER_EDIT', "Modifier le membre");
 // Éléments de membre
 \define('_AM_TROMBINOSCOPE_MEMBER_ID', "Id");
-\define('_AM_TROMBINOSCOPE_MEMBER_CAT_ID', "Identifiant de chat");
+\define('_AM_TROMBINOSCOPE_MEMBER_CAT_ID', "#cat");
 \define('_AM_TROMBINOSCOPE_MEMBER_UID', "Membres");
 \define('_AM_TROMBINOSCOPE_MEMBER_FIRSTNAME', "Prénom");
 \define('_AM_TROMBINOSCOPE_MEMBER_LASTNAME', "Lastname");

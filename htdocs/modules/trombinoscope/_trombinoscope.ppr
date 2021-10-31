@@ -17,7 +17,7 @@ Extensions=*.*
 [Project tree]
 _trombinoscope
 	+trombinoscope
-		+admin
+		-admin
 			admin\about.php
 			admin\categories.php
 			admin\clone.php
@@ -64,7 +64,7 @@ _trombinoscope
 			blocks\categories.php
 			blocks\index.php
 			blocks\members.php
-		+class
+		-class
 			-Common
 				class\Common\Breadcrumb.php
 				class\Common\Configurator.php
@@ -94,7 +94,7 @@ _trombinoscope
 			config\icons.php
 			config\index.php
 			config\paths.php
-		+docs
+		-docs
 			docs\changelog.txt
 			docs\credits.txt
 			docs\index.php
@@ -202,9 +202,16 @@ _trombinoscope
 11=xoops_version.php
 12=admin\about.php
 13=docs\changelog.txt
+14=admin\menu.php
+15=language\french\modinfo.php
+16=sql\mysql.sql
+17=include\install.php
+18=include\uninstall.php
+19=templates\admin\trombinoscope_admin_members.tpl
+20=language\french\admin.php
 [Selected Project Files]
 Main=
-Selected=docs\changelog.txt
+Selected=language\french\admin.php
 [class\Members.php]
 TopLine=41
 Caret=1,70
@@ -242,8 +249,29 @@ Caret=1,32
 TopLine=25
 Caret=40,36
 [admin\about.php]
-TopLine=128
-Caret=15,130
+TopLine=150
+Caret=43,168
 [docs\changelog.txt]
 TopLine=1
-Caret=100,10
+Caret=59,14
+[admin\menu.php]
+TopLine=21
+Caret=42,48
+[language\french\modinfo.php]
+TopLine=18
+Caret=58,36
+[sql\mysql.sql]
+TopLine=1
+Caret=31,29
+[include\install.php]
+TopLine=73
+Caret=10,91
+[include\uninstall.php]
+TopLine=25
+Caret=1,1
+[templates\admin\trombinoscope_admin_members.tpl]
+TopLine=21
+Caret=52,32
+[language\french\admin.php]
+TopLine=38
+Caret=50,55

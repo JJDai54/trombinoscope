@@ -33,7 +33,7 @@ require_once __DIR__ . '/common.php';
 \define('_MI_TROMBINOSCOPE_ADMENU2', "Catégories");
 \define('_MI_TROMBINOSCOPE_ADMENU3', "Membres");
 \define('_MI_TROMBINOSCOPE_ADMENU5', "Cloner");
-\define('_MI_TROMBINOSCOPE_ADMENU6', "Commentaires");
+\define('_MI_TROMBINOSCOPE_ADMENU6', "Retour d'expérience");
 \define('_MI_TROMBINOSCOPE_ABOUT', "À propos");
 // ---------------- Nav Admin ----------------
 \define('_MI_TROMBINOSCOPE_ADMIN_PAGER', "Pager administrateur");

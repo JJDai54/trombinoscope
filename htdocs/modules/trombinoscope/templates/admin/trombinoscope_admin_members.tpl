@@ -17,7 +17,7 @@
                 <th class="center"><{$smarty.const._AM_TROMBINOSCOPE_MEMBER_EMAIL}></th>
                 <th class="center"><{$smarty.const._AM_TROMBINOSCOPE_MEMBER_TEL}></th>
                 <th class="center"><{$smarty.const._AM_TROMBINOSCOPE_MEMBER_STATUS}></th>
-                <th class="center"><{$smarty.const._AM_TROMBINOSCOPE_MEMBER_COMMENTS}></th>
+                <{* <th class="center"><{$smarty.const._AM_TROMBINOSCOPE_MEMBER_COMMENTS}></th> *}>
                 <th class="center"><{$smarty.const._AM_TROMBINOSCOPE_MEMBER_ACTIF}></th>
                 <th class="center"><{$smarty.const._AM_TROMBINOSCOPE_MEMBER_CREATION}></th>
                 <th class="center width5"><{$smarty.const._AM_TROMBINOSCOPE_FORM_ACTION}></th>
@@ -29,7 +29,7 @@
             <tr class='<{cycle values='odd, even'}>'>
                 <td class='center'><{$member.id}></td>
                 <td class='center'><{$member.cat_id}></td>
-                <td class='center'><{$member.uid}></td>
+                <td class='center'><{$member.pseudo}></td>
                 <td class='left'><{$member.civilite}></td>
                 <td class='left'>
                     <a href="members.php?op=edit&amp;mbr_id=<{$member.id}>&amp;start=<{$start}>&amp;limit=<{$limit}>" title="<{$smarty.const._EDIT}>">
@@ -56,7 +56,7 @@
                 <td class='left'><{$member.email}></td>
                 <td class='center'><{$member.fixe}><br><{$member.mobile}></td>
                 <td class='left'><{$member.status}></td>
-                <td class='left'><{$member.comments_short}></td>
+                <{* <td class='left'><{$member.comments_short}></td> *}>
                 <td class='center'>
                     <div style='visibility:hidden;'><{$member.mbr_actif}></div>
                     <a href="members.php?op=change_etat&cat_id=<{$member.cat_id}>&mbr_id=<{$member.id}>&field=mbr_actif" >

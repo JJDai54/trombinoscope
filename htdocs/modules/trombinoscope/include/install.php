@@ -94,8 +94,8 @@ function xoops_module_install_trombinoscope(\XoopsModule $module)
     // JJDai
     $imgs = array('no-picture-00.jpg','no-picture-01.jpg');
     foreach ($imgs as $img){
-        copy( \dirname(__DIR__) . 'assets/image/' . $img, XOOPS_ROOT_PATH . '/uploads/trombinoscope/images/members/' . $img);
+        copy( \dirname(__DIR__) . '/assets/images/' . $img, XOOPS_ROOT_PATH . '/uploads/trombinoscope/images/members/' . $img);
     }
-
+//exit;
     return true;
 }

@@ -26,7 +26,7 @@ CREATE TABLE `trombinoscope_categories` (
 INSERT INTO trombinoscope_categories (`cat_id`, `cat_parent_id`, `cat_name`, `cat_weight`, `cat_theme`) VALUES
 (1, 0, 'Membres', 0, ''),
 (2, 0, 'Donnateurs', 10, ''),
-(3, 0, 'Partenaires', 20, ''),
+(3, 0, 'Partenaires', 20, '');
 
 
 

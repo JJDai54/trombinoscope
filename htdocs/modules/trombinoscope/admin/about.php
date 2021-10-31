@@ -165,18 +165,18 @@ $module = $helper->getModule();
               'bold'  => true];
     
   $lines[] = ['title' => 'author_mail',
-              'value' => $module->getInfo('author_mail'),
+              'value' => "<a href='mailto:" . $module->getInfo('author_mail') . "?subject={$module_dir}&body=Bonjour'>" . $module->getInfo('author_mail') . "</a>",              
               'color' => '',
               'bold'  => true];
      
   $lines[] = ['title' => 'author_website_url',
-              'value' => $module->getInfo('author_website_url'),
+              'value' => "<a href='" . $module->getInfo('author_website_url') . "' target='blank'>" . $module->getInfo('author_website_url') . "</a>",
               'color' => '',
               'bold'  => true];
              
      
   $lines[] = ['title' => 'author_website_name',
-              'value' => $module->getInfo('author_website_name'),
+              'value' => "<a href='" . $module->getInfo('author_website_url') . "' target='blank'>" . $module->getInfo('author_website_name') . "</a>",
               'color' => '',
               'bold'  => true];
 
