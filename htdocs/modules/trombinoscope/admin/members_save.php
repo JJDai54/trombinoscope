@@ -61,6 +61,7 @@ $mbrId = Request::getInt('mbr_id');
         $membersObj->setVar('mbr_civilite', Request::getString('mbr_civilite', ''));
         $membersObj->setVar('mbr_firstname', Request::getString('mbr_firstname', ''));
         $membersObj->setVar('mbr_lastname', Request::getString('mbr_lastname', ''));
+        $membersObj->setVar('mbr_sexe', Request::getString('mbr_sexe', ''));
         $membersObj->setVar('mbr_fonctions', Request::getString('mbr_fonctions', ''));
         // Set Var mbr_photo
         require_once \XOOPS_ROOT_PATH . '/class/uploader.php';

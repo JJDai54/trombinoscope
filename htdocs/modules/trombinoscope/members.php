@@ -50,6 +50,8 @@ $keywords = [];
 $xoBreadcrumbs[] = ['title' => \_MA_TROMBINOSCOPE_INDEX, 'link' => 'index.php'];
 // Permissions
 $GLOBALS['xoopsTpl']->assign('showItem', $mbrId > 0);
+// $gp = array_merge($_GET, $_POST);
+// echo "<hr>_GET/_POST<pre>" . print_r($gp, true) . "</pre><hr>";
 
 switch ($op) {
     case 'show':
@@ -69,8 +71,8 @@ switch ($op) {
             $crMembers->setStart($start);
             $crMembers->setLimit($limit);
         }
-    $crMembers->setOrder("ASC");
-    $crMembers->setSort('mbr_firstname,mbr_lastname,mbr_id');
+      $crMembers->setOrder("ASC");
+      $crMembers->setSort('mbr_firstname,mbr_lastname,mbr_id');
     
         $membersAll = $membersHandler->getAll($crMembers);
         if ($membersCount > 0) {
@@ -260,6 +262,12 @@ switch ($op) {
             $form = $xoopsconfirm->getFormXoopsConfirm();
             $GLOBALS['xoopsTpl']->assign('form', $form->render());
         }
+        break;
+        
+	case 'change_etat':
+        $field = Request::getString('field','mbr_actif');
+        $membersHandler->changeEtat($mbrId, $field);
+        \redirect_header('members.php', 3, \implode(', ', $GLOBALS['xoopsSecurity']->getErrors()));
         break;
 }
 

@@ -36,6 +36,7 @@
 <{*
             <a class='btn btn-primary right' href='members.php?op=edit&amp;mbr_id=<{$member.mbr_id}>&amp;start=<{$start}>&amp;limit=<{$limit}>' title='<{$smarty.const._EDIT}>'><{$smarty.const._EDIT}></a>
             <a class='btn btn-primary right' href='members.php?op=clone&amp;mbr_id_source=<{$member.mbr_id}>' title='<{$smarty.const._CLONE}>'><{$smarty.const._CLONE}></a>
+            <a class='btn btn-danger right' href='members.php?op=changeEtat&field=mbr_actif&mbr_id=<{$member.mbr_id}>' title='<{$smarty.const._ACTIF}>'><{$smarty.const._ACTIF}></a>
             <a class='btn btn-danger right' href='members.php?op=delete&amp;mbr_id=<{$member.mbr_id}>' title='<{$smarty.const._DELETE}>'><{$smarty.const._DELETE}></a>
 *}>        
     </div></center>

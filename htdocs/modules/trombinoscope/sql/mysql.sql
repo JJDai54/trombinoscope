@@ -41,6 +41,7 @@ CREATE TABLE `trombinoscope_members` (
   `mbr_civilite` VARCHAR(12) NOT NULL DEFAULT '',
   `mbr_firstname` VARCHAR(50) NOT NULL DEFAULT '',
   `mbr_lastname` VARCHAR(50) NOT NULL DEFAULT '',
+  `mbr_sexe` TINYINT(1) NOT NULL DEFAULT '0',
   `mbr_address` TEXT NOT NULL ,
   `mbr_fonctions` VARCHAR(255) NOT NULL DEFAULT '',
   `mbr_photo` VARCHAR(255) NOT NULL DEFAULT '',

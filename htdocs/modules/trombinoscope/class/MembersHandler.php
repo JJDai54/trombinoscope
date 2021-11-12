@@ -130,12 +130,11 @@ class MembersHandler extends \XoopsPersistableObjectHandler
  * @$quizId : id du quiz
  * @$field : nom du champ à changer
  * *********************** */
-    public function changeEtat($mbrId, $field)
+    public function changeEtat($mbrId, $field, $modulo = 2)
     {
-        $sql = "UPDATE " . $this->table . " SET {$field} = not {$field} WHERE mbr_id ={$mbrId};";
+        $sql = "UPDATE " . $this->table . " SET {$field} = mod({$field}+1,{$modulo}) WHERE mbr_id={$mbrId};";
         $ret = $this->db->queryf($sql);
         return $ret;
     }
-
     
 }

@@ -118,4 +118,7 @@ require_once __DIR__ . '/main.php';
 \define('_AM_TROMBINOSCOPE_MEMBER_TEL', "Téléphones");
 \define('_AM_TROMBINOSCOPE_MEMBRE_PHOTO', "Photo");
 
+\define('_AM_TROMBINOSCOPE_MEMBER_SEXE', "Sexe");
+\define('_AM_TROMBINOSCOPE_MEMBER_HOMME', "Homme");
+\define('_AM_TROMBINOSCOPE_MEMBER_FEMME', "Femme");
 

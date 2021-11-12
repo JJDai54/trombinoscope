@@ -29,7 +29,7 @@ $moduleDirNameUpper = \mb_strtoupper($moduleDirName);
 // ------------------- Informations ------------------- //
 $modversion = [
     'name'                => \_MI_TROMBINOSCOPE_NAME,
-    'version'             => 1.0,
+    'version'             => 1.2,
     'description'         => \_MI_TROMBINOSCOPE_DESC,
     'author'              => 'JJDai (Jean-Jacques Delalandre)',
     'author_mail'         => 'jjdelalandre@orange.fr',

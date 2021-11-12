@@ -58,6 +58,7 @@ class Members extends \XoopsObject
         $this->initVar('mbr_civilite', \XOBJ_DTYPE_TXTBOX);
         $this->initVar('mbr_firstname', \XOBJ_DTYPE_TXTBOX);
         $this->initVar('mbr_lastname', \XOBJ_DTYPE_TXTBOX);
+        $this->initVar('mbr_sexe', \XOBJ_DTYPE_INT);
         $this->initVar('mbr_fonctions', \XOBJ_DTYPE_TXTBOX);
         $this->initVar('mbr_photo', \XOBJ_DTYPE_TXTBOX);
         $this->initVar('mbr_birthday', \XOBJ_DTYPE_OTHER); //XOBJ_DTYPE_LTIME // XOBJ_DTYPE_DATE
@@ -142,6 +143,14 @@ class Members extends \XoopsObject
         $form->addElement(new \XoopsFormText(\_AM_TROMBINOSCOPE_MEMBER_FIRSTNAME, 'mbr_firstname', 50, 255, $this->getVar('mbr_firstname')), true);
         // Form Text mbrLastname
         $form->addElement(new \XoopsFormText(\_AM_TROMBINOSCOPE_MEMBER_LASTNAME, 'mbr_lastname', 50, 255, $this->getVar('mbr_lastname')), true);
+        
+        
+        // Form Text mbr_sexe
+        $inpSexe = new \XoopsFormRadio(\_AM_TROMBINOSCOPE_MEMBER_SEXE, 'mbr_sexe', $this->getVar('mbr_sexe'));
+        $inpSexe->addOption(1,_AM_TROMBINOSCOPE_MEMBER_HOMME);
+        $inpSexe->addOption(2,_AM_TROMBINOSCOPE_MEMBER_FEMME);
+        $form->addElement($inpSexe, true);
+        
         // Form Text mbrFonction
         $form->addElement(new \XoopsFormText(\_AM_TROMBINOSCOPE_MEMBER_FONCTION, 'mbr_fonctions', 50, 255, $this->getVar('mbr_fonctions')));
         
@@ -263,6 +272,7 @@ $user=$member_handler->getUser($this->getVar('mbr_uid'));
         $ret['firstname']      = $this->getVar('mbr_firstname');
         $ret['lastname']       = $this->getVar('mbr_lastname');
         $ret['fullname']       = $this->getVar('mbr_civilite') . " " . $this->getVar('mbr_firstname') . " " . $this->getVar('mbr_lastname');
+        $ret['sexe']           = $this->getVar('mbr_sexe');
         
         
         $ret['fonctions']      = $this->getVar('mbr_fonctions');
@@ -273,7 +283,8 @@ $user=$member_handler->getUser($this->getVar('mbr_uid'));
         if($this->getVar('mbr_birthday')=='1900-01-01'){
       		$ret['birthday']   = '';
         }else{
-      		$ret['birthday']   = \JJD\getDateSql2Str($this->getVar('mbr_birthday'), 'd-m-Y');
+        setlocale(LC_ALL, 'fr_FR');
+      		$ret['birthday']   = \JJD\getDateSql2Str($this->getVar('mbr_birthday'), 'd-F');//'d-m-Y'
         }
         
         $ret['email']          = $this->getVar('mbr_email');
