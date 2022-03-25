@@ -45,7 +45,7 @@ switch ($op) {
             loadSampleData();
         } else {
             xoops_cp_header();
-            xoops_confirm(['ok' => 1, 'op' => 'load'], 'index.php', \sprintf(\constant('CO_TROMBINOSCOPE_' . 'ADD_SAMPLEDATA_OK')), \constant('CO_TROMBINOSCOPE_' . 'CONFIRM'), true);
+            xoops_confirm(['ok' => 1, 'op' => 'load'], 'index.php', \sprintf(\constant('_CO_TROMBINOSCOPE_ADD_SAMPLEDATA_OK')), \constant('_CO_TROMBINOSCOPE_CONFIRM'), true);
             xoops_cp_footer();
         }
         break;
@@ -93,7 +93,7 @@ function loadSampleData()
             $utility::rcopy($src, $dest);
         }
     }
-    \redirect_header('../admin/index.php', 1, \constant('CO_TROMBINOSCOPE_' . 'SAMPLEDATA_SUCCESS'));
+    \redirect_header('../admin/index.php', 1, \constant('_CO_TROMBINOSCOPE_SAMPLEDATA_SUCCESS'));
 }
 
 function saveSampleData()
@@ -135,7 +135,7 @@ function saveSampleData()
             Utility::rcopy($src, $dest);
         }
     }
-    \redirect_header('../admin/index.php', 1, \constant('CO_TROMBINOSCOPE_' . 'SAVE_SAMPLEDATA_SUCCESS'));
+    \redirect_header('../admin/index.php', 1, \constant('_CO_TROMBINOSCOPE_SAVE_SAMPLEDATA_SUCCESS'));
 }
 
 function exportSchema()
@@ -148,9 +148,9 @@ function exportSchema()
         //        $migrate = new Trombinoscope\Migrate($moduleDirName);
         //        $migrate->saveCurrentSchema();
         //
-        //        \redirect_header('../admin/index.php', 1, \constant('CO_TROMBINOSCOPE_' . 'EXPORT_SCHEMA_SUCCESS'));
+        //        \redirect_header('../admin/index.php', 1, \constant('_CO_TROMBINOSCOPE_EXPORT_SCHEMA_SUCCESS'));
     } catch (\Exception $e) {
-        exit(\constant('CO_TROMBINOSCOPE_' . 'EXPORT_SCHEMA_ERROR'));
+        exit(\constant('_CO_TROMBINOSCOPE_EXPORT_SCHEMA_ERROR'));
     }
 
 }

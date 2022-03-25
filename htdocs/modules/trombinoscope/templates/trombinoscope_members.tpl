@@ -14,7 +14,7 @@
         </thead>
         <tbody>
             <tr>
-                <{foreach item=member from=$members name=member}>
+                <{foreach item=member from=$members name=memberName}>
                 <td width='100px'>
                     <div class='panel panel-<{$panel_type|default:false}>'>
                         <{if $membersCount == 1}>
@@ -24,7 +24,7 @@
                         <{/if}>
                     </div>
                 </td>
-                <{if $smarty.foreach.member.iteration is div by $divideby}>
+                <{if $smarty.foreach.memberName.iteration is div by $divideby}>
                     </tr><tr>
                 <{/if}>
                 <{/foreach}>

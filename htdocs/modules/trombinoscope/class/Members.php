@@ -138,7 +138,7 @@ class Members extends \XoopsObject
         $form->addElement($mbrUidSelect);
         //-------------------------------
         // Form Text mbr_civilite
-        $form->addElement(new \XoopsFormText(\_AM_TROMBINOSCOPE_MEMBER_FIRSTNAME, 'mbr_civilite', 50, 255, $this->getVar('mbr_civilite')), true);
+        $form->addElement(new \XoopsFormText(\_AM_TROMBINOSCOPE_MEMBER_CIVILITE, 'mbr_civilite', 20, 20, $this->getVar('mbr_civilite')), true);
         // Form Text mbrFirstname
         $form->addElement(new \XoopsFormText(\_AM_TROMBINOSCOPE_MEMBER_FIRSTNAME, 'mbr_firstname', 50, 255, $this->getVar('mbr_firstname')), true);
         // Form Text mbrLastname

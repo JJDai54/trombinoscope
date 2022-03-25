@@ -64,7 +64,7 @@ span.title{
             <a class='btn btn-primary right' href='members.php?op=clone&amp;mbr_id_source=<{$member.mbr_id}>' title='<{$smarty.const._CLONE}>'><{$smarty.const._CLONE}></a>
             *}>
             <{if $member.actif == 1 || $member.actif}>
-                <a class='btn btn-danger right' href='members.php?op=change_etat&field=mbr_actif&mbr_id=<{$member.mbr_id}>' title='<{$smarty.const._UNACTIVATE}>'><{$smarty.const.CO_TROMBINOSCOPE_UNACTIVATE}></a>             
+                <a class='btn btn-danger right' href='members.php?op=change_etat&field=mbr_actif&mbr_id=<{$member.mbr_id}>' title='<{$smarty.const._UNACTIVATE}>'><{$smarty.const._CO_TROMBINOSCOPE_UNACTIVATE}></a>             
             <{else}>
             <{/if}>
             <{*

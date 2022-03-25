@@ -29,7 +29,7 @@ $moduleDirNameUpper = \mb_strtoupper($moduleDirName);
 // ------------------- Informations ------------------- //
 $modversion = [
     'name'                => \_MI_TROMBINOSCOPE_NAME,
-    'version'             => 1.2,
+    'version'             => 1.6,
     'description'         => \_MI_TROMBINOSCOPE_DESC,
     'author'              => 'JJDai (Jean-Jacques Delalandre)',
     'author_mail'         => 'jjdelalandre@orange.fr',
@@ -41,7 +41,7 @@ $modversion = [
     'help'                => 'page=help',
     'release_info'        => 'release_info',
     'release_file'        => \XOOPS_URL . '/modules/trombinoscope/docs/release_info file',
-    'release_date'        => '2021/10/27',
+    'release_date'        => '2022/03/25',
     'manual'              => 'link to manual file',
     'manual_file'         => \XOOPS_URL . '/modules/trombinoscope/docs/install.txt',
     'min_php'             => '7.0',
@@ -366,6 +366,7 @@ $modversion['config'][] = [
     'default'     => 'default',
     'options'     => ['default' => 'default', 'primary' => 'primary', 'success' => 'success', 'info' => 'info', 'warning' => 'warning', 'danger' => 'danger'],
 ];
+/*
 // Paypal ID
 $modversion['config'][] = [
     'name'        => 'donations',
@@ -405,8 +406,8 @@ $modversion['config'][] = [
 // Make Sample button visible?
 $modversion['config'][] = [
     'name'        => 'displaySampleButton',
-    'title'       => 'CO_TROMBINOSCOPE_' . 'SHOW_SAMPLE_BUTTON',
-    'description' => 'CO_TROMBINOSCOPE_' . 'SHOW_SAMPLE_BUTTON_DESC',
+    'title'       => '_CO_TROMBINOSCOPE_SHOW_SAMPLE_BUTTON',
+    'description' => '_CO_TROMBINOSCOPE_SHOW_SAMPLE_BUTTON_DESC',
     'formtype'    => 'yesno',
     'valuetype'   => 'int',
     'default'     => 1,
@@ -420,3 +421,4 @@ $modversion['config'][] = [
     'valuetype'   => 'text',
     'default'     => 'https://www.frxoops.org/modules/newbb/',
 ];
+*/

@@ -73,7 +73,7 @@ switch ($op) {
         }
       $crMembers->setOrder("ASC");
       $crMembers->setSort('mbr_firstname,mbr_lastname,mbr_id');
-    
+ $helper = \XoopsModules\Trombinoscope\Helper::getInstance();   
         $membersAll = $membersHandler->getAll($crMembers);
         if ($membersCount > 0) {
             $members = [];
@@ -95,6 +95,7 @@ switch ($op) {
             $GLOBALS['xoopsTpl']->assign('table_type', $helper->getConfig('table_type'));
             $GLOBALS['xoopsTpl']->assign('panel_type', $helper->getConfig('panel_type'));
             $GLOBALS['xoopsTpl']->assign('divideby', $helper->getConfig('divideby'));
+            //$GLOBALS['xoopsTpl']->assign('divideby',5);
             $GLOBALS['xoopsTpl']->assign('numb_col', $helper->getConfig('numb_col'));
             $GLOBALS['xoopsTpl']->assign('membersCount', $membersCount);
         
