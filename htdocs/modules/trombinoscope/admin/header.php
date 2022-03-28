@@ -24,6 +24,8 @@
  */
 require \dirname(__DIR__, 3) . '/include/cp_header.php';
 require_once \dirname(__DIR__) . '/include/common.php';
+$moduleDirName       = \basename(\dirname(__DIR__));
+//$moduleDirName = \basename(__DIR__);
 
 $sysPathIcon16   = '../' . $GLOBALS['xoopsModule']->getInfo('sysicons16');
 $sysPathIcon32   = '../' . $GLOBALS['xoopsModule']->getInfo('sysicons32');
@@ -46,7 +48,8 @@ if (!isset($xoopsTpl) || !\is_object($xoopsTpl)) {
 // Load languages
 \xoops_loadLanguage('admin');
 \xoops_loadLanguage('modinfo');
-\xoops_loadLanguage('common');
+\xoops_loadLanguage('common', $moduleDirName);
+\xoops_loadLanguage('about', $moduleDirName);
 
 // Local admin menu class
 if (\file_exists($GLOBALS['xoops']->path($pathModuleAdmin.'/moduleadmin.php'))) {

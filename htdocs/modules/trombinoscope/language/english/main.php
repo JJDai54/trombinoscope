@@ -22,7 +22,6 @@
  */
 
 defined( 'XOOPS_ROOT_PATH' ) or die( 'Accès restreint' );
-include_once("common.php");
 
 define('_MA_TROMBINOSCOPE_INDEX', "Overview Trombinoscope");
 define('_MA_TROMBINOSCOPE_TITLE', "Trombinoscope");

@@ -159,71 +159,72 @@ $module = $helper->getModule();
     
   $lines = array();
   
-  $lines[] = ['title' => 'Auteur',
+  $lines[] = ['title' => _CO_TROMBINOSCOPE_AUTEUR,
               'value' => $module->getInfo('author'), //$module->getInfo('author'),
               'color' => 'red',
               'bold'  => true];
     
-  $lines[] = ['title' => 'author_mail',
+  $lines[] = ['title' => _CO_TROMBINOSCOPE_AUTHOR_MAIL,
               'value' => "<a href='mailto:" . $module->getInfo('author_mail') . "?subject={$module_dir}&body=Bonjour'>" . $module->getInfo('author_mail') . "</a>",              
               'color' => '',
               'bold'  => true];
      
-  $lines[] = ['title' => 'author_website_url',
+  $lines[] = ['title' => _CO_TROMBINOSCOPE_AUTHOR_WEBSITE_URL,
               'value' => "<a href='" . $module->getInfo('author_website_url') . "' target='blank'>" . $module->getInfo('author_website_url') . "</a>",
               'color' => '',
               'bold'  => true];
              
      
-  $lines[] = ['title' => 'author_website_name',
+  $lines[] = ['title' => _CO_TROMBINOSCOPE_AUTHOR_WEBSITE_URL,
               'value' => "<a href='" . $module->getInfo('author_website_url') . "' target='blank'>" . $module->getInfo('author_website_name') . "</a>",
               'color' => '',
               'bold'  => true];
 
- $lines[] = ['title' => 'module',
+ $lines[] = ['title' => _CO_TROMBINOSCOPE_MODULE,
               'value' => $module->getInfo('name'),
               'color' => 'red',
               'bold'  => true];
   
-  $lines[] = ['title' => 'dirname',
+  $lines[] = ['title' => _CO_TROMBINOSCOPE_DIRNAME,
               'value' => basename(dirname(__DIR__)),
               'color' => 'red',
               'bold'  => true];
     
-  $lines[] = ['title' => 'version',
+  $lines[] = ['title' => _CO_TROMBINOSCOPE_VERSION,
               'value' => $module->getInfo('version'),
               'color' => '',
               'bold'  => true];
     
-  $lines[] = ['title' => 'release_info',
+  $lines[] = ['title' => _CO_TROMBINOSCOPE_RELEASE_INFO,
               'value' => $module->getInfo('release_info'),
               'color' => '',
               'bold'  => true];
     
-  $lines[] = ['title' => 'release_file',
+  $lines[] = ['title' => _CO_TROMBINOSCOPE_RELEASE_FILE,
               'value' => $module->getInfo('release_file'),
               'color' => '',
               'bold'  => true];
     
-  $lines[] = ['title' => 'release_date',
+  $lines[] = ['title' => _CO_TROMBINOSCOPE_RELEASE_DATE,
               'value' => $module->getInfo('release_date'),
               'color' => '',
               'bold'  => true];
     
-  $lines[] = ['title' => 'description',
+  $lines[] = ['title' => _CO_TROMBINOSCOPE_DESCRIPTION,
               'value' => $module->getInfo(''),
               'color' => '',
               'bold'  => true];
     
-  $lines[] = ['title' => 'license',
+  $lines[] = ['title' => _CO_TROMBINOSCOPE_LICENSE,
               'value' => $module->getInfo('license'),
               'color' => '',
               'bold'  => true];
     
-  $lines[] = ['title' => 'credits',
+  $lines[] = ['title' => _CO_TROMBINOSCOPE_CREDITS,
               'value' => $module->getInfo('credits'),
               'color' => '',
               'bold'  => true];
+
  return $lines;   
     
 }

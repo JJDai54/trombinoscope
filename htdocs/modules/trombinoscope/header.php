@@ -25,6 +25,7 @@
 require \dirname(__DIR__, 2) . '/mainfile.php';
 require __DIR__ . '/include/common.php';
 $moduleDirName = \basename(__DIR__);
+
 // Breadcrumbs
 $xoBreadcrumbs = [];
 // Get instance of module
@@ -44,5 +45,7 @@ $modPathIcon32 = $GLOBALS['xoopsModule']->getInfo('modicons16');
 // Load Languages
 \xoops_loadLanguage('main');
 \xoops_loadLanguage('modinfo');
+\xoops_loadLanguage('common', $moduleDirName);
+
 //$xoTheme->addScript(XOOPS_URL . '/Frameworks/trierTableauHTML/trierTableau.js');
 include_once (XOOPS_ROOT_PATH . "/Frameworks/JJD-Framework/back_office.php");

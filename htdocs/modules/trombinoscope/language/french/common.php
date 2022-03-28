@@ -84,7 +84,6 @@ define('_CO_TROMBINOSCOPE_MEMBER_COMMENTS', "Commentaires");
 define('_CO_TROMBINOSCOPE_MEMBER_ACTIF', "Actif");
 define('_CO_TROMBINOSCOPE_MEMBER_CREATION', "Création");
 define('_CO_TROMBINOSCOPE_MEMBER_UPDATE', "Mise à jour");
-define('_CO_TROMBINOSCOPE_MEMBER_EDIT', "Éditer");
 define('_CO_TROMBINOSCOPE_FORM_UPLOAD', "Télécharger le fichier");
 define('_CO_TROMBINOSCOPE_FORM_UPLOAD_NEW', "Télécharger un nouveau fichier : ");
 define('_CO_TROMBINOSCOPE_FORM_UPLOAD_SIZE', "Taille max du fichier : ");
@@ -94,5 +93,8 @@ define('_CO_TROMBINOSCOPE_FORM_UPLOAD_IMG_HEIGHT', "Hauteur max de l'image : ");
 define('_CO_TROMBINOSCOPE_FORM_ACTION', "Action");
 define('_CO_TROMBINOSCOPE_FORM_DELETE', "Effacer");
 define('_CO_TROMBINOSCOPE_FORM_DELETE_OK', "Supprimé avec succès");
+
+
+
 
 ?>

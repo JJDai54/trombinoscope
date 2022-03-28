@@ -22,7 +22,6 @@
  */
  
 defined( 'XOOPS_ROOT_PATH' ) or die( 'Accès restreint' );
-include_once("common.php");
 
 define('_AM_TROMBINOSCOPE_STATISTICS', "Statistics");
 define('_AM_TROMBINOSCOPE_THEREARE_MEMBERS', "There are <span class='bold'>%s</span> members in the database");
