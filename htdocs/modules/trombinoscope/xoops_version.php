@@ -29,7 +29,7 @@ $moduleDirNameUpper = \mb_strtoupper($moduleDirName);
 // ------------------- Informations ------------------- //
 $modversion = [
     'name'                => \_MI_TROMBINOSCOPE_NAME,
-    'version'             => 1.6,
+    'version'             => 1.8,
     'description'         => \_MI_TROMBINOSCOPE_DESC,
     'author'              => 'JJDai (Jean-Jacques Delalandre)',
     'author_mail'         => 'jjdelalandre@orange.fr',
@@ -41,7 +41,7 @@ $modversion = [
     'help'                => 'page=help',
     'release_info'        => 'release_info',
     'release_file'        => \XOOPS_URL . '/modules/trombinoscope/docs/release_info file',
-    'release_date'        => '2022/03/25',
+    'release_date'        => '2022/03/28',
     'manual'              => 'link to manual file',
     'manual_file'         => \XOOPS_URL . '/modules/trombinoscope/docs/install.txt',
     'min_php'             => '7.0',
@@ -61,7 +61,7 @@ $modversion = [
     'support_name'        => 'Support Forum',
     'module_website_url'  => 'https://github.com/JJDai54',
     'module_website_name' => 'GitHub',
-    'release'             => '2021-09-25',
+    'release'             => '2022-03-28',
     'module_status'       => 'Beta 1',
     'system_menu'         => 1,
     'hasAdmin'            => 1,
