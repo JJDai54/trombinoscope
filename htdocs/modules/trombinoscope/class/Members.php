@@ -111,7 +111,7 @@ class Members extends \XoopsObject
         }
         $isAdmin = $GLOBALS['xoopsUser']->isAdmin($GLOBALS['xoopsModule']->mid());
         // Title
-        $title = $this->isNew() ? \sprintf(\_AM_TROMBINOSCOPE_MEMBER_ADD) : \sprintf(\_AM_TROMBINOSCOPE_MEMBER_EDIT);
+        $title = ($this->isNew()) ? _CO_TROMBINOSCOPE_MEMBER_ADD : _CO_TROMBINOSCOPE_MEMBER_EDIT;
         // Get Theme Form
         \xoops_load('XoopsFormLoader');
         $form = new \XoopsThemeForm($title, 'form', $action, 'post', true);
@@ -120,7 +120,7 @@ class Members extends \XoopsObject
         $membersHandler = $helper->getHandler('Members');
         //--------------------------------------------------------
         // Form Select mbrCat_id
-        $mbrCat_idSelect = new \XoopsFormSelect(\_AM_TROMBINOSCOPE_CATEGORIE, 'mbr_cat_id', $this->getVar('mbr_cat_id'), 1);
+        $mbrCat_idSelect = new \XoopsFormSelect(_CO_TROMBINOSCOPE_CATEGORIE, 'mbr_cat_id', $this->getVar('mbr_cat_id'), 1);
 //         $allCat = $categoriesHandler->getAll($criteria);
 //         foreach($allCat as $cat){
 //             $mbrCat_idSelect->addOption($cat->getVar('cat_id'), $cat->getVar('cat_name'));        
@@ -133,26 +133,26 @@ class Members extends \XoopsObject
         //--------------------------------------------------------
         // Form Table members
         //membersHandler = $helper->getHandler('Members');
-        $mbrUidSelect = new \XoopsFormSelectUser(_AM_TROMBINOSCOPE_MEMBER_UID, 'mbr_uid', true, $this->getVar('mbr_uid'));
+        $mbrUidSelect = new \XoopsFormSelectUser(_CO_TROMBINOSCOPE_MEMBER_UID, 'mbr_uid', true, $this->getVar('mbr_uid'));
         //$mbrUidSelect->addOptionArray($membersHandler->getList());
         $form->addElement($mbrUidSelect);
         //-------------------------------
         // Form Text mbr_civilite
-        $form->addElement(new \XoopsFormText(\_AM_TROMBINOSCOPE_MEMBER_CIVILITE, 'mbr_civilite', 20, 20, $this->getVar('mbr_civilite')), true);
+        $form->addElement(new \XoopsFormText(_CO_TROMBINOSCOPE_MEMBER_CIVILITE, 'mbr_civilite', 20, 20, $this->getVar('mbr_civilite')), true);
         // Form Text mbrFirstname
-        $form->addElement(new \XoopsFormText(\_AM_TROMBINOSCOPE_MEMBER_FIRSTNAME, 'mbr_firstname', 50, 255, $this->getVar('mbr_firstname')), true);
+        $form->addElement(new \XoopsFormText(_CO_TROMBINOSCOPE_MEMBER_FIRSTNAME, 'mbr_firstname', 50, 255, $this->getVar('mbr_firstname')), true);
         // Form Text mbrLastname
-        $form->addElement(new \XoopsFormText(\_AM_TROMBINOSCOPE_MEMBER_LASTNAME, 'mbr_lastname', 50, 255, $this->getVar('mbr_lastname')), true);
+        $form->addElement(new \XoopsFormText(_CO_TROMBINOSCOPE_MEMBER_LASTNAME, 'mbr_lastname', 50, 255, $this->getVar('mbr_lastname')), true);
         
         
         // Form Text mbr_sexe
-        $inpSexe = new \XoopsFormRadio(\_AM_TROMBINOSCOPE_MEMBER_SEXE, 'mbr_sexe', $this->getVar('mbr_sexe'));
-        $inpSexe->addOption(1,_AM_TROMBINOSCOPE_MEMBER_HOMME);
-        $inpSexe->addOption(2,_AM_TROMBINOSCOPE_MEMBER_FEMME);
+        $inpSexe = new \XoopsFormRadio(_CO_TROMBINOSCOPE_MEMBER_SEXE, 'mbr_sexe', $this->getVar('mbr_sexe'));
+        $inpSexe->addOption(1,_CO_TROMBINOSCOPE_MEMBER_HOMME);
+        $inpSexe->addOption(2,_CO_TROMBINOSCOPE_MEMBER_FEMME);
         $form->addElement($inpSexe, true);
         
         // Form Text mbrFonction
-        $form->addElement(new \XoopsFormText(\_AM_TROMBINOSCOPE_MEMBER_FONCTION, 'mbr_fonctions', 50, 255, $this->getVar('mbr_fonctions')));
+        $form->addElement(new \XoopsFormText(_CO_TROMBINOSCOPE_MEMBER_FONCTION, 'mbr_fonctions', 50, 255, $this->getVar('mbr_fonctions')));
         
         // Form Image mbrPhoto
         // Form Image mbrPhoto: Select Uploaded Image 
@@ -160,7 +160,7 @@ class Members extends \XoopsObject
         $mbrPhoto = $getMbrPhoto ?: TROMBINOSCOPE_NO_PICTURE; //blank.gif
         $imageDirectory = '/uploads/trombinoscope/images/members';
         $imageTray = new \XoopsFormElementTray(_AM_TROMBINOSCOPE_MEMBRE_PHOTO, '<br>');
-//         $imageSelect = new \XoopsFormSelect(\sprintf(\_AM_TROMBINOSCOPE_MEMBRE_PHOTO_UPLOADS, ".{$imageDirectory}/"), 'mbr_photo', $mbrPhoto, 5);
+//         $imageSelect = new \XoopsFormSelect(\sprintf(_AM_TROMBINOSCOPE_MEMBRE_PHOTO_UPLOADS, ".{$imageDirectory}/"), 'mbr_photo', $mbrPhoto, 5);
 //         $imageArray = \XoopsLists::getImgListAsArray( \XOOPS_ROOT_PATH . $imageDirectory );
 //         foreach ($imageArray as $image1) {
 //             $imageSelect->addOption(($image1), $image1);
@@ -173,14 +173,14 @@ class Members extends \XoopsObject
         
         // Form Image mbrPhoto: Upload new image
             $maxsize = $helper->getConfig('maxsize_image');
-            $imageTray->addElement(new \XoopsFormFile('<br>' . \_AM_TROMBINOSCOPE_FORM_UPLOAD_NEW, 'mbr_photo', $maxsize));
-            $imageTray->addElement(new \XoopsFormLabel(\_AM_TROMBINOSCOPE_FORM_UPLOAD_SIZE, ($maxsize / 1048576) . ' '  . \_AM_TROMBINOSCOPE_FORM_UPLOAD_SIZE_MB));
-            $imageTray->addElement(new \XoopsFormLabel(\_AM_TROMBINOSCOPE_FORM_UPLOAD_IMG_WIDTH, $helper->getConfig('maxwidth_image') . ' px'));
-            $imageTray->addElement(new \XoopsFormLabel(\_AM_TROMBINOSCOPE_FORM_UPLOAD_IMG_HEIGHT, $helper->getConfig('maxheight_image') . ' px'));
-        if ($permissionUpload) {
-        } else {
+            $imageTray->addElement(new \XoopsFormFile('<br>' . _CO_TROMBINOSCOPE_FORM_UPLOAD_NEW, 'mbr_photo', $maxsize));
+            $imageTray->addElement(new \XoopsFormLabel(_CO_TROMBINOSCOPE_FORM_UPLOAD_SIZE, ($maxsize / 1048576) . ' '  . _CO_TROMBINOSCOPE_FORM_UPLOAD_SIZE_MB));
+            $imageTray->addElement(new \XoopsFormLabel(_CO_TROMBINOSCOPE_FORM_UPLOAD_IMG_WIDTH, $helper->getConfig('maxwidth_image') . ' px'));
+            $imageTray->addElement(new \XoopsFormLabel(_CO_TROMBINOSCOPE_FORM_UPLOAD_IMG_HEIGHT, $helper->getConfig('maxheight_image') . ' px'));
+//         if ($permissionUpload) {
+//         } else {
+//         }
             $imageTray->addElement(new \XoopsFormHidden('mbr_photo', $mbrPhoto));
-        }
         $form->addElement($imageTray);
         //-------------------------------------------------
         // Form Text Date Select mbrBirthday
@@ -188,7 +188,7 @@ class Members extends \XoopsObject
 //        $form->addElement(new \XoopsFormTextDateSelect(\, 'mbr_birthday', '', $mbrBirthday));
         
 		// Form Check Box quizDateBegin
-         $mbrBirthday= \JJD\xoopsformDateSimple(_AM_TROMBINOSCOPE_MEMBER_BIRTHDAY, 'mbr_birthday', $this->getVar('mbr_birthday'));
+         $mbrBirthday= \JJD\xoopsformDateSimple(_CO_TROMBINOSCOPE_MEMBER_BIRTHDAY, 'mbr_birthday', $this->getVar('mbr_birthday'));
 		$form->addElement($mbrBirthday);
         
         
@@ -198,39 +198,39 @@ class Members extends \XoopsObject
         
         
         // Form Text mbrEmail
-        $form->addElement(new \XoopsFormText(\_AM_TROMBINOSCOPE_MEMBER_EMAIL, 'mbr_email', 50, 255, $this->getVar('mbr_email')));
+        $form->addElement(new \XoopsFormText(_CO_TROMBINOSCOPE_MEMBER_EMAIL, 'mbr_email', 50, 255, $this->getVar('mbr_email')));
         // Form Text mbrFixe
-        $form->addElement(new \XoopsFormText(\_AM_TROMBINOSCOPE_MEMBER_FIXE, 'mbr_fixe', 50, 255, $this->getVar('mbr_fixe')));
+        $form->addElement(new \XoopsFormText(_CO_TROMBINOSCOPE_MEMBER_FIXE, 'mbr_fixe', 50, 255, $this->getVar('mbr_fixe')));
         // Form Text mbrMobile
-        $form->addElement(new \XoopsFormText(\_AM_TROMBINOSCOPE_MEMBER_MOBILE, 'mbr_mobile', 50, 255, $this->getVar('mbr_mobile')));
+        $form->addElement(new \XoopsFormText(_CO_TROMBINOSCOPE_MEMBER_MOBILE, 'mbr_mobile', 50, 255, $this->getVar('mbr_mobile')));
         // Members Handler
         $membersHandler = $helper->getHandler('Members');
         
         /* pas utilisé pour l'instant
         // Form Select mbrStatus
-        $mbrStatusSelect = new \XoopsFormSelect(\_AM_TROMBINOSCOPE_MEMBER_STATUS, 'mbr_status', $this->getVar('mbr_status'), 5);
+        $mbrStatusSelect = new \XoopsFormSelect(_CO_TROMBINOSCOPE_MEMBER_STATUS, 'mbr_status', $this->getVar('mbr_status'), 5);
         $mbrStatusSelect->addOption('0', \_NONE);
-        $mbrStatusSelect->addOption('1', \_AM_TROMBINOSCOPE_LIST_1);
-        $mbrStatusSelect->addOption('2', \_AM_TROMBINOSCOPE_LIST_2);
-        $mbrStatusSelect->addOption('3', \_AM_TROMBINOSCOPE_LIST_3);
+        $mbrStatusSelect->addOption('1', _AM_TROMBINOSCOPE_LIST_1);
+        $mbrStatusSelect->addOption('2', _AM_TROMBINOSCOPE_LIST_2);
+        $mbrStatusSelect->addOption('3', _AM_TROMBINOSCOPE_LIST_3);
         $form->addElement($mbrStatusSelect, true);
         */
         // Form Editor TextArea mbr_address
-        $form->addElement(new \XoopsFormTextArea(\_AM_TROMBINOSCOPE_MEMBER_ADDRESS, 'mbr_address', $this->getVar('mbr_address', 'e'), 4, 47));
+        $form->addElement(new \XoopsFormTextArea(_CO_TROMBINOSCOPE_MEMBER_ADDRESS, 'mbr_address', $this->getVar('mbr_address', 'e'), 4, 47));
         
         // Form Editor TextArea mbrComments
-        $form->addElement(new \XoopsFormTextArea(\_AM_TROMBINOSCOPE_MEMBER_COMMENTS, 'mbr_comments', $this->getVar('mbr_comments', 'e'), 4, 47));
+        $form->addElement(new \XoopsFormTextArea(_CO_TROMBINOSCOPE_MEMBER_COMMENTS, 'mbr_comments', $this->getVar('mbr_comments', 'e'), 4, 47));
         // Form Radio Yes/No mbrActif
         $mbrActif = $this->isNew() ?: $this->getVar('mbr_actif');
-        $form->addElement(new \XoopsFormRadioYN(\_AM_TROMBINOSCOPE_MEMBER_ACTIF, 'mbr_actif', $mbrActif));
+        $form->addElement(new \XoopsFormRadioYN(_CO_TROMBINOSCOPE_MEMBER_ACTIF, 'mbr_actif', $mbrActif));
         
         /* mis à jour lors de l'enregistrement
         // Form Text Date Select mbrCreation
         $mbrCreation = $this->isNew() ? \time() : $this->getVar('mbr_creation');
-        $form->addElement(new \XoopsFormDateTime(\_AM_TROMBINOSCOPE_MEMBER_CREATION, 'mbr_creation', '', $mbrCreation));
+        $form->addElement(new \XoopsFormDateTime(_CO_TROMBINOSCOPE_MEMBER_CREATION, 'mbr_creation', '', $mbrCreation));
         // Form Text Date Select mbrUpdate
         $mbrUpdate = $this->isNew() ? \time() : $this->getVar('mbr_update');
-        $form->addElement(new \XoopsFormDateTime(\_AM_TROMBINOSCOPE_MEMBER_UPDATE, 'mbr_update', '', $mbrUpdate));
+        $form->addElement(new \XoopsFormDateTime(_CO_TROMBINOSCOPE_MEMBER_UPDATE, 'mbr_update', '', $mbrUpdate));
         */
         // To Save
         $form->addElement(new \XoopsFormHidden('op', 'save'));

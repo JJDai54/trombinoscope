@@ -100,11 +100,11 @@ class Categories extends \XoopsObject
         if($isNew){
           // Title
           $catId = 0;
-          $title = \_AM_TROMBINOSCOPE_CATEGORY_ADD ;
+          $title = _AM_TROMBINOSCOPE_CATEGORY_ADD ;
         }else{
         // Title
           $catId = $this->getVar('cat_id');
-          $title = \_AM_TROMBINOSCOPE_CATEGORY_EDIT;
+          $title = _AM_TROMBINOSCOPE_CATEGORY_EDIT;
         }
         
 
@@ -116,7 +116,7 @@ class Categories extends \XoopsObject
         $categoriesHandler = $helper->getHandler('Categories');
         /* pas géré pour le moment
         // Form Select catParent_id
-        $catParent_idSelect = new \XoopsFormSelect(\_AM_TROMBINOSCOPE_CATEGORY_PARENT_ID, 'cat_parent_id', $this->getVar('cat_parent_id'), 1);
+        $catParent_idSelect = new \XoopsFormSelect(_AM_TROMBINOSCOPE_CATEGORY_PARENT_ID, 'cat_parent_id', $this->getVar('cat_parent_id'), 1);
         $criteria = new \CriteriaCompo(new \Criteria('cat_id',0,'='));
         $criteria->add(new \Criteria('cat_id', $catId, '<>'), 'AND');
         $allCat = $categoriesHandler->getAll($criteria);
@@ -129,23 +129,23 @@ class Categories extends \XoopsObject
         //-------------------------------
         
         // Form Text catName
-        $form->addElement(new \XoopsFormText(\_AM_TROMBINOSCOPE_CATEGORY_NAME, 'cat_name', 50, 255, $this->getVar('cat_name')), true);
+        $form->addElement(new \XoopsFormText(_AM_TROMBINOSCOPE_CATEGORY_NAME, 'cat_name', 50, 255, $this->getVar('cat_name')), true);
         // Form Text catWeight
         $catWeight = $this->isNew() ? '0' : $this->getVar('cat_weight');
-        $form->addElement(new \XoopsFormText(\_AM_TROMBINOSCOPE_CATEGORY_WEIGHT, 'cat_weight', 20, 150, $catWeight));
+        $form->addElement(new \XoopsFormText(_AM_TROMBINOSCOPE_CATEGORY_WEIGHT, 'cat_weight', 20, 150, $catWeight));
         // Categories Handler
         $categoriesHandler = $helper->getHandler('Categories');
 
         // Form Editor TextArea mbrComments
-        $form->addElement(new \XoopsFormTextArea(\_AM_TROMBINOSCOPE_MEMBER_COMMENTS, 'cat_comments', $this->getVar('cat_comments', 'e'), 4, 47));
+        $form->addElement(new \XoopsFormTextArea(_CO_TROMBINOSCOPE_MEMBER_COMMENTS, 'cat_comments', $this->getVar('cat_comments', 'e'), 4, 47));
 
 /* pas géré pour l'instant 
         // Form Select catTheme
-        $catThemeSelect = new \XoopsFormSelect(\_AM_TROMBINOSCOPE_CATEGORY_THEME, 'cat_theme', $this->getVar('cat_theme'), 5);
+        $catThemeSelect = new \XoopsFormSelect(_AM_TROMBINOSCOPE_CATEGORY_THEME, 'cat_theme', $this->getVar('cat_theme'), 5);
         $catThemeSelect->addOption('0', \_NONE);
-        $catThemeSelect->addOption('1', \_AM_TROMBINOSCOPE_LIST_1);
-        $catThemeSelect->addOption('2', \_AM_TROMBINOSCOPE_LIST_2);
-        $catThemeSelect->addOption('3', \_AM_TROMBINOSCOPE_LIST_3);
+        $catThemeSelect->addOption('1', _AM_TROMBINOSCOPE_LIST_1);
+        $catThemeSelect->addOption('2', _AM_TROMBINOSCOPE_LIST_2);
+        $catThemeSelect->addOption('3', _AM_TROMBINOSCOPE_LIST_3);
         $form->addElement($catThemeSelect);
 */        
 

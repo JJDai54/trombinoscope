@@ -5,22 +5,22 @@
     <table id='trombinoscope_members' name='trombinoscope_members' class='table table-bordered'>
         <thead>
             <tr class='head'>
-                <th class="center"><{$smarty.const._AM_TROMBINOSCOPE_MEMBER_ID}></th>
-                <th class="center"><{$smarty.const._AM_TROMBINOSCOPE_MEMBER_CAT_ID}></th>
-                <th class="center"><{$smarty.const._AM_TROMBINOSCOPE_MEMBER_UID}></th>
-                <th class="center"><{$smarty.const._AM_TROMBINOSCOPE_MEMBER_CIVILITE}></th>
-                <th class="center"><{$smarty.const._AM_TROMBINOSCOPE_MEMBER_FIRSTNAME}></th>
-                <th class="center"><{$smarty.const._AM_TROMBINOSCOPE_MEMBER_LASTNAME}></th>
-                <th class="center"><{$smarty.const._AM_TROMBINOSCOPE_MEMBER_PHOTO}></th>
-                <th class="center"><{$smarty.const._AM_TROMBINOSCOPE_MEMBER_FONCTION}></th>
-                <th class="center"><{$smarty.const._AM_TROMBINOSCOPE_MEMBER_BIRTHDAY}></th>
-                <th class="center"><{$smarty.const._AM_TROMBINOSCOPE_MEMBER_EMAIL}></th>
-                <th class="center"><{$smarty.const._AM_TROMBINOSCOPE_MEMBER_TEL}></th>
-                <th class="center"><{$smarty.const._AM_TROMBINOSCOPE_MEMBER_STATUS}></th>
-                <{* <th class="center"><{$smarty.const._AM_TROMBINOSCOPE_MEMBER_COMMENTS}></th> *}>
-                <th class="center"><{$smarty.const._AM_TROMBINOSCOPE_MEMBER_ACTIF}></th>
-                <th class="center"><{$smarty.const._AM_TROMBINOSCOPE_MEMBER_CREATION}></th>
-                <th class="center width5"><{$smarty.const._AM_TROMBINOSCOPE_FORM_ACTION}></th>
+                <th class="center"><{$smarty.const._CO_TROMBINOSCOPE_MEMBER_ID}></th>
+                <th class="center"><{$smarty.const._CO_TROMBINOSCOPE_MEMBER_CAT_ID}></th>
+                <th class="center"><{$smarty.const._CO_TROMBINOSCOPE_MEMBER_UID}></th>
+                <th class="center"><{$smarty.const._CO_TROMBINOSCOPE_MEMBER_CIVILITE}></th>
+                <th class="center"><{$smarty.const._CO_TROMBINOSCOPE_MEMBER_FIRSTNAME}></th>
+                <th class="center"><{$smarty.const._CO_TROMBINOSCOPE_MEMBER_LASTNAME}></th>
+                <th class="center"><{$smarty.const._CO_TROMBINOSCOPE_MEMBER_PHOTO}></th>
+                <th class="center"><{$smarty.const._CO_TROMBINOSCOPE_MEMBER_FONCTION}></th>
+                <th class="center"><{$smarty.const._CO_TROMBINOSCOPE_MEMBER_BIRTHDAY}></th>
+                <th class="center"><{$smarty.const._CO_TROMBINOSCOPE_MEMBER_EMAIL}></th>
+                <th class="center"><{$smarty.const._CO_TROMBINOSCOPE_MEMBER_TEL}></th>
+                <th class="center"><{$smarty.const._CO_TROMBINOSCOPE_MEMBER_STATUS}></th>
+                <{* <th class="center"><{$smarty.const._CO_TROMBINOSCOPE_MEMBER_COMMENTS}></th> *}>
+                <th class="center"><{$smarty.const._CO_TROMBINOSCOPE_MEMBER_ACTIF}></th>
+                <th class="center"><{$smarty.const._CO_TROMBINOSCOPE_MEMBER_CREATION}></th>
+                <th class="center width5"><{$smarty.const._CO_TROMBINOSCOPE_FORM_ACTION}></th>
             </tr>
         </thead>
         <{if $members_count|default:''}>

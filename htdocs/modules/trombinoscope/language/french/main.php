@@ -22,11 +22,12 @@
  */
  
 defined( 'XOOPS_ROOT_PATH' ) or die( 'Accès restreint' );
+include_once("common.php");
 
 define('_MA_TROMBINOSCOPE_INDEX', "Aperçu du trombinoscope");
 define('_MA_TROMBINOSCOPE_TITLE', "Trombinoscope");
 define('_MA_TROMBINOSCOPE_DESC', "Module de présentation d'un tromboniscope, et accessoirement de suivi des anniversaires");
-define('_MA_TROMBINOSCOPE_INDEX_DESC', "Bienvenue sur la page d'accueil de votre nouveau module Trombinoscope !<br>
+define('_MA_TROMBINOSCOPE_INDEX_DESC', "Bienvenue sur la page d'accueil de votre nouveau module Trombinoscope !<br>
 Comme vous pouvez le voir, vous avez créé une page avec une liste de liens en haut pour naviguer entre les pages de votre module. Cette description n'est visible que sur la page d'accueil de ce module, les autres pages vous verrez le contenu que vous avez créé lorsque vous avez construit ce module avec le module ModuleBuilder, et après avoir créé un nouveau contenu dans l'admin de ce module. Afin d'étendre ce module avec d'autres ressources, ajoutez simplement le code dont vous avez besoin pour étendre les fonctionnalités de celui-ci. Les fichiers sont regroupés par type, de l'en-tête au pied de page pour voir comment se divise le code source.<br><br>Si vous voyez ce message, c'est que vous n'avez pas créé de contenu pour ce module. Une fois que vous avez créé tout type de contenu, vous ne verrez plus ce message.<br><br>Si vous avez aimé le module ModuleBuilder et grâce au long processus pour donner la possibilité au nouveau module d'être créé en un instant, pensez faire un don pour conserver le module ModuleBuilder et faire un don en utilisant ce bouton <a href='https://xoops.org/modules/xdonations/index.php' title='Donation To Txmod Xoops'><img src=' https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif' alt='Button Donations' ></a><br>Merci !<br><br>Utilisez le lien ci-dessous pour accéder au admin et créer du contenu.");
 define('_MA_TROMBINOSCOPE_DETAILS', "Afficher les détails");
 define('_MA_TROMBINOSCOPE_MEMBER', "Membre");

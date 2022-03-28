@@ -22,6 +22,7 @@
  */
  
 defined( 'XOOPS_ROOT_PATH' ) or die( 'Accès restreint' );
+include_once("common.php");
 
 define('_AM_TROMBINOSCOPE_STATISTICS', "Statistics");
 define('_AM_TROMBINOSCOPE_THEREARE_MEMBERS', "There are <span class='bold'>%s</span> members in the database");
@@ -29,30 +30,11 @@ define('_AM_TROMBINOSCOPE_THEREARE_CATEGORIES', "There are <span class='bold'>%s
 define('_AM_TROMBINOSCOPE_THEREARENT_MEMBERS', "There aren't members");
 define('_AM_TROMBINOSCOPE_THEREARENT_CATEGORIES', "There aren't categories");
 define('_AM_TROMBINOSCOPE_FORM_OK', "Successfully saved");
-define('_AM_TROMBINOSCOPE_FORM_DELETE_OK', "Successfully deleted");
 define('_AM_TROMBINOSCOPE_FORM_SURE_DELETE', "Are you sure to delete: <b><span style='color : Red;'>%s </span></b>");
 define('_AM_TROMBINOSCOPE_ADD_MEMBER', "Add New Member");
 define('_AM_TROMBINOSCOPE_ADD_CATEGORY', "Add New Category");
 define('_AM_TROMBINOSCOPE_LIST_MEMBERS', "List of Members");
 define('_AM_TROMBINOSCOPE_LIST_CATEGORIES', "List of Categories");
-define('_AM_TROMBINOSCOPE_MEMBER_ADD', "Add Member");
-define('_AM_TROMBINOSCOPE_MEMBER_EDIT', "Edit Member");
-define('_AM_TROMBINOSCOPE_MEMBER_ID', "Id");
-define('_AM_TROMBINOSCOPE_MEMBER_CAT_ID', "Cat id");
-define('_AM_TROMBINOSCOPE_MEMBER_UID', "Members");
-define('_AM_TROMBINOSCOPE_MEMBER_FIRSTNAME', "Firstname");
-define('_AM_TROMBINOSCOPE_MEMBER_LASTNAME', "Lastname");
-define('_AM_TROMBINOSCOPE_MEMBER_FONCTION', "Fonction");
-define('_AM_TROMBINOSCOPE_MEMBER_PHOTO', "Photo");
-define('_AM_TROMBINOSCOPE_MEMBER_BIRTHDAY', "Birthday");
-define('_AM_TROMBINOSCOPE_MEMBER_EMAIL', "Email");
-define('_AM_TROMBINOSCOPE_MEMBER_FIXE', "Fixe");
-define('_AM_TROMBINOSCOPE_MEMBER_MOBILE', "Mobile");
-define('_AM_TROMBINOSCOPE_MEMBER_STATUS', "Status");
-define('_AM_TROMBINOSCOPE_MEMBER_COMMENTS', "Comments");
-define('_AM_TROMBINOSCOPE_MEMBER_ACTIF', "Actif");
-define('_AM_TROMBINOSCOPE_MEMBER_CREATION', "Creation");
-define('_AM_TROMBINOSCOPE_MEMBER_UPDATE', "Update");
 define('_AM_TROMBINOSCOPE_CATEGORY_ADD', "Add Category");
 define('_AM_TROMBINOSCOPE_CATEGORY_EDIT', "Edit Category");
 define('_AM_TROMBINOSCOPE_CATEGORY_ID', "Id");
@@ -60,14 +42,6 @@ define('_AM_TROMBINOSCOPE_CATEGORY_PARENT_ID', "Parent id");
 define('_AM_TROMBINOSCOPE_CATEGORY_NAME', "Name");
 define('_AM_TROMBINOSCOPE_CATEGORY_WEIGHT', "Weight");
 define('_AM_TROMBINOSCOPE_CATEGORY_THEME', "Theme");
-define('_AM_TROMBINOSCOPE_FORM_UPLOAD', "Upload file");
-define('_AM_TROMBINOSCOPE_FORM_UPLOAD_NEW', "Upload new file: ");
-define('_AM_TROMBINOSCOPE_FORM_UPLOAD_SIZE', "Max file size: ");
-define('_AM_TROMBINOSCOPE_FORM_UPLOAD_SIZE_MB', "MB");
-define('_AM_TROMBINOSCOPE_FORM_UPLOAD_IMG_WIDTH', "Max image width: ");
-define('_AM_TROMBINOSCOPE_FORM_UPLOAD_IMG_HEIGHT', "Max image height: ");
-define('_AM_TROMBINOSCOPE_FORM_ACTION', "Action");
-define('_AM_TROMBINOSCOPE_FORM_DELETE', "Clear");
 define('_AM_TROMBINOSCOPE_LIST_1', "Sample List Value 1");
 define('_AM_TROMBINOSCOPE_LIST_2', "Sample List Value 2");
 define('_AM_TROMBINOSCOPE_LIST_3', "Sample List Value 3");
@@ -83,14 +57,6 @@ define('_AM_TROMBINOSCOPE_CLONE_FAIL', "Sorry, we failed in creating the new clo
 define('_AM_TROMBINOSCOPE_ABOUT_MAKE_DONATION', "Submit");
 define('_AM_TROMBINOSCOPE_DONATION_AMOUNT', "Donation Amount");
 define('_AM_TROMBINOSCOPE_MAINTAINEDBY', " is maintained by ");
-define('_AM_TROMBINOSCOPE_CATEGORIE', "Category");
-define('_AM_TROMBINOSCOPE_FORMAT_DATE_SHORT', "Y-m-j");
-define('_AM_TROMBINOSCOPE_MEMBER_ADDRESS', "Address");
-define('_AM_TROMBINOSCOPE_MEMBER_CIVILITE', "Civility");
-define('_AM_TROMBINOSCOPE_MEMBER_TEL', "Phones");
 define('_AM_TROMBINOSCOPE_MEMBRE_PHOTO', "Photo");
-define('_AM_TROMBINOSCOPE_MEMBER_SEXE', "Sexe");
-define('_AM_TROMBINOSCOPE_MEMBER_HOMME', "Homme");
-define('_AM_TROMBINOSCOPE_MEMBER_FEMME', "Femme");
 
 ?>

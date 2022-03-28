@@ -104,7 +104,7 @@ $mbrId = Request::getInt('mbr_id');
         //$membersObj->setVar('mbr_birthday', $memberBirthdayObj->getTimestamp());
 // 		$memberBirthdayObj = Request::getArray('mbr_birthday');		
 //         $membersObj->setVar('mbr_birthday', \JJD\getSqlDate($memberBirthdayObj));
-        $membersObj->setVar('mbr_birthday', \JJD\getSqlDate(Request::getString('mbr_birthday'), 'Y-m-d', _AM_TROMBINOSCOPE_FORMAT_DATE_SHORT));
+        $membersObj->setVar('mbr_birthday', \JJD\getSqlDate(Request::getString('mbr_birthday'), 'Y-m-d', _CO_TROMBINOSCOPE_FORMAT_DATE_SHORT));
         
         $membersObj->setVar('mbr_email', Request::getString('mbr_email', ''));
         $membersObj->setVar('mbr_fixe', Request::getString('mbr_fixe', ''));
@@ -122,10 +122,10 @@ $mbrId = Request::getInt('mbr_id');
             } else {
                 if ($office == "frontoffice")
                 {
-                  \redirect_header("members.php?op=list&mbr_id={$mbrId}&start={$start}&limit={$limit}" , 2, \_AM_TROMBINOSCOPE_FORM_OK);
+                  \redirect_header("members.php?op=list&mbr_id={$mbrId}&start={$start}&limit={$limit}" , 2, _AM_TROMBINOSCOPE_FORM_OK);
                 }else{
-                  \redirect_header("members.php?op=list&start={$start}&limit={$limit}" , 2, \_AM_TROMBINOSCOPE_FORM_OK);
-                  //\redirect_header('members.php?op=list&amp;start=' . $start . '&amp;limit=' . $limit, 2, \_AM_TROMBINOSCOPE_FORM_OK);
+                  \redirect_header("members.php?op=list&start={$start}&limit={$limit}" , 2, _AM_TROMBINOSCOPE_FORM_OK);
+                  //\redirect_header('members.php?op=list&amp;start=' . $start . '&amp;limit=' . $limit, 2, _AM_TROMBINOSCOPE_FORM_OK);
                 }
 
             }

@@ -56,4 +56,43 @@ define('_CO_TROMBINOSCOPE_NEW_VERSION', "Nouvelle version : ");
 define('_CO_TROMBINOSCOPE_UNACTIVATE', "Désactiver");
 define('_CO_TROMBINOSCOPE_', "Submitted");
 
+define('_CO_TROMBINOSCOPE_CATEGORIE', "Catégorie");
+define('_CO_TROMBINOSCOPE_FORMAT_DATE_SHORT', "j-m-Y");
+define('_CO_TROMBINOSCOPE_MEMBER_ADDRESS', "Adresse");
+define('_CO_TROMBINOSCOPE_MEMBER_CIVILITE', "Civilité");
+define('_CO_TROMBINOSCOPE_MEMBER_TEL', "Téléphones");
+define('_AM_TROMBINOSCOPE_MEMBRE_PHOTO', "Photo");
+define('_CO_TROMBINOSCOPE_MEMBER_SEXE', "Sexe");
+define('_CO_TROMBINOSCOPE_MEMBER_HOMME', "Homme");
+define('_CO_TROMBINOSCOPE_MEMBER_FEMME', "Femme");
+
+define('_CO_TROMBINOSCOPE_MEMBER_ADD', "Ajouter un membre");
+define('_CO_TROMBINOSCOPE_MEMBER_EDIT', "Modifier le membre");
+define('_CO_TROMBINOSCOPE_MEMBER_ID', "Id");
+define('_CO_TROMBINOSCOPE_MEMBER_CAT_ID', "#cat");
+define('_CO_TROMBINOSCOPE_MEMBER_UID', "Membres");
+define('_CO_TROMBINOSCOPE_MEMBER_FIRSTNAME', "Prénom");
+define('_CO_TROMBINOSCOPE_MEMBER_LASTNAME', "Lastname");
+define('_CO_TROMBINOSCOPE_MEMBER_FONCTION', "Fonction");
+define('_CO_TROMBINOSCOPE_MEMBER_PHOTO', "Photo");
+define('_CO_TROMBINOSCOPE_MEMBER_BIRTHDAY', "Anniversaire");
+define('_CO_TROMBINOSCOPE_MEMBER_EMAIL', "Email");
+define('_CO_TROMBINOSCOPE_MEMBER_FIXE', "Fixe");
+define('_CO_TROMBINOSCOPE_MEMBER_MOBILE', "Mobile");
+define('_CO_TROMBINOSCOPE_MEMBER_STATUS', "Statut");
+define('_CO_TROMBINOSCOPE_MEMBER_COMMENTS', "Commentaires");
+define('_CO_TROMBINOSCOPE_MEMBER_ACTIF', "Actif");
+define('_CO_TROMBINOSCOPE_MEMBER_CREATION', "Création");
+define('_CO_TROMBINOSCOPE_MEMBER_UPDATE', "Mise à jour");
+define('_CO_TROMBINOSCOPE_MEMBER_EDIT', "Éditer");
+define('_CO_TROMBINOSCOPE_FORM_UPLOAD', "Télécharger le fichier");
+define('_CO_TROMBINOSCOPE_FORM_UPLOAD_NEW', "Télécharger un nouveau fichier : ");
+define('_CO_TROMBINOSCOPE_FORM_UPLOAD_SIZE', "Taille max du fichier : ");
+define('_CO_TROMBINOSCOPE_FORM_UPLOAD_SIZE_MB', "MB");
+define('_CO_TROMBINOSCOPE_FORM_UPLOAD_IMG_WIDTH', "Largeur max de l'image : ");
+define('_CO_TROMBINOSCOPE_FORM_UPLOAD_IMG_HEIGHT', "Hauteur max de l'image : ");
+define('_CO_TROMBINOSCOPE_FORM_ACTION', "Action");
+define('_CO_TROMBINOSCOPE_FORM_DELETE', "Effacer");
+define('_CO_TROMBINOSCOPE_FORM_DELETE_OK', "Supprimé avec succès");
+
 ?>

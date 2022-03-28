@@ -44,7 +44,7 @@ switch ($op) {
         $GLOBALS['xoTheme']->addStylesheet($style, null);
         $templateMain = 'trombinoscope_admin_categories.tpl';
         $GLOBALS['xoopsTpl']->assign('navigation', $adminObject->displayNavigation('categories.php'));
-        $adminObject->addItemButton(\_AM_TROMBINOSCOPE_ADD_CATEGORY, 'categories.php?op=new', 'add');
+        $adminObject->addItemButton(_AM_TROMBINOSCOPE_ADD_CATEGORY, 'categories.php?op=new', 'add');
         $GLOBALS['xoopsTpl']->assign('buttons', $adminObject->displayButton('left'));
         $categoriesCount = $categoriesHandler->getCountCategories();
         $categoriesAll = $categoriesHandler->getAllCategories($start, $limit);
@@ -65,13 +65,13 @@ switch ($op) {
                 $GLOBALS['xoopsTpl']->assign('pagenav', $pagenav->renderNav(4));
             }
         } else {
-            $GLOBALS['xoopsTpl']->assign('error', \_AM_TROMBINOSCOPE_THEREARENT_CATEGORIES);
+            $GLOBALS['xoopsTpl']->assign('error', _AM_TROMBINOSCOPE_THEREARENT_CATEGORIES);
         }
         break;
     case 'new':
         $templateMain = 'trombinoscope_admin_categories.tpl';
         $GLOBALS['xoopsTpl']->assign('navigation', $adminObject->displayNavigation('categories.php'));
-        $adminObject->addItemButton(\_AM_TROMBINOSCOPE_LIST_CATEGORIES, 'categories.php', 'list');
+        $adminObject->addItemButton(_AM_TROMBINOSCOPE_LIST_CATEGORIES, 'categories.php', 'list');
         $GLOBALS['xoopsTpl']->assign('buttons', $adminObject->displayButton('left'));
         // Form Create
         $categoriesObj = $categoriesHandler->create();
@@ -81,8 +81,8 @@ switch ($op) {
     case 'clone':
         $templateMain = 'trombinoscope_admin_categories.tpl';
         $GLOBALS['xoopsTpl']->assign('navigation', $adminObject->displayNavigation('categories.php'));
-        $adminObject->addItemButton(\_AM_TROMBINOSCOPE_LIST_CATEGORIES, 'categories.php', 'list');
-        $adminObject->addItemButton(\_AM_TROMBINOSCOPE_ADD_CATEGORY, 'categories.php?op=new', 'add');
+        $adminObject->addItemButton(_AM_TROMBINOSCOPE_LIST_CATEGORIES, 'categories.php', 'list');
+        $adminObject->addItemButton(_AM_TROMBINOSCOPE_ADD_CATEGORY, 'categories.php?op=new', 'add');
         $GLOBALS['xoopsTpl']->assign('buttons', $adminObject->displayButton('left'));
         // Request source
         $catIdSource = Request::getInt('cat_id_source');
@@ -110,7 +110,7 @@ switch ($op) {
         $categoriesObj->setVar('cat_theme', Request::getString('cat_theme', ''));
         // Insert Data
         if ($categoriesHandler->insert($categoriesObj)) {
-                \redirect_header('categories.php?op=list&amp;start=' . $start . '&amp;limit=' . $limit, 2, \_AM_TROMBINOSCOPE_FORM_OK);
+                \redirect_header('categories.php?op=list&amp;start=' . $start . '&amp;limit=' . $limit, 2, _AM_TROMBINOSCOPE_FORM_OK);
         }
         // Get Form
         $GLOBALS['xoopsTpl']->assign('error', $categoriesObj->getHtmlErrors());
@@ -120,8 +120,8 @@ switch ($op) {
     case 'edit':
         $templateMain = 'trombinoscope_admin_categories.tpl';
         $GLOBALS['xoopsTpl']->assign('navigation', $adminObject->displayNavigation('categories.php'));
-        $adminObject->addItemButton(\_AM_TROMBINOSCOPE_ADD_CATEGORY, 'categories.php?op=new', 'add');
-        $adminObject->addItemButton(\_AM_TROMBINOSCOPE_LIST_CATEGORIES, 'categories.php', 'list');
+        $adminObject->addItemButton(_AM_TROMBINOSCOPE_ADD_CATEGORY, 'categories.php?op=new', 'add');
+        $adminObject->addItemButton(_AM_TROMBINOSCOPE_LIST_CATEGORIES, 'categories.php', 'list');
         $GLOBALS['xoopsTpl']->assign('buttons', $adminObject->displayButton('left'));
         // Get Form
         $categoriesObj = $categoriesHandler->get($catId);
@@ -140,7 +140,7 @@ switch ($op) {
                 \redirect_header('categories.php', 3, \implode(', ', $GLOBALS['xoopsSecurity']->getErrors()));
             }
             if ($categoriesHandler->delete($categoriesObj)) {
-                \redirect_header('categories.php', 3, \_AM_TROMBINOSCOPE_FORM_DELETE_OK);
+                \redirect_header('categories.php', 3, _CO_TROMBINOSCOPE_FORM_DELETE_OK);
             } else {
                 $GLOBALS['xoopsTpl']->assign('error', $categoriesObj->getHtmlErrors());
             }
@@ -148,7 +148,7 @@ switch ($op) {
             $xoopsconfirm = new Common\XoopsConfirm(
                 ['ok' => 1, 'cat_id' => $catId, 'start' => $start, 'limit' => $limit, 'op' => 'delete'],
                 $_SERVER['REQUEST_URI'],
-                \sprintf(\_AM_TROMBINOSCOPE_FORM_SURE_DELETE, $categoriesObj->getVar('cat_name')));
+                \sprintf(_AM_TROMBINOSCOPE_FORM_SURE_DELETE, $categoriesObj->getVar('cat_name')));
             $form = $xoopsconfirm->getFormXoopsConfirm();
             $GLOBALS['xoopsTpl']->assign('form', $form->render());
         }

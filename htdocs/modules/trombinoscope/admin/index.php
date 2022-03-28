@@ -37,10 +37,10 @@ $countCategories = $categoriesHandler->getCount();
 $countMembers = $membersHandler->getCount();
 
 // InfoBox Statistics
-$adminObject->addInfoBox(\_AM_TROMBINOSCOPE_STATISTICS);
+$adminObject->addInfoBox(_AM_TROMBINOSCOPE_STATISTICS);
 // Info elements
-$adminObject->addInfoBoxLine(\sprintf( '<label>' . \_AM_TROMBINOSCOPE_THEREARE_CATEGORIES . '</label>', $countCategories));
-$adminObject->addInfoBoxLine(\sprintf( '<label>' . \_AM_TROMBINOSCOPE_THEREARE_MEMBERS . '</label>', $countMembers));
+$adminObject->addInfoBoxLine(\sprintf( '<label>' . _AM_TROMBINOSCOPE_THEREARE_CATEGORIES . '</label>', $countCategories));
+$adminObject->addInfoBoxLine(\sprintf( '<label>' . _AM_TROMBINOSCOPE_THEREARE_MEMBERS . '</label>', $countMembers));
 
 // Upload Folders
 $configurator = new Common\Configurator();

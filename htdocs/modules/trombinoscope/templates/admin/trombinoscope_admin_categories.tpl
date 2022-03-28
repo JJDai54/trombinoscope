@@ -14,7 +14,7 @@
                 <{* pas utilisé pour l'instant
                     <th class="center"><{$smarty.const._AM_TROMBINOSCOPE_CATEGORY_THEME}></th>
                 *}>
-                <th class="center width5"><{$smarty.const._AM_TROMBINOSCOPE_FORM_ACTION}></th>
+                <th class="center width5"><{$smarty.const._CO_TROMBINOSCOPE_FORM_ACTION}></th>
             </tr>
         </thead>
         <{if $categories_count|default:''}>

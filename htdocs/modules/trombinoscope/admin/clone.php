@@ -34,9 +34,9 @@ switch ($op) {
     default:
         $GLOBALS['xoopsTpl']->assign('navigation', $adminObject->displayNavigation('clone.php'));
         require_once $GLOBALS['xoops']->path('class/xoopsformloader.php');
-        $form  = new \XoopsThemeForm(\sprintf(\_AM_TROMBINOSCOPE_CLONE_TITLE, $helper->getModule()->getVar('name', 'E')), 'clone', 'clone.php', 'post', true);
-        $clone = new \XoopsFormText(\_AM_TROMBINOSCOPE_CLONE_NAME, 'clone', 20, 20, '');
-        $clone->setDescription(\_AM_TROMBINOSCOPE_CLONE_NAME_DSC);
+        $form  = new \XoopsThemeForm(\sprintf(_AM_TROMBINOSCOPE_CLONE_TITLE, $helper->getModule()->getVar('name', 'E')), 'clone', 'clone.php', 'post', true);
+        $clone = new \XoopsFormText(_AM_TROMBINOSCOPE_CLONE_NAME, 'clone', 20, 20, '');
+        $clone->setDescription(_AM_TROMBINOSCOPE_CLONE_NAME_DSC);
         $form->addElement($clone, true);
         $form->addElement(new \XoopsFormHidden('op', 'submit'));
         $form->addElement(new \XoopsFormButton('', '', \_SUBMIT, 'submit'));
@@ -51,13 +51,13 @@ switch ($op) {
         $clone = Request::getString('clone', '', 'POST');
         //check if name is valid
         if (empty($clone) || \preg_match('/[^a-zA-Z0-9\_\-]/', $clone)) {
-            \redirect_header('clone.php', 3, \sprintf(\_AM_TROMBINOSCOPE_CLONE_INVALIDNAME, $clone));
+            \redirect_header('clone.php', 3, \sprintf(_AM_TROMBINOSCOPE_CLONE_INVALIDNAME, $clone));
         }
 
         // Check wether the cloned module exists or not
         $dirClone = $GLOBALS['xoops']->path('modules/' . $clone);
         if ($clone && \is_dir($dirClone)) {
-            \redirect_header('clone.php', 3, \sprintf(\_AM_TROMBINOSCOPE_CLONE_EXISTS, $clone));
+            \redirect_header('clone.php', 3, \sprintf(_AM_TROMBINOSCOPE_CLONE_EXISTS, $clone));
         }
 
         $patterns = [
@@ -79,12 +79,12 @@ switch ($op) {
 
         $msg = '';
         if (\is_dir($GLOBALS['xoops']->path('modules/' . \mb_strtolower($clone)))) {
-            $msg .= \sprintf(\_AM_TROMBINOSCOPE_CLONE_CONGRAT, "<a href='" . \XOOPS_URL . "/modules/system/admin.php?fct=modulesadmin&op=installlist'>" . \ucfirst(\mb_strtolower($clone)) . '</a>') . "<br>\n";
+            $msg .= \sprintf(_AM_TROMBINOSCOPE_CLONE_CONGRAT, "<a href='" . \XOOPS_URL . "/modules/system/admin.php?fct=modulesadmin&op=installlist'>" . \ucfirst(\mb_strtolower($clone)) . '</a>') . "<br>\n";
             if (!$logocreated) {
-                $msg .= \_AM_TROMBINOSCOPE_CLONE_IMAGEFAIL;
+                $msg .= _AM_TROMBINOSCOPE_CLONE_IMAGEFAIL;
             }
         } else {
-            $msg .= \_AM_TROMBINOSCOPE_CLONE_FAIL;
+            $msg .= _AM_TROMBINOSCOPE_CLONE_FAIL;
         }
         $GLOBALS['xoopsTpl']->assign('result', $msg);
         break;

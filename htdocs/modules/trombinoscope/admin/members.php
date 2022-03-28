@@ -49,7 +49,7 @@ switch ($op) {
         $GLOBALS['xoTheme']->addStylesheet($style, null);
         $templateMain = 'trombinoscope_admin_members.tpl';
         $GLOBALS['xoopsTpl']->assign('navigation', $adminObject->displayNavigation('members.php'));
-        $adminObject->addItemButton(\_AM_TROMBINOSCOPE_ADD_MEMBER, 'members.php?op=new', 'add');
+        $adminObject->addItemButton(_AM_TROMBINOSCOPE_ADD_MEMBER, 'members.php?op=new', 'add');
         $GLOBALS['xoopsTpl']->assign('buttons', $adminObject->displayButton('left'));
         $membersCount = $membersHandler->getCountMembers();
         $membersAll = $membersHandler->getAllMembers($start, $limit, 'mbr_firstname,mbr_lastname,mbr_id');
@@ -70,13 +70,13 @@ switch ($op) {
                 $GLOBALS['xoopsTpl']->assign('pagenav', $pagenav->renderNav(4));
             }
         } else {
-            $GLOBALS['xoopsTpl']->assign('error', \_AM_TROMBINOSCOPE_THEREARENT_MEMBERS);
+            $GLOBALS['xoopsTpl']->assign('error', _AM_TROMBINOSCOPE_THEREARENT_MEMBERS);
         }
         break;
     case 'new':
         $templateMain = 'trombinoscope_admin_members.tpl';
         $GLOBALS['xoopsTpl']->assign('navigation', $adminObject->displayNavigation('members.php'));
-        $adminObject->addItemButton(\_AM_TROMBINOSCOPE_LIST_MEMBERS, 'members.php', 'list');
+        $adminObject->addItemButton(_AM_TROMBINOSCOPE_LIST_MEMBERS, 'members.php', 'list');
         $GLOBALS['xoopsTpl']->assign('buttons', $adminObject->displayButton('left'));
         // Form Create
         $membersObj = $membersHandler->create();
@@ -86,8 +86,8 @@ switch ($op) {
     case 'clone':
         $templateMain = 'trombinoscope_admin_members.tpl';
         $GLOBALS['xoopsTpl']->assign('navigation', $adminObject->displayNavigation('members.php'));
-        $adminObject->addItemButton(\_AM_TROMBINOSCOPE_LIST_MEMBERS, 'members.php', 'list');
-        $adminObject->addItemButton(\_AM_TROMBINOSCOPE_ADD_MEMBER, 'members.php?op=new', 'add');
+        $adminObject->addItemButton(_AM_TROMBINOSCOPE_LIST_MEMBERS, 'members.php', 'list');
+        $adminObject->addItemButton(_AM_TROMBINOSCOPE_ADD_MEMBER, 'members.php?op=new', 'add');
         $GLOBALS['xoopsTpl']->assign('buttons', $adminObject->displayButton('left'));
         // Request source
         $mbrIdSource = Request::getInt('mbr_id_source');
@@ -106,8 +106,8 @@ switch ($op) {
     case 'edit':
         $templateMain = 'trombinoscope_admin_members.tpl';
         $GLOBALS['xoopsTpl']->assign('navigation', $adminObject->displayNavigation('members.php'));
-        $adminObject->addItemButton(\_AM_TROMBINOSCOPE_ADD_MEMBER, 'members.php?op=new', 'add');
-        $adminObject->addItemButton(\_AM_TROMBINOSCOPE_LIST_MEMBERS, 'members.php', 'list');
+        $adminObject->addItemButton(_AM_TROMBINOSCOPE_ADD_MEMBER, 'members.php?op=new', 'add');
+        $adminObject->addItemButton(_AM_TROMBINOSCOPE_LIST_MEMBERS, 'members.php', 'list');
         $GLOBALS['xoopsTpl']->assign('buttons', $adminObject->displayButton('left'));
         // Get Form
         $membersObj = $membersHandler->get($mbrId);
@@ -127,7 +127,7 @@ switch ($op) {
                 \redirect_header('members.php', 3, \implode(', ', $GLOBALS['xoopsSecurity']->getErrors()));
             }
             if ($membersHandler->delete($membersObj)) {
-                \redirect_header('members.php', 3, \_AM_TROMBINOSCOPE_FORM_DELETE_OK);
+                \redirect_header('members.php', 3, _CO_TROMBINOSCOPE_FORM_DELETE_OK);
             } else {
                 $GLOBALS['xoopsTpl']->assign('error', $membersObj->getHtmlErrors());
             }
@@ -135,7 +135,7 @@ switch ($op) {
             $xoopsconfirm = new Common\XoopsConfirm(
                 ['ok' => 1, 'mbr_id' => $mbrId, 'start' => $start, 'limit' => $limit, 'op' => 'delete'],
                 $_SERVER['REQUEST_URI'],
-                \sprintf(\_AM_TROMBINOSCOPE_FORM_SURE_DELETE, $membersObj->getVar('mbr_uid')));
+                \sprintf(_AM_TROMBINOSCOPE_FORM_SURE_DELETE, $membersObj->getVar('mbr_uid')));
             $form = $xoopsconfirm->getFormXoopsConfirm();
             $GLOBALS['xoopsTpl']->assign('form', $form->render());
         }
