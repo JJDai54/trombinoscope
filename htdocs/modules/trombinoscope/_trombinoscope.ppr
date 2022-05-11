@@ -206,7 +206,7 @@ _trombinoscope
 15=header.php
 [Selected Project Files]
 Main=
-Selected=xoops_version.php
+Selected=admin\about.php
 [language\french\admin.php]
 TopLine=16
 Caret=1,25
@@ -217,7 +217,7 @@ Caret=1,79
 TopLine=15
 Caret=1,25
 [xoops_version.php]
-TopLine=41
+TopLine=31
 Caret=37,65
 [testdata\index.php]
 TopLine=139
@@ -244,8 +244,8 @@ Caret=1,1
 TopLine=69
 Caret=1,87
 [admin\about.php]
-TopLine=1
-Caret=1,27
+TopLine=148
+Caret=1,159
 [language\french\about.php]
 TopLine=14
 Caret=1,39

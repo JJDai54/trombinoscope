@@ -1,5 +1,5 @@
 <?php
-namespace XoopsModules\Slider;
+namespace XoopsModules\Trombinoscope;
 /*
  You may not change or alter any portion of this comment or credits
  of supporting developers from this source code or any supporting source code
@@ -20,9 +20,9 @@ namespace XoopsModules\Slider;
  * @min_xoops      2.5.9
  * @author         JJDai - Email:<jjdelalandre@orange.fr> - Website:<http://jubile.fr>
  */
-use XoopsModules\trombinoscope;
-use XoopsModules\trombinoscope\Helper;
-use XoopsModules\trombinoscope\Constants;
+use XoopsModules\Trombinoscope;
+use XoopsModules\Trombinoscope\Helper;
+use XoopsModules\Trombinoscope\Constants;
 
 require __DIR__ . '/header.php';
 $templateMain = 'trombinoscope_admin_about.tpl';
