@@ -112,7 +112,7 @@ _trombinoscope
 			include\uninstall.php
 			include\update.php
 			include\xoops_version.inc.php
-		+language
+		-language
 			+english
 				-help
 					language\english\help\help.html
@@ -143,7 +143,7 @@ _trombinoscope
 		+sql
 			sql\index.php
 			sql\mysql.sql
-		-templates
+		+templates
 			+admin
 				templates\admin\index.php
 				templates\admin\trombinoscope_admin_about.tpl
@@ -204,9 +204,10 @@ _trombinoscope
 13=language\french\about.php
 14=admin\header.php
 15=header.php
+16=templates\admin\trombinoscope_admin_categories.tpl
 [Selected Project Files]
 Main=
-Selected=admin\about.php
+Selected=templates\admin\trombinoscope_admin_categories.tpl
 [language\french\admin.php]
 TopLine=16
 Caret=1,25
@@ -244,7 +245,7 @@ Caret=1,1
 TopLine=69
 Caret=1,87
 [admin\about.php]
-TopLine=114
+TopLine=125
 Caret=1,159
 [language\french\about.php]
 TopLine=14
@@ -255,3 +256,6 @@ Caret=1,27
 [header.php]
 TopLine=17
 Caret=1,28
+[templates\admin\trombinoscope_admin_categories.tpl]
+TopLine=1
+Caret=56,41
