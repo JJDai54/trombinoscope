@@ -211,13 +211,13 @@ Selected=admin\about.php
 TopLine=16
 Caret=1,25
 [language\english\common.php]
-TopLine=47
+TopLine=50
 Caret=1,79
 [language\english\admin.php]
 TopLine=15
 Caret=1,25
 [xoops_version.php]
-TopLine=31
+TopLine=36
 Caret=37,65
 [testdata\index.php]
 TopLine=139
@@ -244,7 +244,7 @@ Caret=1,1
 TopLine=69
 Caret=1,87
 [admin\about.php]
-TopLine=148
+TopLine=114
 Caret=1,159
 [language\french\about.php]
 TopLine=14
