@@ -32,6 +32,8 @@ require __DIR__ . '/header.php';
 // Get all request values
 $op = Request::getCmd('op', 'list');
 $mbrId = Request::getInt('mbr_id');
+$catId = Request::getInt('cat_id',0);
+$actif = Request::getInt('mbr_actif',0);
 $start = Request::getInt('start', 0);
 $limit = Request::getInt('limit', $helper->getConfig('adminpager'));
 $GLOBALS['xoopsTpl']->assign('start', $start);
@@ -51,8 +53,38 @@ switch ($op) {
         $GLOBALS['xoopsTpl']->assign('navigation', $adminObject->displayNavigation('members.php'));
         $adminObject->addItemButton(_AM_TROMBINOSCOPE_ADD_MEMBER, 'members.php?op=new', 'add');
         $GLOBALS['xoopsTpl']->assign('buttons', $adminObject->displayButton('left'));
-        $membersCount = $membersHandler->getCountMembers();
-        $membersAll = $membersHandler->getAllMembers($start, $limit, 'mbr_firstname,mbr_lastname,mbr_id');
+        
+        //-----------------------------------
+       // ----- /Listes de selection pour filtrage -----        
+        $filters = array();
+  //echo "<hr>Categories<pre>" . print_r($categoriesHandler->getList(), true) . "</pre><hr>";
+        $inpCat = new \XoopsFormSelect(_AM_TROMBINOSCOPE_CATEGORY, 'cat_id', $catId);
+        $inpCat->addOption(0, _AM_TROMBINOSCOPE_ALL);
+        $inpCat->addOptionArray($categoriesHandler->getList());
+        $inpCat->setExtra('onchange="document.trombinoscope_filter.submit();"');
+        $filters['categories']['input'] = $inpCat->render();
+        $filters['categories']['caption'] = _AM_TROMBINOSCOPE_CATEGORY;
+        
+        $inpActif = new \XoopsFormSelect(_AM_TROMBINOSCOPE_ACTIF, 'mbr_actif', $actif);
+        $inpActif->addOption(0, _AM_TROMBINOSCOPE_ALL);
+        $inpActif->addOption(1, _NO);
+        $inpActif->addOption(2, _YES);
+        $inpActif->setExtra('onchange="document.trombinoscope_filter.submit();"');
+        $filters['actif']['input'] = $inpActif->render();
+        $filters['actif']['caption'] = _AM_TROMBINOSCOPE_ACTIF;
+
+  	    $GLOBALS['xoopsTpl']->assign('filters', $filters);
+        
+
+        //-----------------------------------
+        $criteria = new \CriteriaCompo();
+        if($catId > 0) $criteria->add(new \Criteria('mbr_cat_id', $catId,'='));
+        if($actif > 0) $criteria->add(new \Criteria('mbr_actif', $actif-1,'='));
+        
+        
+        
+        $membersCount = $membersHandler->getCountMembers($criteria);
+        $membersAll = $membersHandler->getAllMembers($criteria, $start, $limit, 'mbr_firstname,mbr_lastname,mbr_id');
         $GLOBALS['xoopsTpl']->assign('members_count', $membersCount);
         $GLOBALS['xoopsTpl']->assign('trombinoscope_url', \TROMBINOSCOPE_URL);
         $GLOBALS['xoopsTpl']->assign('trombinoscope_upload_url', \TROMBINOSCOPE_UPLOAD_URL);
@@ -73,6 +105,7 @@ switch ($op) {
             $GLOBALS['xoopsTpl']->assign('error', _AM_TROMBINOSCOPE_THEREARENT_MEMBERS);
         }
         break;
+        
     case 'new':
         $templateMain = 'trombinoscope_admin_members.tpl';
         $GLOBALS['xoopsTpl']->assign('navigation', $adminObject->displayNavigation('members.php'));
@@ -80,9 +113,12 @@ switch ($op) {
         $GLOBALS['xoopsTpl']->assign('buttons', $adminObject->displayButton('left'));
         // Form Create
         $membersObj = $membersHandler->create();
+        $membersObj->setVar('mbr_cat_id', $categoriesHandler->getDefault());
+        
         $form = $membersObj->getFormMembers();
         $GLOBALS['xoopsTpl']->assign('form', $form->render());
         break;
+        
     case 'clone':
         $templateMain = 'trombinoscope_admin_members.tpl';
         $GLOBALS['xoopsTpl']->assign('navigation', $adminObject->displayNavigation('members.php'));

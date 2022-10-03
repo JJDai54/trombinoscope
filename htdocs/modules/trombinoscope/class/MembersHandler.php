@@ -85,9 +85,9 @@ class MembersHandler extends \XoopsPersistableObjectHandler
      * @param string $order
      * @return int
      */
-    public function getCountMembers($start = 0, $limit = 0, $sort = 'mbr_id ASC, mbr_uid', $order = 'ASC')
+    public function getCountMembers($crCountMembers = null, $start = 0, $limit = 0, $sort = 'mbr_id ASC, mbr_uid', $order = 'ASC')
     {
-        $crCountMembers = new \CriteriaCompo();
+        if (!$crCountMembers) $crCountMembers = new \CriteriaCompo();
         $crCountMembers = $this->getMembersCriteria($crCountMembers, $start, $limit, $sort, $order);
         return $this->getCount($crCountMembers);
     }
@@ -100,9 +100,9 @@ class MembersHandler extends \XoopsPersistableObjectHandler
      * @param string $order
      * @return array
      */
-    public function getAllMembers($start = 0, $limit = 0, $sort = 'mbr_id ASC, mbr_uid', $order = 'ASC')
+    public function getAllMembers($crAllMembers = null, $start = 0, $limit = 0, $sort = 'mbr_id ASC, mbr_uid', $order = 'ASC')
     {
-        $crAllMembers = new \CriteriaCompo();
+        if (!$crAllMembers) $crAllMembers = new \CriteriaCompo();
         $crAllMembers = $this->getMembersCriteria($crAllMembers, $start, $limit, $sort, $order);
         return $this->getAll($crAllMembers);
     }
@@ -135,6 +135,45 @@ class MembersHandler extends \XoopsPersistableObjectHandler
         $sql = "UPDATE " . $this->table . " SET {$field} = mod({$field}+1,{$modulo}) WHERE mbr_id={$mbrId};";
         $ret = $this->db->queryf($sql);
         return $ret;
+    }
+/* ******************************
+ * Renvoie le nombre de membre par catégories
+ * *********************** */
+    public function getStatistiques()
+    {
+        $sql="SELECT mbr_cat_id,`mbr_actif`, count(`mbr_id`) AS nbMembers FROM " . $this->table 
+        . " GROUP BY mbr_cat_id,`mbr_actif`";
+        
+
+        $rst = $this->db->query($sql);
+        $stat = array();
+        while ($row = $this->db->fetchArray($rst)) {
+//echo "<hr>Statistiqrowues : <pre>" . print_r($row, true) . "</pre><hr>";        
+            $catId = $row['mbr_cat_id'];
+            if (!isset($stat[$catId]))
+                $stat[$catId] = array('catId'=>$catId,'actifs'=>0,'inactifs'=>0);
+                
+                $key = ($row['mbr_actif'] == 0) ? 'inactifs' : 'actifs';
+                $stat[$catId][$key]  = $row['nbMembers'];  
+        }
+//echo "<hr>Statistiques : <pre>" . print_r($stat, true) . "</pre><hr>";        
+        return $stat;
+    }
+    
+/* ******************************
+ * Renvoie le nombre de membre par catégories
+ * *********************** */
+    public function getStatistiques2()
+    {
+        $sql="SELECT mbr_cat_id, count(`mbr_id`) AS nbMembers FROM " . $this->table 
+        . " GROUP BY mbr_cat_id";
+        $rst = $this->db->query($sql);
+        $stat = array();
+        while ($row = $this->db->fetchArray($result)) {
+            $stat[$row['mbr_cat_id']] = $row['nbMembers'];
+        }
+        
+        return $stat;
     }
     
 }

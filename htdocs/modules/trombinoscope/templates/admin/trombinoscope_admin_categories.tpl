@@ -11,6 +11,7 @@
                 *}>
                 <th class="center"><{$smarty.const._AM_TROMBINOSCOPE_CATEGORY_NAME}></th>
                 <th class="center"><{$smarty.const._AM_TROMBINOSCOPE_CATEGORY_WEIGHT}></th>
+                <th class="center"><{$smarty.const._AM_TROMBINOSCOPE_DEFAULT}></th>
                 <{* pas utilisé pour l'instant
                     <th class="center"><{$smarty.const._AM_TROMBINOSCOPE_CATEGORY_THEME}></th>
                 *}>
@@ -19,18 +20,87 @@
         </thead>
         <{if $categories_count|default:''}>
         <tbody>
-            <{foreach item=category from=$categories_list name=catItem}}>
+            <{assign var="fldImg" value="blue"}>
+            <{foreach item=cat from=$categories_list name=catItem}>
             <tr class='<{cycle values='odd, even'}>'>
-                <td class='center'><{$category.id}></td>
+                <td class='center'><{$cat.id}></td>
                 <{* pas utilisé pour l'instant
-                    <td class='center'><{$category.parent_id}></td>
+                    <td class='center'><{$cat.parent_id}></td>
                 *}>
-                <td class='center'>
-                    <a href="categories.php?op=edit&amp;cat_id=<{$category.id}>&amp;start=<{$start}>&amp;limit=<{$limit}>" title="<{$smarty.const._EDIT}>">
-                        <{$category.name}>
+                <td class='left'>
+                    <a href="categories.php?op=edit&amp;cat_id=<{$cat.id}>&amp;start=<{$start}>&amp;limit=<{$limit}>" title="<{$smarty.const._EDIT}>">
+                        <{$cat.name}>
                     </a>
                 </td>
-                <td class='center'><{$category.weight}></td>
+                
+                
+                <{* ---------------- Arrows Weight -------------------- *}>
+                <td class='center' <{$styleParent}> >
+                    <{if $smarty.foreach.catItem.first}>
+                      <img src="<{$modPathIcon16}>/arrows/<{$fldImg}>/first-0.png" title="<{$smarty.const._AM_TROMBINOSCOPE_FIRST}>">
+                      <img src="<{$modPathIcon16}>/arrows/<{$fldImg}>/up-0.png" title="<{$smarty.const._AM_TROMBINOSCOPE_UP}>">
+                    <{else}>
+                      <a href="categories.php?op=weight&cat_id=<{$cat.id}>&sens=first&cat_id=<{$cat.id}>&cat_weight=<{$cat.weight}>">
+                      <img src="<{$modPathIcon16}>/arrows/<{$fldImg}>/first-1.png" title="<{$smarty.const._AM_TROMBINOSCOPE_FIRST}>">
+                      </a>
+                    
+                      <a href="categories.php?op=weight&cat_id=<{$cat.id}>&sens=up&cat_id=<{$cat.id}>&cat_weight=<{$cat.weight}>">
+                      <img src="<{$modPathIcon16}>/arrows/<{$fldImg}>/up-1.png" title="<{$smarty.const._AM_TROMBINOSCOPE_UP}>">
+                      </a>
+                    <{/if}>
+                 
+                    <{* ----------------------------------- *}>
+                    <img src="<{$modPathIcon16}>/blank-08.png" title="">
+                    <{$cat.weight}>
+                    <img src="<{$modPathIcon16}>/blank-08.png" title="">
+                    <{* ----------------------------------- *}>
+                 
+                    <{if $smarty.foreach.catItem.last}>
+                      <img src="<{$modPathIcon16}>/arrows/<{$fldImg}>/down-0.png" title="<{$smarty.const._AM_TROMBINOSCOPE_DOWN}>">
+                      <img src="<{$modPathIcon16}>/arrows/<{$fldImg}>/last-0.png" title="<{$smarty.const._AM_TROMBINOSCOPE_LAST}>">
+                    <{else}>
+                    
+                    <a href="categories.php?op=weight&cat_id=<{$cat.id}>&sens=down&cat_id=<{$cat.id}>&cat_weight=<{$cat.weight}>">
+                      <img src="<{$modPathIcon16}>/arrows/<{$fldImg}>/down-1.png" title="<{$smarty.const._AM_TROMBINOSCOPE_DOWN}>">
+                      </a>
+                 
+                    <a href="categories.php?op=weight&cat_id=<{$cat.id}>&sens=last&cat_id=<{$cat.id}>&cat_weight=<{$cat.weight}>">
+                      <img src="<{$modPathIcon16}>/arrows/<{$fldImg}>/last-1.png" title="<{$smarty.const._AM_TROMBINOSCOPE_LAST}>">
+                      </a>
+                    <{/if}>
+                </td>
+                <{* ---------------- /Arrows -------------------- *}>
+                
+                
+                <td class='center'>
+
+                    <a href="categories.php?op=set_default&cat_id=<{$cat.id}>&field=cat_default&value=1" >
+                        <img src="<{xoModuleIcons16}><{$cat.default}>.png" alt="category" title='<{$smarty.const._AM_TROMBINOSCOPER_DEFAULT}>' />
+                        </a>
+                
+                </td>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
                 <{* pas utilisé pour l'instant
                   <td class='center'><{$category.theme}></td>
                 *}>

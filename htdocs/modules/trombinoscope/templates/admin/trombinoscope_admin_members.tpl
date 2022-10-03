@@ -1,6 +1,15 @@
 <!-- Header -->
 <{include file='db:trombinoscope_admin_header.tpl' }>
 
+
+<form name='trombinoscope_filter' id='trombinoscope_filter' action='members.php' method='post' onsubmit='return xoopsFormValidate_form();' enctype=''>
+<input type="hidden" name="op" value="list" />
+  <{foreach item=filter from=$filters}>
+      <{$filter.caption}> : <{$filter.input}>&nbsp;
+  <{/foreach}>            
+</form>
+
+<{* -------------------------------------------------------------- *}>
 <{if $members_list|default:''}>
     <table id='trombinoscope_members' name='trombinoscope_members' class='table table-bordered'>
         <thead>

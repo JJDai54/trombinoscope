@@ -91,6 +91,7 @@ function b_trombinoscope_categories_show($options)
             $block[$i]['comments'] = \htmlspecialchars($categoriesAll[$i]->getVar('cat_comments'), ENT_QUOTES | ENT_HTML5);
             $block[$i]['weight'] = \htmlspecialchars($categoriesAll[$i]->getVar('cat_weight'), ENT_QUOTES | ENT_HTML5);
             $block[$i]['theme'] = $categoriesAll[$i]->getVar('cat_theme');
+            $block[$i]['default'] = $categoriesAll[$i]->getVar('cat_default');
         }
     }
 

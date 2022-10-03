@@ -1,11 +1,20 @@
 ==============================================================
-1.0 [2021/10/27 17:59:19]
+1.81 [2022/10/03 19:04:00]
+==============================================================
+- Gestion du poids des catégories
+- Gestion d'une catégorie par défaut
+- Ajout de filtres dans l'admin sur l'onglet des membres pour une meilleure visualisation
+- Ajout de filtres sur la page du front-office pour une meilleure visualisation
+- Activation de la gestion des catégories
+
+==============================================================
+1.00 [2021/10/27 17:59:19]
 ==============================================================
  - Original release trombinoscope (JJDai)
  ------------------------------------------
- Module pour assocssiation ou autre groupe désirant présenter un trombinoscope
+ Module pour association ou autre groupe désirant présenter un trombinoscope
  de ses membres et de leurs fonctions.
- - Ler permissions sont gérées au niveau global de Xoops dans les groupes.
+ - Les permissions sont gérées au niveau global de Xoops dans les groupes.
  - Pas de block pour ce module
  - Bien que la table catégories permettent d'en définir, elles sont pas gérées pour le moment
    il est donc conseillé d'utiliser que la première catégorie (cat_id=1) et de ne pas la supprimer.

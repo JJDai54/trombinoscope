@@ -4,7 +4,20 @@
 
 <{include file='db:trombinoscope_header.tpl' }>
 
+<{if !$is_fiche}>
+<form name='trombinoscope_filter' id='trombinoscope_filter' action='members.php' method='post' onsubmit='return xoopsFormValidate_form();' enctype=''>
+  <input type="hidden" name="op" value="list" />
+
+  <{foreach item=filter from=$filters}>
+      <{$filter.caption}> : <{$filter.input}><br>
+  <{/foreach}>            
+</form>
+<{else}>
+
+<{/if}>
+
 <{if $membersCount|default:0 > 0}>
+
 <div class='table-responsive' style="background:#E1E1E1;">
     <table class='table table-<{$table_type|default:false}>'>
         <thead>
@@ -34,6 +47,11 @@
     </table>
 </div>
 <{/if}>
+
+
+
+
+
 <{if $form|default:''}>
     <{$form|default:false}>
 <{/if}>

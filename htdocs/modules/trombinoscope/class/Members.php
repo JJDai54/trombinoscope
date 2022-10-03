@@ -134,6 +134,7 @@ class Members extends \XoopsObject
         // Form Table members
         //membersHandler = $helper->getHandler('Members');
         $mbrUidSelect = new \XoopsFormSelectUser(_CO_TROMBINOSCOPE_MEMBER_UID, 'mbr_uid', true, $this->getVar('mbr_uid'));
+        $mbrUidSelect->setDescription(_CO_TROMBINOSCOPE_MEMBER_UID_DESC);
         //$mbrUidSelect->addOptionArray($membersHandler->getList());
         $form->addElement($mbrUidSelect);
         //-------------------------------

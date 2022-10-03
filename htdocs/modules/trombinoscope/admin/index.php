@@ -33,14 +33,14 @@ require __DIR__ . '/header.php';
 $templateMain = 'trombinoscope_admin_index.tpl';
 
 // Count elements
-$countCategories = $categoriesHandler->getCount();
-$countMembers = $membersHandler->getCount();
-
+$stat = $categoriesHandler->getStatistiques();
 // InfoBox Statistics
 $adminObject->addInfoBox(_AM_TROMBINOSCOPE_STATISTICS);
 // Info elements
-$adminObject->addInfoBoxLine(\sprintf( '<label>' . _AM_TROMBINOSCOPE_THEREARE_CATEGORIES . '</label>', $countCategories));
-$adminObject->addInfoBoxLine(\sprintf( '<label>' . _AM_TROMBINOSCOPE_THEREARE_MEMBERS . '</label>', $countMembers));
+foreach($stat AS $catId => $t){
+    $adminObject->addInfoBoxLine( \sprintf( _AM_TROMBINOSCOPE_STAT_MEMBERS, $t['catId'], $t['name'], $t['actifs'], $t['inactifs']));
+}
+
 
 // Upload Folders
 $configurator = new Common\Configurator();

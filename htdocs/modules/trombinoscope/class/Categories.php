@@ -58,6 +58,7 @@ class Categories extends \XoopsObject
         $this->initVar('cat_comments', \XOBJ_DTYPE_TXTAREA);
         $this->initVar('cat_weight', \XOBJ_DTYPE_INT);
         $this->initVar('cat_theme', \XOBJ_DTYPE_TXTBOX);
+        $this->initVar('cat_default', \XOBJ_DTYPE_INT);
     }
 
     /**
@@ -148,6 +149,9 @@ class Categories extends \XoopsObject
         $catThemeSelect->addOption('3', _AM_TROMBINOSCOPE_LIST_3);
         $form->addElement($catThemeSelect);
 */        
+        // Form Select cat_default
+        $catDefaultSelect = new \XoopsFormRadioYN(_AM_TROMBINOSCOPE_CATEGORY_DEFAULT, 'cat_default', $this->getVar('cat_default'));        
+        $form->addElement($catDefaultSelect);
 
         // To Save
         $form->addElement(new \XoopsFormHidden('op', 'save'));
@@ -173,6 +177,7 @@ class Categories extends \XoopsObject
         $ret['comments']  = \strip_tags($this->getVar('cat_comments', 'e'));
         $ret['weight']    = $this->getVar('cat_weight');
         $ret['theme']     = $this->getVar('cat_theme');
+        $ret['default']   = $this->getVar('cat_default');
         return $ret;
     }
 

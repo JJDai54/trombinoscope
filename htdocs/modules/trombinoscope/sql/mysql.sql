@@ -18,6 +18,7 @@ CREATE TABLE `trombinoscope_categories` (
   `cat_comments` TEXT NOT NULL ,
   `cat_weight` TINYINT(1) NOT NULL DEFAULT '0',
   `cat_theme` VARCHAR(50) NOT NULL DEFAULT '',
+  `cat_default` INT(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`cat_id`),
   INDEX (`cat_parent_id`),
   INDEX (`cat_name`)

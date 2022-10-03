@@ -109,6 +109,7 @@ switch ($op) {
         $categoriesObj->setVar('cat_comments', Request::getString('cat_comments', ''));
         $categoriesObj->setVar('cat_weight', Request::getInt('cat_weight', 0));
         $categoriesObj->setVar('cat_theme', Request::getString('cat_theme', ''));
+        $categoriesObj->setVar('cat_default', Request::getString('cat_default', ''));
         // Insert Data
         if ($categoriesHandler->insert($categoriesObj)) {
             // redirect after insert

@@ -34,6 +34,7 @@ require_once \XOOPS_ROOT_PATH . '/header.php';
 
 $op    = Request::getCmd('op', 'list');
 $mbrId = Request::getInt('mbr_id', 0);
+$catId = Request::getInt('cat_id', 0);
 $start = Request::getInt('start', 0);
 $limit = Request::getInt('limit', $helper->getConfig('userpager'));
 $GLOBALS['xoopsTpl']->assign('start', $start);
@@ -59,12 +60,36 @@ switch ($op) {
     default:
         // Breadcrumbs
         $xoBreadcrumbs[] = ['title' => \_MA_TROMBINOSCOPE_MEMBERS_LIST];
-        $crMembers =  new \CriteriaCompo(new \Criteria('mbr_actif',1,'='));
-        $crMembers->add(New \Criteria('mbr_cat_id', 1, '='));
+
+
+        //-----------------------------------
+       // ----- /Listes de selection pour filtrage -----        
+        $filters = array();
+  //echo "<hr>Categories<pre>" . print_r($categoriesHandler->getList(), true) . "</pre><hr>";
+        //$catList = $categoriesHandler->getList(new \Criteria('cat_actif',1,'='));
+        $catList = $categoriesHandler->getList();
+        if ($catId == 0) $catId = $categoriesHandler->getDefault();
+                                               
+        if (count($catList) > 1){
+          $inpCat = new \XoopsFormSelect(_CO_TROMBINOSCOPE_CATEGORIE, 'cat_id', $catId);
+          //->addOption(0, _AM_TROMBINOSCOPE_ALL);
+          $inpCat->addOptionArray($catList);
+          $inpCat->setExtra('onchange="document.trombinoscope_filter.submit();"'); // style="width:150px;"
+          $filters['categories']['input'] = $inpCat->render();
+          $filters['categories']['caption'] = _CO_TROMBINOSCOPE_CATEGORIE;
+        }
         
+  	    $GLOBALS['xoopsTpl']->assign('filters', $filters);
+       // ----- /Listes de selection pour filtrage -----        
+
+        $crMembers =  new \CriteriaCompo(new \Criteria('mbr_actif', 1,'='));
+        $crMembers->add(New \Criteria('mbr_cat_id', $catId, '='));
+
         if ($mbrId > 0) {
             $crMembers->add(new \Criteria('mbr_id', $mbrId));
         }
+        
+        
         $membersCount = $membersHandler->getCount($crMembers);
         $GLOBALS['xoopsTpl']->assign('membersCount', $membersCount);
         if (0 === $mbrId) {
@@ -98,7 +123,7 @@ switch ($op) {
             //$GLOBALS['xoopsTpl']->assign('divideby',5);
             $GLOBALS['xoopsTpl']->assign('numb_col', $helper->getConfig('numb_col'));
             $GLOBALS['xoopsTpl']->assign('membersCount', $membersCount);
-        
+            $GLOBALS['xoopsTpl']->assign('is_fiche',$mbrId > 0);        
             $utility = new \XoopsModules\Trombinoscope\Utility();            
             $GLOBALS['xoopsTpl']->assign('permEdit', $utility->getPermissions());
             

@@ -78,6 +78,7 @@ define('_CO_TROMBINOSCOPE_MEMBER_EDIT', "Edit Member");
 define('_CO_TROMBINOSCOPE_MEMBER_ID', "Id");
 define('_CO_TROMBINOSCOPE_MEMBER_CAT_ID', "Cat id");
 define('_CO_TROMBINOSCOPE_MEMBER_UID', "Members");
+define('_CO_TROMBINOSCOPE_MEMBER_UID_DESC', "Si le membre est enregistré sur le site indiquez ici son pseudo.");
 define('_CO_TROMBINOSCOPE_MEMBER_FIRSTNAME', "Firstname");
 define('_CO_TROMBINOSCOPE_MEMBER_LASTNAME', "Lastname");
 define('_CO_TROMBINOSCOPE_MEMBER_FONCTION', "Fonction");

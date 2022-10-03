@@ -66,7 +66,7 @@ $count = 1;
 if ($membersCount > 0) {
     $start = Request::getInt('start', 0);
     $limit = Request::getInt('limit', $helper->getConfig('userpager'));
-    $membersAll = $membersHandler->getAllMembers($start, $limit);
+    $membersAll = $membersHandler->getAllMembers(null, $start, $limit);
     // Get All Members
     $members = [];
     foreach (\array_keys($membersAll) as $i) {

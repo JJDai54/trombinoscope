@@ -78,6 +78,7 @@ switch ($op) {
         $form = $categoriesObj->getFormCategories();
         $GLOBALS['xoopsTpl']->assign('form', $form->render());
         break;
+        
     case 'clone':
         $templateMain = 'trombinoscope_admin_categories.tpl';
         $GLOBALS['xoopsTpl']->assign('navigation', $adminObject->displayNavigation('categories.php'));
@@ -108,6 +109,7 @@ switch ($op) {
         $categoriesObj->setVar('cat_comments', Request::getString('cat_comments', ''));
         $categoriesObj->setVar('cat_weight', Request::getInt('cat_weight', 0));
         $categoriesObj->setVar('cat_theme', Request::getString('cat_theme', ''));
+        $categoriesObj->setVar('cat_default', Request::getInt('cat_default', 0));
         // Insert Data
         if ($categoriesHandler->insert($categoriesObj)) {
                 \redirect_header('categories.php?op=list&amp;start=' . $start . '&amp;limit=' . $limit, 2, _AM_TROMBINOSCOPE_FORM_OK);
@@ -117,6 +119,7 @@ switch ($op) {
         $form = $categoriesObj->getFormCategories();
         $GLOBALS['xoopsTpl']->assign('form', $form->render());
         break;
+        
     case 'edit':
         $templateMain = 'trombinoscope_admin_categories.tpl';
         $GLOBALS['xoopsTpl']->assign('navigation', $adminObject->displayNavigation('categories.php'));
@@ -153,5 +156,23 @@ switch ($op) {
             $GLOBALS['xoopsTpl']->assign('form', $form->render());
         }
         break;
+
+    case 'weight':
+        $action = Request::getString('sens', "down") ;
+        $categoriesHandler->updateWeight($catId, $action);
+        //$questionsHandler->incrementeWeight($catId);
+        $url = "categories.php?op=list&cat_id={$catId}";            // ."#question-{$catId}";
+        //echo "<hr>{$url}<hr>";exit;
+        \redirect_header($url, 0, "");
+        break;
+
+
+	case 'set_default':
+        $field = Request::getString('field','');
+        $value = Request::getInt('value', 1);
+        $categoriesHandler->setDefault($catId, $field, $value);
+        redirect_header("categories.php?op=list", 5, "Etat de {$field} Changé");
+	break;
+        
 }
 require __DIR__ . '/footer.php';
