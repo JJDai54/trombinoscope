@@ -199,9 +199,10 @@ _trombinoscope
 8=language\french\common.php
 9=docs\changelog.txt
 10=xoops_version.php
+11=class\Utility.php
 [Selected Project Files]
 Main=
-Selected=docs\changelog.txt
+Selected=class\Utility.php
 [templates\admin\trombinoscope_admin_members.tpl]
 TopLine=1
 Caret=1,11
@@ -232,7 +233,10 @@ TopLine=56
 Caret=49,76
 [docs\changelog.txt]
 TopLine=1
-Caret=4,8
+Caret=1,1
 [xoops_version.php]
 TopLine=19
 Caret=16,36
+[class\Utility.php]
+TopLine=224
+Caret=1,251
