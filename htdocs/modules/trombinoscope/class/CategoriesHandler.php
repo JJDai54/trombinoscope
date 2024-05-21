@@ -145,7 +145,7 @@ class CategoriesHandler extends \XoopsPersistableObjectHandler
     }
 
 /* ******************************
- * renvoi l'Id de la catégorie par default
+ * renvoi l'Id de la catÃ©gorie par default
  * *********************** */
     public function getDefault()
     {
@@ -154,7 +154,7 @@ class CategoriesHandler extends \XoopsPersistableObjectHandler
         return (count($t > 0)) ? array_key_first($t) : 0;
     }
 /* ******************************
- * renvoi un tableu de toutes les catégorie avev le nombre de membres
+ * renvoi un tableu de toutes les catÃ©gorie avev le nombre de membres
  * *********************** */
      public function getStatistiques()
     {

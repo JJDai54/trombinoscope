@@ -207,7 +207,7 @@ class Members extends \XoopsObject
         // Members Handler
         $membersHandler = $helper->getHandler('Members');
         
-        /* pas utilisé pour l'instant
+        /* pas utilisÃ© pour l'instant
         // Form Select mbrStatus
         $mbrStatusSelect = new \XoopsFormSelect(_CO_TROMBINOSCOPE_MEMBER_STATUS, 'mbr_status', $this->getVar('mbr_status'), 5);
         $mbrStatusSelect->addOption('0', \_NONE);
@@ -225,7 +225,7 @@ class Members extends \XoopsObject
         $mbrActif = $this->isNew() ?: $this->getVar('mbr_actif');
         $form->addElement(new \XoopsFormRadioYN(_CO_TROMBINOSCOPE_MEMBER_ACTIF, 'mbr_actif', $mbrActif));
         
-        /* mis à jour lors de l'enregistrement
+        /* mis Ã  jour lors de l'enregistrement
         // Form Text Date Select mbrCreation
         $mbrCreation = $this->isNew() ? \time() : $this->getVar('mbr_creation');
         $form->addElement(new \XoopsFormDateTime(_CO_TROMBINOSCOPE_MEMBER_CREATION, 'mbr_creation', '', $mbrCreation));

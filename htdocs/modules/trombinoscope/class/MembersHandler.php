@@ -128,7 +128,7 @@ class MembersHandler extends \XoopsPersistableObjectHandler
 /* ******************************
  * Change l'etat du champ passer en parametre
  * @$quizId : id du quiz
- * @$field : nom du champ à changer
+ * @$field : nom du champ Ã  changer
  * *********************** */
     public function changeEtat($mbrId, $field, $modulo = 2)
     {
@@ -137,7 +137,7 @@ class MembersHandler extends \XoopsPersistableObjectHandler
         return $ret;
     }
 /* ******************************
- * Renvoie le nombre de membre par catégories
+ * Renvoie le nombre de membre par catÃ©gories
  * *********************** */
     public function getStatistiques()
     {
@@ -161,7 +161,7 @@ class MembersHandler extends \XoopsPersistableObjectHandler
     }
     
 /* ******************************
- * Renvoie le nombre de membre par catégories
+ * Renvoie le nombre de membre par catÃ©gories
  * *********************** */
     public function getStatistiques2()
     {

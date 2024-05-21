@@ -6,13 +6,13 @@
         <thead>
             <tr class='head'>
                 <th class="center"><{$smarty.const._AM_TROMBINOSCOPE_CATEGORY_ID}></th>
-                <{* pas utilisé pour l'instant
+                <{* pas utilisÃ© pour l'instant
                     <th class="center"><{$smarty.const._AM_TROMBINOSCOPE_CATEGORY_PARENT_ID}></th>
                 *}>
                 <th class="center"><{$smarty.const._AM_TROMBINOSCOPE_CATEGORY_NAME}></th>
                 <th class="center"><{$smarty.const._AM_TROMBINOSCOPE_CATEGORY_WEIGHT}></th>
                 <th class="center"><{$smarty.const._AM_TROMBINOSCOPE_DEFAULT}></th>
-                <{* pas utilisé pour l'instant
+                <{* pas utilisÃ© pour l'instant
                     <th class="center"><{$smarty.const._AM_TROMBINOSCOPE_CATEGORY_THEME}></th>
                 *}>
                 <th class="center width5"><{$smarty.const._CO_TROMBINOSCOPE_FORM_ACTION}></th>
@@ -24,7 +24,7 @@
             <{foreach item=cat from=$categories_list name=catItem}>
             <tr class='<{cycle values='odd, even'}>'>
                 <td class='center'><{$cat.id}></td>
-                <{* pas utilisé pour l'instant
+                <{* pas utilisÃ© pour l'instant
                     <td class='center'><{$cat.parent_id}></td>
                 *}>
                 <td class='left'>
@@ -101,7 +101,7 @@
                 
                 
                 
-                <{* pas utilisé pour l'instant
+                <{* pas utilisÃ© pour l'instant
                   <td class='center'><{$category.theme}></td>
                 *}>
                 <td class="center  width5">
