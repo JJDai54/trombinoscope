@@ -5,6 +5,7 @@ Compilator.CompileOnBackground=0
 Compilator.ProgSaveAll=0
 Compilator.ProgRunSelection=0
 Compilator.LogType=0
+Compilator.LogEncoding=0
 DefaultDir=J:\Xoops\modules-JJD\trombinoscope\projet\htdocs\modules\trombinoscope
 DefaultCP=0
 LogtoEnd=1
@@ -64,7 +65,7 @@ _trombinoscope
 			blocks\categories.php
 			blocks\index.php
 			blocks\members.php
-		+class
+		-class
 			-Common
 				class\Common\Breadcrumb.php
 				class\Common\Configurator.php
@@ -200,9 +201,10 @@ _trombinoscope
 9=docs\changelog.txt
 10=xoops_version.php
 11=class\Utility.php
+12=admin\menu.php
 [Selected Project Files]
 Main=
-Selected=class\Utility.php
+Selected=admin\menu.php
 [templates\admin\trombinoscope_admin_members.tpl]
 TopLine=1
 Caret=1,11
@@ -238,5 +240,8 @@ Caret=1,1
 TopLine=19
 Caret=16,36
 [class\Utility.php]
-TopLine=224
+TopLine=238
 Caret=1,251
+[admin\menu.php]
+TopLine=17
+Caret=1,1
