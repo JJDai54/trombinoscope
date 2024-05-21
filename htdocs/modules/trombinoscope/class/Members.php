@@ -160,7 +160,7 @@ class Members extends \XoopsObject
         $getMbrPhoto = $this->getVar('mbr_photo');
         $mbrPhoto = $getMbrPhoto ?: TROMBINOSCOPE_NO_PICTURE; //blank.gif
         $imageDirectory = '/uploads/trombinoscope/images/members';
-        $imageTray = new \XoopsFormElementTray(_AM_TROMBINOSCOPE_MEMBRE_PHOTO, '<br>');
+        $imageTray = new \XoopsFormElementTray(_AM_TROMBINOSCOPE_MEMBER_PHOTO, '<br>');
 //         $imageSelect = new \XoopsFormSelect(\sprintf(_AM_TROMBINOSCOPE_MEMBRE_PHOTO_UPLOADS, ".{$imageDirectory}/"), 'mbr_photo', $mbrPhoto, 5);
 //         $imageArray = \XoopsLists::getImgListAsArray( \XOOPS_ROOT_PATH . $imageDirectory );
 //         foreach ($imageArray as $image1) {
