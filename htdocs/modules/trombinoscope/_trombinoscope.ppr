@@ -202,9 +202,11 @@ _trombinoscope
 10=xoops_version.php
 11=class\Utility.php
 12=admin\menu.php
+13=templates\trombinoscope_categories_cat.tpl
+14=templates\admin\trombinoscope_admin_categories.tpl
 [Selected Project Files]
 Main=
-Selected=admin\menu.php
+Selected=templates\admin\trombinoscope_admin_categories.tpl
 [templates\admin\trombinoscope_admin_members.tpl]
 TopLine=1
 Caret=1,11
@@ -240,8 +242,14 @@ Caret=1,1
 TopLine=19
 Caret=16,36
 [class\Utility.php]
-TopLine=238
+TopLine=227
 Caret=1,251
 [admin\menu.php]
-TopLine=17
+TopLine=14
 Caret=1,1
+[templates\trombinoscope_categories_cat.tpl]
+TopLine=1
+Caret=1,1
+[templates\admin\trombinoscope_admin_categories.tpl]
+TopLine=63
+Caret=30,89

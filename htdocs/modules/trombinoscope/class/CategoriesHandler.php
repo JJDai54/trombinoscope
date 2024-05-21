@@ -151,7 +151,7 @@ class CategoriesHandler extends \XoopsPersistableObjectHandler
     {
         $criteria = new \Criteria('cat_default', 1, '=');
         $t = $this->getList($criteria);
-        return (count($t > 0)) ? array_key_first($t) : 0;
+        return (is_array($t) && count($t) > 0) ? array_key_first($t) : 0;
     }
 /* ******************************
  * renvoi un tableu de toutes les catégorie avev le nombre de membres

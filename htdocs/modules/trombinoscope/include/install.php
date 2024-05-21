@@ -96,6 +96,15 @@ function xoops_module_install_trombinoscope(\XoopsModule $module)
     foreach ($imgs as $img){
         copy( \dirname(__DIR__) . '/assets/images/' . $img, XOOPS_ROOT_PATH . '/uploads/trombinoscope/images/members/' . $img);
     }
+    $sql = "
+INSERT INTO `"  . $GLOBALS['xoopsDB']->prefix('trombinoscope_categories') . "` (`cat_id`, `cat_parent_id`, `cat_name`, `cat_weight`, `cat_theme`) VALUES
+(1, 0, '" . _MI_TROMBINOSCOPE_CATEGORY_MEMBRES . "', 0, ''),
+(2, 0, '" . _MI_TROMBINOSCOPE_CATEGORY_DONATEURS . "', 10, ''),
+(3, 0, '" . _MI_TROMBINOSCOPE_CATEGORY_PARTENAIRES . "', 20, '');
+";
+
+    // Execute the query using the XOOPS database handler
+    $GLOBALS['xoopsDB']->queryF($sql);
 //exit;
     return true;
 }
