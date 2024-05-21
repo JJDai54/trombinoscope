@@ -21,9 +21,9 @@
  * Traduction:  
  */
  
-defined( 'XOOPS_ROOT_PATH' ) or die( 'Accès restreint' );
+defined( 'XOOPS_ROOT_PATH' ) or die( 'Restricted access' );
 
-define('_CO_TROMBINOSCOPE_AUTHOR', "Author");
+define('_CO_TROMBINOSCOPE_AUTEUR', "Author");
 define('_CO_TROMBINOSCOPE_AUTHOR_MAIL', "Email");
 define('_CO_TROMBINOSCOPE_AUTHOR_WEBSITE_URL', "Author WEBSITE");
 define('_CO_TROMBINOSCOPE_AUTHOR_WEBSITE_NAME', "Site name");
@@ -36,4 +36,3 @@ define('_CO_TROMBINOSCOPE_RELEASE_DATE', "release date");
 define('_CO_TROMBINOSCOPE_DESCRIPTION', "Description");
 define('_CO_TROMBINOSCOPE_LICENSE', "License");
 define('_CO_TROMBINOSCOPE_CREDITS', "Credits");
-?>
