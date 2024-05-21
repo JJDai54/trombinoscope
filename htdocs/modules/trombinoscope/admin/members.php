@@ -179,7 +179,7 @@ switch ($op) {
 	case 'change_etat':
         $field = Request::getString('field','mbr_actif');
         $membersHandler->changeEtat($mbrId, $field);
-        redirect_header("members.php?op=list&cat_id={$catId}", 5, "Etat de {$field} Changé");
+        redirect_header("members.php?op=list&cat_id={$catId}", 5, "Etat de {$field} ChangÃ©");
 	break;
         
         break;

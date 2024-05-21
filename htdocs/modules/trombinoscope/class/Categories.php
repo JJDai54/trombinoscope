@@ -115,7 +115,7 @@ class Categories extends \XoopsObject
         $form->setExtra('enctype="multipart/form-data"');
         // Categories Handler
         $categoriesHandler = $helper->getHandler('Categories');
-        /* pas géré pour le moment
+        /* pas gÃ©rÃ© pour le moment
         // Form Select catParent_id
         $catParent_idSelect = new \XoopsFormSelect(_AM_TROMBINOSCOPE_CATEGORY_PARENT_ID, 'cat_parent_id', $this->getVar('cat_parent_id'), 1);
         $criteria = new \CriteriaCompo(new \Criteria('cat_id',0,'='));
@@ -140,7 +140,7 @@ class Categories extends \XoopsObject
         // Form Editor TextArea mbrComments
         $form->addElement(new \XoopsFormTextArea(_CO_TROMBINOSCOPE_MEMBER_COMMENTS, 'cat_comments', $this->getVar('cat_comments', 'e'), 4, 47));
 
-/* pas géré pour l'instant 
+/* pas gÃ©rÃ© pour l'instant 
         // Form Select catTheme
         $catThemeSelect = new \XoopsFormSelect(_AM_TROMBINOSCOPE_CATEGORY_THEME, 'cat_theme', $this->getVar('cat_theme'), 5);
         $catThemeSelect->addOption('0', \_NONE);

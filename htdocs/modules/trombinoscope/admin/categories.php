@@ -171,7 +171,7 @@ switch ($op) {
         $field = Request::getString('field','');
         $value = Request::getInt('value', 1);
         $categoriesHandler->setDefault($catId, $field, $value);
-        redirect_header("categories.php?op=list", 5, "Etat de {$field} Changé");
+        redirect_header("categories.php?op=list", 5, "Etat de {$field} ChangÃ©");
 	break;
         
 }

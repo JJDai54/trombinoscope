@@ -139,7 +139,7 @@ if ($currdirname == $moduleDirName) {
 }
 // ------------------- Blocks ------------------- //
 // Members last
-/* pas géré pour l'instant
+/* pas gÃ©rÃ© pour l'instant
 $modversion['blocks'][] = [
     'file'        => 'members.php',
     'name'        => \_MI_TROMBINOSCOPE_MEMBERS_BLOCK_LAST,
