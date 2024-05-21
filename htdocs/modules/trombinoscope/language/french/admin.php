@@ -63,5 +63,11 @@ define('_AM_TROMBINOSCOPE_CLONE_FAIL', "Désolé, nous n'avons pas réussi à cr
 define('_AM_TROMBINOSCOPE_ABOUT_MAKE_DONATION', "Soumettre");
 define('_AM_TROMBINOSCOPE_DONATION_AMOUNT', "Montant du don");
 define('_AM_TROMBINOSCOPE_MAINTAINEDBY', " est maintenu par ");
+define('_AM_TROMBINOSCOPE_FIRST', "Premier");
+define('_AM_TROMBINOSCOPE_UP', "Monter");
+define('_AM_TROMBINOSCOPE_DOWN', "Descendre");
+define('_AM_TROMBINOSCOPE_LAST', "Last");
+define('_AM_TROMBINOSCOPER_DEFAULT', "Défaut");
+define('_AM_TROMBINOSCOPER_IS_ACTIF', "Est actif");
 
 ?>

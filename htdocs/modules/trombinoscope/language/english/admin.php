@@ -64,3 +64,10 @@ define('_AM_TROMBINOSCOPE_CLONE_FAIL', "Sorry, we failed in creating the new clo
 define('_AM_TROMBINOSCOPE_ABOUT_MAKE_DONATION', "Submit");
 define('_AM_TROMBINOSCOPE_DONATION_AMOUNT', "Donation Amount");
 define('_AM_TROMBINOSCOPE_MAINTAINEDBY', " is maintained by ");
+define('_AM_TROMBINOSCOPE_FIRST', "First");
+define('_AM_TROMBINOSCOPE_UP', "Up");
+define('_AM_TROMBINOSCOPE_DOWN', "Down");
+define('_AM_TROMBINOSCOPE_LAST', "Last");
+define('_AM_TROMBINOSCOPER_DEFAULT', "Default");
+define('_AM_TROMBINOSCOPER_IS_ACTIF', "Is actif");
+

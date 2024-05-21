@@ -204,9 +204,13 @@ _trombinoscope
 12=admin\menu.php
 13=templates\trombinoscope_categories_cat.tpl
 14=templates\admin\trombinoscope_admin_categories.tpl
+15=include\install.php
+16=language\english\common.php
+17=language\english\admin.php
+18=language\french\admin.php
 [Selected Project Files]
 Main=
-Selected=templates\admin\trombinoscope_admin_categories.tpl
+Selected=language\french\admin.php
 [templates\admin\trombinoscope_admin_members.tpl]
 TopLine=1
 Caret=1,11
@@ -253,3 +257,15 @@ Caret=1,1
 [templates\admin\trombinoscope_admin_categories.tpl]
 TopLine=63
 Caret=30,89
+[include\install.php]
+TopLine=56
+Caret=47,101
+[language\english\common.php]
+TopLine=29
+Caret=56,60
+[language\english\admin.php]
+TopLine=33
+Caret=1,73
+[language\french\admin.php]
+TopLine=33
+Caret=1,72
