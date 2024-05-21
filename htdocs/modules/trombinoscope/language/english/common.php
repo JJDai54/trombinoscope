@@ -21,7 +21,7 @@
  * Traduction:  
  */
  
-defined( 'XOOPS_ROOT_PATH' ) or die( 'Accès restreint' );
+defined( 'XOOPS_ROOT_PATH' ) or die( 'Restricted access' );
 
 define('_CO_TROMBINOSCOPE_GDLIBSTATUS', "GD library support: ");
 define('_CO_TROMBINOSCOPE_GDLIBVERSION', "GD Library version: ");
@@ -41,21 +41,49 @@ define('_CO_TROMBINOSCOPE_UPLOADPATHDSC', "Note. Upload path *MUST* contain the 
 define('_CO_TROMBINOSCOPE_ERROR_BAD_XOOPS', "This module requires XOOPS %s+ (%s installed)");
 define('_CO_TROMBINOSCOPE_ERROR_BAD_PHP', "This module requires PHP version %s+ (%s installed)");
 define('_CO_TROMBINOSCOPE_ERROR_BAD_DEL_PATH', "Could not delete %s directory");
-define('_CO_TROMBINOSCOPE_ADD_SAMPLEDATA', "Importer des exemples de données (supprimera TOUTES les données actuelles)");
-define('_CO_TROMBINOSCOPE_SAMPLEDATA_SUCCESS', "Exemple de données importé avec succès");
-define('_CO_TROMBINOSCOPE_SAVE_SAMPLEDATA', "Exporter les tables vers YAML");
-define('_CO_TROMBINOSCOPE_SAVE_SAMPLEDATA_SUCCESS', "Exportation réussie des tables vers YAML");
-define('_CO_TROMBINOSCOPE_SHOW_SAMPLE_BUTTON', "Afficher le bouton d'échantillon ?");
-define('_CO_TROMBINOSCOPE_SHOW_SAMPLE_BUTTON_DESC', "Si oui, le bouton \"Ajouter des données d'exemple\" sera visible par l'administrateur. C'est Oui par défaut pour la première installation.");
-define('_CO_TROMBINOSCOPE_EXPORT_SCHEMA', "Exporter le schéma de base de données vers YAML");
-define('_CO_TROMBINOSCOPE_EXPORT_SCHEMA_SUCCESS', "L'exportation du schéma de base de données vers YAML a été un succès");
-define('_CO_TROMBINOSCOPE_EXPORT_SCHEMA_ERROR', "ERREUR : l'exportation du schéma de base de données vers YAML a échoué");
-define('_CO_TROMBINOSCOPE_ADD_SAMPLEDATA_OK', "Êtes-vous sûr d'importer des exemples de données ? (Cela supprimera TOUTES les données actuelles)");
-define('_CO_TROMBINOSCOPE_CONFIRM', "Confirmer");
-define('_CO_TROMBINOSCOPE_NEW_VERSION', "Nouvelle version : ");
-define('_CO_TROMBINOSCOPE_UNACTIVATE', "Désactiver");
+define('_CO_TROMBINOSCOPE_ADD_SAMPLEDATA', "Import sample data (will delete ALL current data)");
+define('_CO_TROMBINOSCOPE_SAMPLEDATA_SUCCESS', "Sample data imported successfully");
+define('_CO_TROMBINOSCOPE_SAVE_SAMPLEDATA', "Export tables to YAML");
+define('_CO_TROMBINOSCOPE_SAVE_SAMPLEDATA_SUCCESS', "Successful export of tables to YAML");
+define('_CO_TROMBINOSCOPE_SHOW_SAMPLE_BUTTON', "Show sample button?");
+define('_CO_TROMBINOSCOPE_SHOW_SAMPLE_BUTTON_DESC', "If yes, the \"Add sample data\" button will be visible to the administrator. It is Yes by default for the first installation.");
+define('_CO_TROMBINOSCOPE_EXPORT_SCHEMA', "Export database schema to YAML");
+define('_CO_TROMBINOSCOPE_EXPORT_SCHEMA_SUCCESS', "The export of the database schema to YAML was successful");
+define('_CO_TROMBINOSCOPE_EXPORT_SCHEMA_ERROR', "ERROR: Exporting database schema to YAML failed");
+define('_CO_TROMBINOSCOPE_ADD_SAMPLEDATA_OK', "Are you sure to import sample data? (This will delete ALL current data)");
+define('_CO_TROMBINOSCOPE_CONFIRM', "Confirm");
+define('_CO_TROMBINOSCOPE_NEW_VERSION', "New version: ");
+define('_CO_TROMBINOSCOPE_UNACTIVATE', "Disable");
 define('_CO_TROMBINOSCOPE_', "Submitted");
 
+define('_CO_TROMBINOSCOPE_CATEGORIE', "Category");
+define('_CO_TROMBINOSCOPE_FORMAT_DATE_SHORT', "Y-m-d");
+define('_CO_TROMBINOSCOPE_MEMBER_ADDRESS', "Address");
+define('_CO_TROMBINOSCOPE_MEMBER_CIVILITE', "Civility");
+define('_CO_TROMBINOSCOPE_MEMBER_TEL', "Phones");
+define('_AM_TROMBINOSCOPE_MEMBER_PHOTO', "Photo");
+define('_CO_TROMBINOSCOPE_MEMBER_SEXE', "Sex");
+define('_CO_TROMBINOSCOPE_MEMBER_HOMME', "Man");
+define('_CO_TROMBINOSCOPE_MEMBER_FEMME', "Woman");
+define('_CO_TROMBINOSCOPE_MEMBER_ADD', "Add Member");
+define('_CO_TROMBINOSCOPE_MEMBER_EDIT', "Edit Member");
+define('_CO_TROMBINOSCOPE_MEMBER_ID', "Id");
+define('_CO_TROMBINOSCOPE_MEMBER_CAT_ID', "Cat id");
+define('_CO_TROMBINOSCOPE_MEMBER_UID', "Members");
+define('_CO_TROMBINOSCOPE_MEMBER_UID_DESC', "If the member is registered on the site, indicate their nickname here.");
+define('_CO_TROMBINOSCOPE_MEMBER_FIRSTNAME', "Firstname");
+define('_CO_TROMBINOSCOPE_MEMBER_LASTNAME', "Lastname");
+define('_CO_TROMBINOSCOPE_MEMBER_FONCTION', "Function");
+define('_CO_TROMBINOSCOPE_MEMBER_PHOTO', "Photo");
+define('_CO_TROMBINOSCOPE_MEMBER_BIRTHDAY', "Birthday");
+define('_CO_TROMBINOSCOPE_MEMBER_EMAIL', "Email");
+define('_CO_TROMBINOSCOPE_MEMBER_FIXED', "Fixed");
+define('_CO_TROMBINOSCOPE_MEMBER_MOBILE', "Mobile");
+define('_CO_TROMBINOSCOPE_MEMBER_STATUS', "Status");
+define('_CO_TROMBINOSCOPE_MEMBER_COMMENTS', "Comments");
+define('_CO_TROMBINOSCOPE_MEMBER_ACTIF', "Active");
+define('_CO_TROMBINOSCOPE_MEMBER_CREATION', "Creation");
+define('_CO_TROMBINOSCOPE_MEMBER_UPDATE', "Update");
 define('_CO_TROMBINOSCOPE_FORM_UPLOAD', "Upload file");
 define('_CO_TROMBINOSCOPE_FORM_UPLOAD_NEW', "Upload new file: ");
 define('_CO_TROMBINOSCOPE_FORM_UPLOAD_SIZE', "Max file size: ");
@@ -65,32 +93,8 @@ define('_CO_TROMBINOSCOPE_FORM_UPLOAD_IMG_HEIGHT', "Max image height: ");
 define('_CO_TROMBINOSCOPE_FORM_ACTION', "Action");
 define('_CO_TROMBINOSCOPE_FORM_DELETE', "Clear");
 define('_CO_TROMBINOSCOPE_FORM_DELETE_OK', "Successfully deleted");
-define('_CO_TROMBINOSCOPE_CATEGORIE', "Category");
-define('_CO_TROMBINOSCOPE_FORMAT_DATE_SHORT', "Y-m-j");
-define('_CO_TROMBINOSCOPE_MEMBER_ADDRESS', "Address");
-define('_CO_TROMBINOSCOPE_MEMBER_CIVILITE', "Civility");
-define('_CO_TROMBINOSCOPE_MEMBER_TEL', "Phones");
-define('_CO_TROMBINOSCOPE_MEMBER_SEXE', "Sexe");
-define('_CO_TROMBINOSCOPE_MEMBER_HOMME', "Homme");
-define('_CO_TROMBINOSCOPE_MEMBER_FEMME', "Femme");
-define('_CO_TROMBINOSCOPE_MEMBER_ADD', "Add Member");
-define('_CO_TROMBINOSCOPE_MEMBER_EDIT', "Edit Member");
-define('_CO_TROMBINOSCOPE_MEMBER_ID', "Id");
-define('_CO_TROMBINOSCOPE_MEMBER_CAT_ID', "Cat id");
-define('_CO_TROMBINOSCOPE_MEMBER_UID', "Members");
-define('_CO_TROMBINOSCOPE_MEMBER_UID_DESC', "Si le membre est enregistré sur le site indiquez ici son pseudo.");
-define('_CO_TROMBINOSCOPE_MEMBER_FIRSTNAME', "Firstname");
-define('_CO_TROMBINOSCOPE_MEMBER_LASTNAME', "Lastname");
-define('_CO_TROMBINOSCOPE_MEMBER_FONCTION', "Fonction");
-define('_CO_TROMBINOSCOPE_MEMBER_PHOTO', "Photo");
-define('_CO_TROMBINOSCOPE_MEMBER_BIRTHDAY', "Birthday");
-define('_CO_TROMBINOSCOPE_MEMBER_EMAIL', "Email");
-define('_CO_TROMBINOSCOPE_MEMBER_FIXE', "Fixe");
-define('_CO_TROMBINOSCOPE_MEMBER_MOBILE', "Mobile");
-define('_CO_TROMBINOSCOPE_MEMBER_STATUS', "Status");
-define('_CO_TROMBINOSCOPE_MEMBER_COMMENTS', "Comments");
-define('_CO_TROMBINOSCOPE_MEMBER_ACTIF', "Actif");
-define('_CO_TROMBINOSCOPE_MEMBER_CREATION', "Creation");
-define('_CO_TROMBINOSCOPE_MEMBER_UPDATE', "Update");
+
+
+
 
 ?>

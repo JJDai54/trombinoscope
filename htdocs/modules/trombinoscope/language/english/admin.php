@@ -21,22 +21,24 @@
  * Traduction:  
  */
  
-defined( 'XOOPS_ROOT_PATH' ) or die( 'Accès restreint' );
+defined( 'XOOPS_ROOT_PATH' ) or die( 'Restricted access' );
+
 
 define('_AM_TROMBINOSCOPE_STATISTICS', "Statistics");
 define('_AM_TROMBINOSCOPE_THEREARE_MEMBERS', "There are <span class='bold'>%s</span> members in the database");
+define('_AM_TROMBINOSCOPE_STAT_MEMBERS', "[#%s] Category %s: %s active members and %s inactive members");
 define('_AM_TROMBINOSCOPE_THEREARE_CATEGORIES', "There are <span class='bold'>%s</span> categories in the database");
 define('_AM_TROMBINOSCOPE_THEREARENT_MEMBERS', "There aren't members");
 define('_AM_TROMBINOSCOPE_THEREARENT_CATEGORIES', "There aren't categories");
 define('_AM_TROMBINOSCOPE_FORM_OK', "Successfully saved");
-define('_AM_TROMBINOSCOPE_FORM_SURE_DELETE', "Are you sure to delete: <b><span style='color : Red;'>%s </span></b>");
+define('_AM_TROMBINOSCOPE_FORM_SURE_DELETE', "Are you sure to delete: <b><span style='color: Red;'>%s </span></b>");
 define('_AM_TROMBINOSCOPE_ADD_MEMBER', "Add New Member");
-define('_AM_TROMBINOSCOPE_ACTIF', "Actif");
-define('_AM_TROMBINOSCOPE_INACTIF', "Inactif");
 define('_AM_TROMBINOSCOPE_ALL', "(*)");
 define('_AM_TROMBINOSCOPE_DEFAULT', "Default");
-define('_AM_TROMBINOSCOPE_CATEGORY_DEFAULT', "Catégorie par défaut");
-define('_AM_TROMBINOSCOPE_CATEGORY', "Catégorie");
+define('_AM_TROMBINOSCOPE_CATEGORY_DEFAULT', "Default category");
+define('_AM_TROMBINOSCOPE_ACTIF', "Active");
+define('_AM_TROMBINOSCOPE_INACTIF', "Inactive");
+define('_AM_TROMBINOSCOPE_CATEGORY', "Category");
 define('_AM_TROMBINOSCOPE_ADD_CATEGORY', "Add New Category");
 define('_AM_TROMBINOSCOPE_LIST_MEMBERS', "List of Members");
 define('_AM_TROMBINOSCOPE_LIST_CATEGORIES', "List of Categories");
@@ -56,12 +58,9 @@ define('_AM_TROMBINOSCOPE_CLONE_NAME', "Choose a name for the new module");
 define('_AM_TROMBINOSCOPE_CLONE_NAME_DSC', "Do not use special characters! <br>Do not choose an existing module dirname or database table name!");
 define('_AM_TROMBINOSCOPE_CLONE_INVALIDNAME', "ERROR: Invalid module name, please try another one!");
 define('_AM_TROMBINOSCOPE_CLONE_EXISTS', "ERROR: Module name already taken, please try another one!");
-define('_AM_TROMBINOSCOPE_CLONE_CONGRAT', "Congratulations! %s was sucessfully created!<br>You may want to make changes in language files.");
+define('_AM_TROMBINOSCOPE_CLONE_CONGRAT', "Congratulations! %s was successfully created!<br>You may want to make changes in language files.");
 define('_AM_TROMBINOSCOPE_CLONE_IMAGEFAIL', "Attention, we failed creating the new module logo. Please consider modifying assets/images/logo_module.png manually!");
 define('_AM_TROMBINOSCOPE_CLONE_FAIL', "Sorry, we failed in creating the new clone. Maybe you need to temporally set write permissions (CHMOD 777) to modules folder and try again.");
 define('_AM_TROMBINOSCOPE_ABOUT_MAKE_DONATION', "Submit");
 define('_AM_TROMBINOSCOPE_DONATION_AMOUNT', "Donation Amount");
 define('_AM_TROMBINOSCOPE_MAINTAINEDBY', " is maintained by ");
-define('_AM_TROMBINOSCOPE_MEMBRE_PHOTO', "Photo");
-
-?>

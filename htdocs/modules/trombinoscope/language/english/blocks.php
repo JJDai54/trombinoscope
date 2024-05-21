@@ -21,7 +21,7 @@
  * Traduction:  
  */
  
-defined( 'XOOPS_ROOT_PATH' ) or die( 'Accès restreint' );
+defined( 'XOOPS_ROOT_PATH' ) or die( 'Restricted access' );
 
 define('_MB_TROMBINOSCOPE_DISPLAY', "How Many Tables to Display");
 define('_MB_TROMBINOSCOPE_TITLE_LENGTH', "Title Length");
@@ -40,5 +40,3 @@ define('_MB_TROMBINOSCOPE_CAT_NAME', "Name");
 define('_MB_TROMBINOSCOPE_CAT_WEIGHT', "Weight");
 define('_MB_TROMBINOSCOPE_CAT_THEME', "Theme");
 define('_MB_TROMBINOSCOPE_CATEGORY_GOTO', "Goto Category");
-
-?>

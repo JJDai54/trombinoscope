@@ -21,10 +21,10 @@
  * Traduction:  
  */
  
-defined( 'XOOPS_ROOT_PATH' ) or die( 'Accès restreint' );
+defined( 'XOOPS_ROOT_PATH' ) or die( 'Restricted access' );
 
-define('_MI_TROMBINOSCOPE_NAME', "Trombinoscope");
-define('_MI_TROMBINOSCOPE_DESC', "Module de présentation d'un tromboniscope, et accessoirement de suivi des anniversaires");
+define('_MI_TROMBINOSCOPE_NAME', "Group Photo");
+define('_MI_TROMBINOSCOPE_DESC', "Module for presenting a tromboniscope, and incidentally for tracking birthdays");
 define('_MI_TROMBINOSCOPE_ADMENU1', "Dashboard");
 define('_MI_TROMBINOSCOPE_ADMENU2', "Categories");
 define('_MI_TROMBINOSCOPE_ADMENU3', "Members");
@@ -61,12 +61,12 @@ define('_MI_TROMBINOSCOPE_KEYWORDS_DESC', "Insert here the keywords (separate by
 define('_MI_TROMBINOSCOPE_SIZE_MB', "MB");
 define('_MI_TROMBINOSCOPE_MAXSIZE_IMAGE', "Max size image");
 define('_MI_TROMBINOSCOPE_MAXSIZE_IMAGE_DESC', "Define the max size for uploading images");
-define('_MI_TROMBINOSCOPE_MIMETYPES_IMAGE', "Mime types image");
+define('_MI_TROMBINOSCOPE_MIMETYPES_IMAGE', "Mime image types");
 define('_MI_TROMBINOSCOPE_MIMETYPES_IMAGE_DESC', "Define the allowed mime types for uploading images");
 define('_MI_TROMBINOSCOPE_MAXWIDTH_IMAGE', "Max width image");
-define('_MI_TROMBINOSCOPE_MAXWIDTH_IMAGE_DESC', "Set the max width to which uploaded images should be scaled (in pixel)<br>0 means, that images keeps the original size. <br>If an image is smaller than maximum value then the image will be not enlarge, it will be save in original width.");
+define('_MI_TROMBINOSCOPE_MAXWIDTH_IMAGE_DESC', "Set the max width to which uploaded images should be scaled (in pixel)<br>0 means, that images keeps the original size. <br>If an image is smaller than maximum value then the image will be not enlarged, it will be saved in original width.");
 define('_MI_TROMBINOSCOPE_MAXHEIGHT_IMAGE', "Max height image");
-define('_MI_TROMBINOSCOPE_MAXHEIGHT_IMAGE_DESC', "Set the max height to which uploaded images should be scaled (in pixel)<br>0 means, that images keeps the original size. <br>If an image is smaller than maximum value then the image will be not enlarge, it will be save in original height");
+define('_MI_TROMBINOSCOPE_MAXHEIGHT_IMAGE_DESC', "Set the max height to which uploaded images should be scaled (in pixel)<br>0 means, that images keeps the original size. <br>If an image is smaller than maximum value then the image will be not enlarged, it will be saved in original height");
 define('_MI_TROMBINOSCOPE_NUMB_COL', "Number Columns");
 define('_MI_TROMBINOSCOPE_NUMB_COL_DESC', "Number Columns to View");
 define('_MI_TROMBINOSCOPE_DIVIDEBY', "Divide By");
@@ -84,5 +84,3 @@ define('_MI_TROMBINOSCOPE_MAINTAINEDBY', "Maintained By");
 define('_MI_TROMBINOSCOPE_MAINTAINEDBY_DESC', "Allow url of support site or community");
 define('_MI_TROMBINOSCOPE_BOOKMARKS', "Social Bookmarks");
 define('_MI_TROMBINOSCOPE_BOOKMARKS_DESC', "Show Social Bookmarks in the single page");
-
-?>
