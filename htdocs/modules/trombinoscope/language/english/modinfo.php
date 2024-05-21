@@ -84,3 +84,7 @@ define('_MI_TROMBINOSCOPE_MAINTAINEDBY', "Maintained By");
 define('_MI_TROMBINOSCOPE_MAINTAINEDBY_DESC', "Allow url of support site or community");
 define('_MI_TROMBINOSCOPE_BOOKMARKS', "Social Bookmarks");
 define('_MI_TROMBINOSCOPE_BOOKMARKS_DESC', "Show Social Bookmarks in the single page");
+
+define('_MI_TROMBINOSCOPE_CATEGORY_MEMBRES', 'Members');
+define('_MI_TROMBINOSCOPE_CATEGORY_DONATEURS', 'Donors');
+define('_MI_TROMBINOSCOPE_CATEGORY_PARTENAIRES', 'Partners');

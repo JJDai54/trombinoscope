@@ -57,11 +57,9 @@ define('_MA_TROMBINOSCOPE_CATEGORIES_TITLE', "Titre des catégories");
 define('_MA_TROMBINOSCOPE_CATEGORIES_DESC', "Description des catégories");
 define('_MA_TROMBINOSCOPE_FORM_OK', "Enregistré avec succès");
 define('_MA_TROMBINOSCOPE_FORM_DELETE_OK', "Supprimé avec succès");
-define('_MA_TROMBINOSCOPE_FORM_SURE_DELETE', "Êtes-vous sûr de supprimer : <b><span style='color : Red;'>%s </span></b>");
+define('_MA_TROMBINOSCOPE_FORM_SURE_DELETE', "Êtes-vous sûr de supprimer : <b><span style='color : Red;'>%s </span></b>");
 define('_MA_TROMBINOSCOPE_INVALID_PARAM', "Paramètre invalide");
 define('_MA_TROMBINOSCOPE_ADMIN', "Admin");
 define('_MA_TROMBINOSCOPE_INDEX_THEREARE', "Il y a %s événements");
 define('_MA_TROMBINOSCOPE_INDEX_LATEST_LIST', "Dernier trombinoscope");
 define('_MA_TROMBINOSCOPE_MEMBER_FONCTIONS', "Fonctions");
-
-?>

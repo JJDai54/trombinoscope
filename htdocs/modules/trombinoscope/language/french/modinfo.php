@@ -85,4 +85,6 @@ define('_MI_TROMBINOSCOPE_MAINTAINEDBY_DESC', "Autoriser l'url du site de suppor
 define('_MI_TROMBINOSCOPE_BOOKMARKS', "Signets sociaux");
 define('_MI_TROMBINOSCOPE_BOOKMARKS_DESC', "Afficher les signets sociaux sur une seule page");
 
-?>
+define('_MI_TROMBINOSCOPE_CATEGORY_MEMBRES', 'Membres');
+define('_MI_TROMBINOSCOPE_CATEGORY_DONATEURS', 'Donateurs');
+define('_MI_TROMBINOSCOPE_CATEGORY_PARTENAIRES', 'Partenaires');
