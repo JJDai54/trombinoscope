@@ -1,8 +1,8 @@
 # trombinoscope
 
- Module pour assocssiation ou autre groupe désirant présenter un trombinoscope
+ Module pour association ou autre groupe désirant présenter un trombinoscope
  de ses membres et de leurs fonctions.
- - Ler permissions sont gérées au niveau global de Xoops dans les groupes.
+ - Les permissions sont gérées au niveau global de Xoops dans les groupes.
  - Pas de block pour ce module
  - Bien que la table catégories permettent d'en définir, elles sont pas gérées pour le moment
    il est donc conseillé d'utiliser que la première catégorie (cat_id=1) et de ne pas la supprimer.
