@@ -57,7 +57,6 @@ define('_CO_TROMBINOSCOPE_UNACTIVATE', "Disable");
 define('_CO_TROMBINOSCOPE_', "Submitted");
 
 define('_CO_TROMBINOSCOPE_CATEGORIE', "Category");
-define('_CO_TROMBINOSCOPE_FORMAT_DATE_SHORT', "m/d/Y");
 define('_CO_TROMBINOSCOPE_MEMBER_ADDRESS', "Address");
 define('_CO_TROMBINOSCOPE_MEMBER_CIVILITE', "Civility");
 define('_CO_TROMBINOSCOPE_MEMBER_TEL', "Phones");
