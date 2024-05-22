@@ -1,4 +1,16 @@
 ==============================================================
+1.81 Bete 2 [2024/05/22] 
+==============================================================
+jjdelalandre@orange.fr
+- Ajout des constantes de langues manquantes
+- Correction fonction "edit" dans "trombinoscope_admin_categories.tpl"
+- remplacement de _CO_TROMBINOSCOPE_FORMAT_DATE_SHORT par _SHORTDATESTRING
+
+mambax7@gmail.com
+==============================================================
+- fichier 'install.php' remplacement des valeurs en dur pa des constantes de langues
+
+==============================================================
 1.81 [2022/10/03 19:04:00]
 ==============================================================
 - Gestion du poids des catégories

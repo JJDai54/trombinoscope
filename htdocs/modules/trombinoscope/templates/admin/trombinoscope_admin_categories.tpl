@@ -35,7 +35,7 @@
                 
                 
                 <{* ---------------- Arrows Weight -------------------- *}>
-                <td class='center' <{$styleParent}> >
+                <td class='center'>
                     <{if $smarty.foreach.catItem.first}>
                       <img src="<{$modPathIcon16}>/arrows/<{$fldImg}>/first-0.png" title="<{$smarty.const._AM_TROMBINOSCOPE_FIRST}>">
                       <img src="<{$modPathIcon16}>/arrows/<{$fldImg}>/up-0.png" title="<{$smarty.const._AM_TROMBINOSCOPE_UP}>">
