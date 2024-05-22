@@ -1,5 +1,5 @@
 ==============================================================
-1.81 Bete 2 [2024/05/22] 
+1.81 Beta 2 [2024/05/22] 
 ==============================================================
 jjdelalandre@orange.fr
 - Ajout des constantes de langues manquantes
@@ -8,7 +8,7 @@ jjdelalandre@orange.fr
 
 mambax7@gmail.com
 ==============================================================
-- fichier 'install.php' remplacement des valeurs en dur pa des constantes de langues
+- fichier 'install.php' remplacement des valeurs en dur par des constantes de langues
 
 ==============================================================
 1.81 [2022/10/03 19:04:00]

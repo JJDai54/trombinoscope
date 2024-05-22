@@ -27,6 +27,49 @@ use XoopsModules\Trombinoscope\Constants;
 require __DIR__ . '/header.php';
 $templateMain = 'trombinoscope_admin_about.tpl';
 
+$TrombinoscopeHelper = \XoopsModules\Trombinoscope\Helper::getInstance();
+
+$clAbout = new \About($TrombinoscopeHelper,
+                      'MUUZPTPGJSB9G',
+                      "https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif",
+                      "https://www.paypal.com/en_FR/i/scr/pixel.gif");
+
+
+/************************************************************************/
+$adminObject->displayNavigation('about.php');
+$GLOBALS['xoopsTpl']->assign('box', $clAbout->getBox());
+$GLOBALS['xoopsTpl']->assign('tplAbout', XOOPS_ROOT_PATH . "/Frameworks/JJD-Framework/templates/admin_about.tpl");
+
+require __DIR__ . '/footer.php';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 define('_AM_JJD_DESCRIPTION','zzzzz');
 define('_AM_JJD_ID','yyyyy');
 // include_once XOOPS_ROOT_PATH . "/modules/trombinoscope/class/About.php";
