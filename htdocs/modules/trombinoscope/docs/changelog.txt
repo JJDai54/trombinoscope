@@ -1,4 +1,8 @@
 ==============================================================
+2.0 Beta 1 [2024/05/22] - (JJDai - jjdelalandre@orange.fr) 
+==============================================================
+
+==============================================================
 1.81 Beta 2 [2024/05/22] 
 ==============================================================
 jjdelalandre@orange.fr
@@ -35,5 +39,5 @@ Installation:
 --------------
 Le module s'installe comme tous les modules pour Xoops.
 Important : 
- - Ce module utilise le framework "JJD-Framework" à installer au préalable
+ - Ce module utilise le framework "janus" à installer au préalable
  - Il est conseillé aussi d'installer le framework "trierTableauHTML"

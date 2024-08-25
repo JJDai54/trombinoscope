@@ -20,7 +20,7 @@
  * @package        trombinoscope
  * @since          1.0
  * @min_xoops      2.5.9
- * @author         JJDai - Email:<jjdelalandre@orange.fr> - Website:<http://jubile.fr>
+ * @author         JJDai - Email:<jjdelalandre@orange.fr> - Website:<https://kiolo.fr>
  */
 
 // 
@@ -29,8 +29,8 @@ $moduleDirNameUpper = \mb_strtoupper($moduleDirName);
 // ------------------- Informations ------------------- //
 $modversion = [
     'name'                => \_MI_TROMBINOSCOPE_NAME,
-    'version'             => 1.81,
-    'module_status'       => 'Beta 2',
+    'version'             => 2.0,
+    'module_status'       => 'Beta 1',
     'release_date'        => '20224/05/22',
     'description'         => \_MI_TROMBINOSCOPE_DESC,
     'author'              => 'JJDai (Jean-Jacques Delalandre)',

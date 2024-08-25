@@ -23,11 +23,11 @@ namespace XoopsModules\Trombinoscope;
  * @package        trombinoscope
  * @since          1.0
  * @min_xoops      2.5.9
- * @author         JJDai - Email:<jjdelalandre@orange.fr> - Website:<http://jubile.fr>
+ * @author         JJDai - Email:<jjdelalandre@orange.fr> - Website:<https://kiolo.fr>
  */
 
 use XoopsModules\Trombinoscope;
-use JJD;
+use JANUS;
 \defined('XOOPS_ROOT_PATH') || die('Restricted access');
 
 /**
@@ -54,6 +54,7 @@ class Members extends \XoopsObject
     {
         $this->initVar('mbr_id', \XOBJ_DTYPE_INT);
         $this->initVar('mbr_cat_id', \XOBJ_DTYPE_INT);
+        $this->initVar('mbr_submitter', \XOBJ_DTYPE_INT);
         $this->initVar('mbr_uid', \XOBJ_DTYPE_INT);
         $this->initVar('mbr_civilite', \XOBJ_DTYPE_TXTBOX);
         $this->initVar('mbr_firstname', \XOBJ_DTYPE_TXTBOX);
@@ -189,7 +190,7 @@ class Members extends \XoopsObject
 //        $form->addElement(new \XoopsFormTextDateSelect(\, 'mbr_birthday', '', $mbrBirthday));
         
 		// Form Check Box quizDateBegin
-         $mbrBirthday= \JJD\xoopsformDateSimple(_CO_TROMBINOSCOPE_MEMBER_BIRTHDAY, 'mbr_birthday', $this->getVar('mbr_birthday'));
+         $mbrBirthday= \JANUS\xoopsformDateSimple(_CO_TROMBINOSCOPE_MEMBER_BIRTHDAY, 'mbr_birthday', $this->getVar('mbr_birthday'));
 		$form->addElement($mbrBirthday);
         
         
@@ -267,6 +268,7 @@ $user=$member_handler->getUser($this->getVar('mbr_uid'));
         $ret['cat_name']         = $cat[$this->getVar('mbr_cat_id')];
         $membersHandler = $helper->getHandler('Members');
         //$membersObj = $membersHandler->get($this->getVar('mbr_uid'));
+        $ret['submitter']      = $this->getVar('mbr_submitter');
         $ret['uid']            = $this->getVar('mbr_uid');
         $ret['pseudo']         = $user->getVar('uname');
         $ret['civilite']       = $this->getVar('mbr_civilite');
@@ -285,7 +287,7 @@ $user=$member_handler->getUser($this->getVar('mbr_uid'));
       		$ret['birthday']   = '';
         }else{
         setlocale(LC_ALL, 'fr_FR');
-      		$ret['birthday']   = \JJD\getDateSql2Str($this->getVar('mbr_birthday'), 'd-F');//'d-m-Y'
+      		$ret['birthday']   = \JANUS\getDateSql2Str($this->getVar('mbr_birthday'), 'd-F');//'d-m-Y'
         }
         
         $ret['email']          = $this->getVar('mbr_email');
@@ -300,8 +302,8 @@ $user=$member_handler->getUser($this->getVar('mbr_uid'));
 //         $ret['creation']       = \formatTimestamp($this->getVar('mbr_creation'), 'm');
 //         $ret['update']         = \formatTimestamp($this->getVar('mbr_update'), 'm');
 
-		$ret['creation']          = \JJD\getDateSql2Str($this->getVar('mbr_creation'));
-		$ret['update']            = \JJD\getDateSql2Str($this->getVar('mbr_update'));
+		$ret['creation']          = \JANUS\getDateSql2Str($this->getVar('mbr_creation'));
+		$ret['update']            = \JANUS\getDateSql2Str($this->getVar('mbr_update'));
         
         return $ret;
     }

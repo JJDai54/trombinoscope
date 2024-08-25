@@ -20,7 +20,7 @@
  * @package        trombinoscope
  * @since          1.0
  * @min_xoops      2.5.9
- * @author         JJDai - Email:<jjdelalandre@orange.fr> - Website:<http://jubile.fr>
+ * @author         JJDai - Email:<jjdelalandre@orange.fr> - Website:<https://kiolo.fr>
  */
 require \dirname(__DIR__, 2) . '/mainfile.php';
 require __DIR__ . '/include/common.php';
@@ -48,4 +48,4 @@ $modPathIcon32 = $GLOBALS['xoopsModule']->getInfo('modicons16');
 \xoops_loadLanguage('common', $moduleDirName);
 
 //$xoTheme->addScript(XOOPS_URL . '/Frameworks/trierTableauHTML/trierTableau.js');
-include_once (XOOPS_ROOT_PATH . "/Frameworks/JJD-Framework/back_office.php");
+include_once (XOOPS_ROOT_PATH . "/Frameworks/janus/back_office.php");

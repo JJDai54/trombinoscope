@@ -20,7 +20,7 @@
  * @package        trombinoscope
  * @since          1.0
  * @min_xoops      2.5.9
- * @author         JJDai - Email:<jjdelalandre@orange.fr> - Website:<http://jubile.fr>
+ * @author         JJDai - Email:<jjdelalandre@orange.fr> - Website:<https://kiolo.fr>
  */
 require \dirname(__DIR__, 3) . '/include/cp_header.php';
 require_once \dirname(__DIR__) . '/include/common.php';
@@ -70,4 +70,4 @@ $adminObject = \Xmf\Module\Admin::getInstance();
 $style = \TROMBINOSCOPE_URL . '/assets/css/admin/style.css';
 
 $xoTheme->addScript(XOOPS_URL . '/Frameworks/trierTableauHTML/trierTableau.js');
-include_once (XOOPS_ROOT_PATH . "/Frameworks/JJD-Framework/back_office.php");
+include_once (XOOPS_ROOT_PATH . "/Frameworks/janus/back_office.php");

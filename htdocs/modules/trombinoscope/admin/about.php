@@ -18,7 +18,7 @@ namespace XoopsModules\Trombinoscope;
  * @package        trombinoscope
  * @since          1.0
  * @min_xoops      2.5.9
- * @author         JJDai - Email:<jjdelalandre@orange.fr> - Website:<http://jubile.fr>
+ * @author         JJDai - Email:<jjdelalandre@orange.fr> - Website:<https://kiolo.fr>
  */
 use XoopsModules\Trombinoscope;
 use XoopsModules\Trombinoscope\Helper;
@@ -38,7 +38,7 @@ $clAbout = new \About($TrombinoscopeHelper,
 /************************************************************************/
 $adminObject->displayNavigation('about.php');
 $GLOBALS['xoopsTpl']->assign('box', $clAbout->getBox());
-$GLOBALS['xoopsTpl']->assign('tplAbout', XOOPS_ROOT_PATH . "/Frameworks/JJD-Framework/templates/admin_about.tpl");
+$GLOBALS['xoopsTpl']->assign('tplAbout', XOOPS_ROOT_PATH . "/Frameworks/janus/templates/admin_about.tpl");
 
 require __DIR__ . '/footer.php';
 
@@ -70,8 +70,8 @@ require __DIR__ . '/footer.php';
 
 
 
-define('_AM_JJD_DESCRIPTION','zzzzz');
-define('_AM_JJD_ID','yyyyy');
+define('_JANUS_DESCRIPTION','zzzzz');
+define('_JANUS_ID','yyyyy');
 // include_once XOOPS_ROOT_PATH . "/modules/trombinoscope/class/About.php";
 
 
@@ -135,7 +135,7 @@ function contribution(){
     $html = array();
     $html[] = "<div style=\"clear: both; height: 1em;\"></div>";
     
-    $html[] = "<div>" . _AM_JJD_ABOUT_WHY_DONATE . "</div><center>";
+    $html[] = "<div>" . _JANUS_ABOUT_WHY_DONATE . "</div><center>";
     
     $html[] = '<form action="https://www.paypal.com/donate" method="post" target="_top">
 <input type="hidden" name="hosted_button_id" value="MUUZPTPGJSB9G" />
@@ -179,7 +179,7 @@ $module = $helper->getModule();
     
     
     $html[] = "<div style=\"line-height: 16px; font-weight: bold;\">";
-    $html[] = _AM_JJD_ABOUT_BY . " ".  $module->getInfo('author');
+    $html[] = _JANUS_ABOUT_BY . " ".  $module->getInfo('author');
     $html[] = "</div>";
     $html[] = "<div style=\"line-height: 16px;\">";
     $html[] = "<a href=\"$license_url\" target=\"_blank\" rel=\"external\">" . $module->getInfo('license') . "</a>";
@@ -278,7 +278,7 @@ $box['module']['legend'] = _AM_MODULEADMIN_ABOUT_MODULEINFO;
 $box['module']['content'] = array2table(moduleInfo());
 
 /* ------------------------- Module -----------------------------*/
-$box['paypal']['legend'] = _AM_JJD_ABOUT_CONTRIBUTION;
+$box['paypal']['legend'] = _JANUS_ABOUT_CONTRIBUTION;
 $box['paypal']['content'] = contribution();
 
 /* ------------------------- Header Info -----------------------------*/

@@ -20,7 +20,7 @@
  * @package        trombinoscope
  * @since          1.0
  * @min_xoops      2.5.9
- * @author         JJDai - Email:<jjdelalandre@orange.fr> - Website:<http://jubile.fr>
+ * @author         JJDai - Email:<jjdelalandre@orange.fr> - Website:<https://kiolo.fr>
  */
 
 use XoopsModules\Trombinoscope;
@@ -108,6 +108,7 @@ function trombinoscope_search($queryarray, $andor, $limit, $offset, $userid)
         }
     }
     // search user(s)
+    /* pas de champ cat_submitter, pas utile il n'y aurap beaucoup de categories
     if ($userid && \is_array($userid)) {
         $userid = array_map('\intval', $userid);
         $crUser = new \CriteriaCompo();
@@ -116,6 +117,11 @@ function trombinoscope_search($queryarray, $andor, $limit, $offset, $userid)
         $crUser = new \CriteriaCompo();
         $crUser->add(new \Criteria('cat_submitter', $userid), 'OR');
     }
+    */
+    
+    
+    
+    
     $crSearch = new \CriteriaCompo();
     if (isset($crKeywords)) {
         $crSearch->add($crKeywords, 'AND');
@@ -125,7 +131,8 @@ function trombinoscope_search($queryarray, $andor, $limit, $offset, $userid)
     }
     $crSearch->setStart($offset);
     $crSearch->setLimit($limit);
-    $crSearch->setSort('cat_id_date');
+    // $crSearch->setSort('cat_id_date'); // pas utile de gere des dates sur les categories
+    $crSearch->setSort('cat_name');
     $crSearch->setOrder('DESC');
     $categoriesAll = $categoriesHandler->getAll($crSearch);
     foreach (\array_keys($categoriesAll) as $i) {

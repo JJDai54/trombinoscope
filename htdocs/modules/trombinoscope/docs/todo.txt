@@ -1,3 +1,4 @@
+ALTER TABLE `x2511_trombinoscope_members` ADD `mbr_submitter` INT NOT NULL DEFAULT '0' AFTER `mbr_cat_id`; 
 
 ## -------------------------------------------
 ## MAJ uid dans la table "members"

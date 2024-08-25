@@ -31,6 +31,7 @@ CREATE TABLE `trombinoscope_categories` (
 CREATE TABLE `trombinoscope_members` (
   `mbr_id` INT(8) UNSIGNED NOT NULL AUTO_INCREMENT,
   `mbr_cat_id` INT(10) NOT NULL DEFAULT '0',
+  `mbr_submitter` INT(0) NOT NULL DEFAULT '0',
   `mbr_uid` INT(0) NOT NULL DEFAULT '0',
   `mbr_civilite` VARCHAR(12) NOT NULL DEFAULT '',
   `mbr_firstname` VARCHAR(50) NOT NULL DEFAULT '',

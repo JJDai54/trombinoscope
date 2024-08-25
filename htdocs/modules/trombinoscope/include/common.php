@@ -20,7 +20,7 @@
  * @package        trombinoscope
  * @since          1.0
  * @min_xoops      2.5.9
- * @author         JJDai - Email:<jjdelalandre@orange.fr> - Website:<http://jubile.fr>
+ * @author         JJDai - Email:<jjdelalandre@orange.fr> - Website:<https://kiolo.fr>
  */
 if (!\defined('XOOPS_ICONS32_PATH')) {
     \define('XOOPS_ICONS32_PATH', \XOOPS_ROOT_PATH . '/Frameworks/moduleclasses/icons/32');
@@ -50,6 +50,6 @@ if (!\defined('XOOPS_ICONS32_URL')) {
 \define('TROMBINOSCOPE_ADMIN', \TROMBINOSCOPE_URL . '/admin/index.php');
 $localLogo = \TROMBINOSCOPE_IMAGE_URL . '/jjdai_logo.png';
 // Module Information
-$copyright = "<a href='http://jubile.fr' title='Jubile' target='_blank'><img src='" . $localLogo . "' alt='Jubile' ></a>";
+$copyright = "<a href='https://kiolo.fr' title='Kiolo' target='_blank'><img src='" . $localLogo . "' alt='Kiolo' ></a>";
 require_once \XOOPS_ROOT_PATH . '/class/xoopsrequest.php';
 require_once \TROMBINOSCOPE_PATH . '/include/functions.php';

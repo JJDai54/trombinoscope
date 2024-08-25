@@ -20,7 +20,7 @@
  * @package        trombinoscope
  * @since          1.0
  * @min_xoops      2.5.9
- * @author         JJDai - Email:<jjdelalandre@orange.fr> - Website:<http://jubile.fr>
+ * @author         JJDai - Email:<jjdelalandre@orange.fr> - Website:<https://kiolo.fr>
  */
 
 use Xmf\Request;
@@ -148,7 +148,7 @@ switch ($op) {
                 $GLOBALS['xoopsTpl']->assign('error', $categoriesObj->getHtmlErrors());
             }
         } else {
-            $xoopsconfirm = new Common\XoopsConfirm(
+            $xoopsconfirm = new XoopsConfirm(
                 ['ok' => 1, 'cat_id' => $catId, 'start' => $start, 'limit' => $limit, 'op' => 'delete'],
                 $_SERVER['REQUEST_URI'],
                 \sprintf(_AM_TROMBINOSCOPE_FORM_SURE_DELETE, $categoriesObj->getVar('cat_name')));
