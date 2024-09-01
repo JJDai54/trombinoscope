@@ -9,7 +9,7 @@
     <table class='table table-<{$table_type|default:false}>'>
         <thead>
             <tr class='head'>
-                <th colspan='<{$divideby|default:false}>'><{$smarty.const._MA_TROMBINOSCOPE_CATEGORIES_TITLE}></th>
+                <th colspan='<{$numb_col|default:false}>'><{$smarty.const._MA_TROMBINOSCOPE_CATEGORIES_TITLE}></th>
             </tr>
         </thead>
         <tbody>
@@ -20,7 +20,7 @@
                         <{include file='db:trombinoscope_categories_item.tpl' }>
                     </div>
                 </td>
-                <{if $smarty.foreach.category.iteration is div by $divideby}>
+                <{if $smarty.foreach.category.iteration is div by $numb_col}>
                     </tr><tr>
                 <{/if}>
                 <{/foreach}>

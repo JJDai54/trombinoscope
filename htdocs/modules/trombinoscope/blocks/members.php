@@ -91,7 +91,7 @@ function b_trombinoscope_members_show($options)
             $block[$i]['civilite'] = \htmlspecialchars($membersAll[$i]->getVar('mbr_civilite'), ENT_QUOTES | ENT_HTML5);
             $block[$i]['firstname'] = \htmlspecialchars($membersAll[$i]->getVar('mbr_firstname'), ENT_QUOTES | ENT_HTML5);
             $block[$i]['lastname'] = \htmlspecialchars($membersAll[$i]->getVar('mbr_lastname'), ENT_QUOTES | ENT_HTML5);
-            $block[$i]['mbr_sexe'] = \htmlspecialchars($membersAll[$i]->getVar('mbr_sexe'), ENT_QUOTES | ENT_HTML5);
+            $block[$i]['quality_id'] = \htmlspecialchars($membersAll[$i]->getVar('mbr_quality_id'), ENT_QUOTES | ENT_HTML5);
             $block[$i]['fonction'] = \htmlspecialchars($membersAll[$i]->getVar('mbr_fonctions'), ENT_QUOTES | ENT_HTML5);
         }
     }

@@ -33,6 +33,7 @@ require __DIR__ . '/header.php';
 $op = Request::getCmd('op', 'list');
 $mbrId = Request::getInt('mbr_id');
 $catId = Request::getInt('cat_id',0);
+$qualityId = Request::getInt('quality_id',0);
 $actif = Request::getInt('mbr_actif',0);
 $start = Request::getInt('start', 0);
 $limit = Request::getInt('limit', $helper->getConfig('adminpager'));
@@ -55,6 +56,7 @@ switch ($op) {
         $GLOBALS['xoopsTpl']->assign('buttons', $adminObject->displayButton('left'));
         
         //-----------------------------------
+        $qualitiesList = $qualitiesHandler->getList();
        // ----- /Listes de selection pour filtrage -----        
         $filters = array();
   //echo "<hr>Categories<pre>" . print_r($categoriesHandler->getList(), true) . "</pre><hr>";
@@ -64,6 +66,13 @@ switch ($op) {
         $inpCat->setExtra('onchange="document.trombinoscope_filter.submit();"');
         $filters['categories']['input'] = $inpCat->render();
         $filters['categories']['caption'] = _AM_TROMBINOSCOPE_CATEGORY;
+        
+        $inpQuality = new \XoopsFormSelect(_AM_TROMBINOSCOPE_QUALITY, 'quality_id', $qualityId);
+        $inpQuality->addOption(0, _AM_TROMBINOSCOPE_ALL);
+        $inpQuality->addOptionArray($qualitiesList);        
+        $inpQuality->setExtra('onchange="document.trombinoscope_filter.submit();"');
+        $filters['qualities']['input'] = $inpQuality->render();
+        $filters['qualities']['caption'] = _AM_TROMBINOSCOPE_QUALITY;
         
         $inpActif = new \XoopsFormSelect(_AM_TROMBINOSCOPE_ACTIF, 'mbr_actif', $actif);
         $inpActif->addOption(0, _AM_TROMBINOSCOPE_ALL);
@@ -79,6 +88,7 @@ switch ($op) {
         //-----------------------------------
         $criteria = new \CriteriaCompo();
         if($catId > 0) $criteria->add(new \Criteria('mbr_cat_id', $catId,'='));
+        if($qualityId > 0) $criteria->add(new \Criteria('mbr_quality_id', $qualityId,'='));
         if($actif > 0) $criteria->add(new \Criteria('mbr_actif', $actif-1,'='));
         
         
@@ -88,10 +98,15 @@ switch ($op) {
         $GLOBALS['xoopsTpl']->assign('members_count', $membersCount);
         $GLOBALS['xoopsTpl']->assign('trombinoscope_url', \TROMBINOSCOPE_URL);
         $GLOBALS['xoopsTpl']->assign('trombinoscope_upload_url', \TROMBINOSCOPE_UPLOAD_URL);
+        
+ //echoArray($qualitiesList);       
+        
         // Table view members
         if ($membersCount > 0) {
             foreach (\array_keys($membersAll) as $i) {
                 $member = $membersAll[$i]->getValuesMembers();
+                $member['quality'] = $qualitiesList[$member['mbr_quality_id']];
+                
                 $GLOBALS['xoopsTpl']->append('members_list', $member);
                 unset($member);
             }

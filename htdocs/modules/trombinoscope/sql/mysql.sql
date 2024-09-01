@@ -31,12 +31,12 @@ CREATE TABLE `trombinoscope_categories` (
 CREATE TABLE `trombinoscope_members` (
   `mbr_id` INT(8) UNSIGNED NOT NULL AUTO_INCREMENT,
   `mbr_cat_id` INT(10) NOT NULL DEFAULT '0',
+  `mbr_quality_id` TINYINT(1) NOT NULL DEFAULT '0',
   `mbr_submitter` INT(0) NOT NULL DEFAULT '0',
   `mbr_uid` INT(0) NOT NULL DEFAULT '0',
   `mbr_civilite` VARCHAR(12) NOT NULL DEFAULT '',
   `mbr_firstname` VARCHAR(50) NOT NULL DEFAULT '',
   `mbr_lastname` VARCHAR(50) NOT NULL DEFAULT '',
-  `mbr_sexe` TINYINT(1) NOT NULL DEFAULT '0',
   `mbr_address` TEXT NOT NULL ,
   `mbr_fonctions` VARCHAR(255) NOT NULL DEFAULT '',
   `mbr_photo` VARCHAR(255) NOT NULL DEFAULT '',
@@ -50,5 +50,13 @@ CREATE TABLE `trombinoscope_members` (
   `mbr_creation` DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00',
   `mbr_update` DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`mbr_id`)
+) ENGINE=InnoDB;
+
+CREATE TABLE `trombinoscope_qualities` (
+  `quality_id` INT(8) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `quality_name` VARCHAR(255) NOT NULL DEFAULT '',
+  `quality_weight` TINYINT(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`quality_id`),
+  INDEX (`quality_name`)
 ) ENGINE=InnoDB;
 

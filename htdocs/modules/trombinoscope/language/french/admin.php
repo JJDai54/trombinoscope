@@ -70,4 +70,13 @@ define('_AM_TROMBINOSCOPE_LAST', "Last");
 define('_AM_TROMBINOSCOPER_DEFAULT', "Défaut");
 define('_AM_TROMBINOSCOPER_IS_ACTIF', "Est actif");
 
+define('_AM_TROMBINOSCOPE_ADD_QUALITY', "Ajouter");
+define('_AM_TROMBINOSCOPE_QUALITY_ID', "#");
+define('_AM_TROMBINOSCOPE_QUALITY_NAME', "Name");
+define('_AM_TROMBINOSCOPE_QUALITY_WEIGHT', "Poids");
+define('_AM_TROMBINOSCOPE_QUALITY_ADD', "Ajouter");
+define('_AM_TROMBINOSCOPE_LIST_QUALITIES', "Edite");
+define('_AM_TROMBINOSCOPE_QUALITY_EDIT', "Liste");
+define('_AM_TROMBINOSCOPE_QUALITY', "Quallité");
+
 ?>

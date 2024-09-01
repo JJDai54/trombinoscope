@@ -85,8 +85,8 @@ if ($membersCount > 0) {
         $GLOBALS['xoopsTpl']->assign('pagenav', $pagenav->renderNav(4));
     }
     $GLOBALS['xoopsTpl']->assign('lang_thereare', \sprintf(\_MA_TROMBINOSCOPE_INDEX_THEREARE, $membersCount));
-    $GLOBALS['xoopsTpl']->assign('divideby', $helper->getConfig('divideby'));
     $GLOBALS['xoopsTpl']->assign('numb_col', $helper->getConfig('numb_col'));
+    //$GLOBALS['xoopsTpl']->assign('numb_col', $helper->getConfig('numb_col'));
 }
 unset($count);
 $GLOBALS['xoopsTpl']->assign('table_type', $helper->getConfig('table_type'));

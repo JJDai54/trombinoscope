@@ -37,6 +37,7 @@ $modPathIcon32   = \TROMBINOSCOPE_URL . '/' . $GLOBALS['xoopsModule']->getInfo('
 $helper = \XoopsModules\Trombinoscope\Helper::getInstance();
 $membersHandler = $helper->getHandler('Members');
 $categoriesHandler = $helper->getHandler('Categories');
+$qualitiesHandler = $helper->getHandler('Qualities');
 
 $myts = MyTextSanitizer::getInstance();
 // 
@@ -71,3 +72,9 @@ $style = \TROMBINOSCOPE_URL . '/assets/css/admin/style.css';
 
 $xoTheme->addScript(XOOPS_URL . '/Frameworks/trierTableauHTML/trierTableau.js');
 include_once (XOOPS_ROOT_PATH . "/Frameworks/janus/back_office.php");
+include_once (XOOPS_ROOT_PATH . "/Frameworks/janus/Goffy/class/XoopsConfirm.php");
+
+
+
+
+

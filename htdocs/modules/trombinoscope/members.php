@@ -119,9 +119,9 @@ switch ($op) {
             }
             $GLOBALS['xoopsTpl']->assign('table_type', $helper->getConfig('table_type'));
             $GLOBALS['xoopsTpl']->assign('panel_type', $helper->getConfig('panel_type'));
-            $GLOBALS['xoopsTpl']->assign('divideby', $helper->getConfig('divideby'));
-            //$GLOBALS['xoopsTpl']->assign('divideby',5);
             $GLOBALS['xoopsTpl']->assign('numb_col', $helper->getConfig('numb_col'));
+            //$GLOBALS['xoopsTpl']->assign('numb_col',5);
+            //$GLOBALS['xoopsTpl']->assign('numb_col', $helper->getConfig('numb_col'));
             $GLOBALS['xoopsTpl']->assign('membersCount', $membersCount);
             $GLOBALS['xoopsTpl']->assign('is_fiche',$mbrId > 0);        
             $utility = new \XoopsModules\Trombinoscope\Utility();            

@@ -1,4 +1,29 @@
-ALTER TABLE `x2511_trombinoscope_members` ADD `mbr_submitter` INT NOT NULL DEFAULT '0' AFTER `mbr_cat_id`; 
+
+
+///////////////////////////////////////
+ALTER TABLE `x251_trombinoscope_members` CHANGE `mbr_sexe` `mbr_quality_id` TINYINT(1) NOT NULL DEFAULT '0';
+ALTER TABLE `x2511_trombinoscope_members` ADD `mbr_submitter` INT NOT NULL DEFAULT '0' AFTER `mbr_cat_id`;
+
+CREATE TABLE `x251_trombinoscope_qualities` (
+  `quality_id` INT(8) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `quality_name` VARCHAR(255) NOT NULL DEFAULT '',
+  `quality_weight` TINYINT(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`quality_id`),
+  INDEX (`quality_name`)
+) ENGINE=InnoDB;
+
+INSERT INTO `x251_trombinoscope_qualities` (`quality_id`, `quality_name`, `quality_weight`) VALUES
+(1, 'Homme', 10),
+(2, 'Femme', 20),
+(3, 'Autre', 100),
+(4, 'Association', 30),
+(5, 'Societé', 40),
+(6, 'Collectivité', 50),
+(7, 'Municipalité', 60);
+
+
+
+ 
 
 ## -------------------------------------------
 ## MAJ uid dans la table "members"

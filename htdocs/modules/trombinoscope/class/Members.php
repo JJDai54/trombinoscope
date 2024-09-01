@@ -54,12 +54,12 @@ class Members extends \XoopsObject
     {
         $this->initVar('mbr_id', \XOBJ_DTYPE_INT);
         $this->initVar('mbr_cat_id', \XOBJ_DTYPE_INT);
+        $this->initVar('mbr_quality_id', \XOBJ_DTYPE_INT);
         $this->initVar('mbr_submitter', \XOBJ_DTYPE_INT);
         $this->initVar('mbr_uid', \XOBJ_DTYPE_INT);
         $this->initVar('mbr_civilite', \XOBJ_DTYPE_TXTBOX);
         $this->initVar('mbr_firstname', \XOBJ_DTYPE_TXTBOX);
         $this->initVar('mbr_lastname', \XOBJ_DTYPE_TXTBOX);
-        $this->initVar('mbr_sexe', \XOBJ_DTYPE_INT);
         $this->initVar('mbr_fonctions', \XOBJ_DTYPE_TXTBOX);
         $this->initVar('mbr_photo', \XOBJ_DTYPE_TXTBOX);
         $this->initVar('mbr_birthday', \XOBJ_DTYPE_OTHER); //XOBJ_DTYPE_LTIME // XOBJ_DTYPE_DATE
@@ -104,7 +104,7 @@ class Members extends \XoopsObject
      */
     public function getFormMembers($action = false)
     {
-        global $categoriesHandler;
+        global $categoriesHandler, $qualitiesHandler;
 
         $helper = \XoopsModules\Trombinoscope\Helper::getInstance();
         if (!$action) {
@@ -140,18 +140,17 @@ class Members extends \XoopsObject
         $form->addElement($mbrUidSelect);
         //-------------------------------
         // Form Text mbr_civilite
-        $form->addElement(new \XoopsFormText(_CO_TROMBINOSCOPE_MEMBER_CIVILITE, 'mbr_civilite', 20, 20, $this->getVar('mbr_civilite')), true);
+        $form->addElement(new \XoopsFormText(_CO_TROMBINOSCOPE_MEMBER_CIVILITE, 'mbr_civilite', 20, 20, $this->getVar('mbr_civilite')), false);
         // Form Text mbrFirstname
-        $form->addElement(new \XoopsFormText(_CO_TROMBINOSCOPE_MEMBER_FIRSTNAME, 'mbr_firstname', 50, 255, $this->getVar('mbr_firstname')), true);
+        $form->addElement(new \XoopsFormText(_CO_TROMBINOSCOPE_MEMBER_FIRSTNAME, 'mbr_firstname', 50, 255, $this->getVar('mbr_firstname')), false);
         // Form Text mbrLastname
         $form->addElement(new \XoopsFormText(_CO_TROMBINOSCOPE_MEMBER_LASTNAME, 'mbr_lastname', 50, 255, $this->getVar('mbr_lastname')), true);
         
-        
-        // Form Text mbr_sexe
-        $inpSexe = new \XoopsFormRadio(_CO_TROMBINOSCOPE_MEMBER_SEXE, 'mbr_sexe', $this->getVar('mbr_sexe'));
-        $inpSexe->addOption(1,_CO_TROMBINOSCOPE_MEMBER_HOMME);
-        $inpSexe->addOption(2,_CO_TROMBINOSCOPE_MEMBER_FEMME);
-        $form->addElement($inpSexe, true);
+        // Form Text mbr_quality_id
+        $inpQuality = new \XoopsFormSelect(_CO_TROMBINOSCOPE_QUALITY, 'mbr_quality_id', $this->getVar('mbr_quality_id'));
+        $inpQuality->addOptionArray($qualitiesHandler->getList());
+
+        $form->addElement($inpQuality, true);
         
         // Form Text mbrFonction
         $form->addElement(new \XoopsFormText(_CO_TROMBINOSCOPE_MEMBER_FONCTION, 'mbr_fonctions', 50, 255, $this->getVar('mbr_fonctions')));
@@ -251,7 +250,8 @@ class Members extends \XoopsObject
      */
     public function getValuesMembers($keys = null, $format = null, $maxDepth = null)
     {
-        global $categoriesHandler;
+        global $categoriesHandler, $qualitiesHandler;
+        
         $cat = $categoriesHandler->getList();
         $member_handler = xoops_getHandler('member');
 //                 $groups         = empty($_POST['mail_to_group']) ? array() : array_map('intval', $_POST['mail_to_group']);
@@ -270,12 +270,12 @@ $user=$member_handler->getUser($this->getVar('mbr_uid'));
         //$membersObj = $membersHandler->get($this->getVar('mbr_uid'));
         $ret['submitter']      = $this->getVar('mbr_submitter');
         $ret['uid']            = $this->getVar('mbr_uid');
-        $ret['pseudo']         = $user->getVar('uname');
+        $ret['pseudo']         = ($user) ? $user->getVar('uname'): '';
         $ret['civilite']       = $this->getVar('mbr_civilite');
         $ret['firstname']      = $this->getVar('mbr_firstname');
         $ret['lastname']       = $this->getVar('mbr_lastname');
         $ret['fullname']       = $this->getVar('mbr_civilite') . " " . $this->getVar('mbr_firstname') . " " . $this->getVar('mbr_lastname');
-        $ret['sexe']           = $this->getVar('mbr_sexe');
+        $ret['quality_id']     = $this->getVar('mbr_quality_id');
         
         
         $ret['fonctions']      = $this->getVar('mbr_fonctions');

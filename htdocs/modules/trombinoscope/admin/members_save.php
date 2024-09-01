@@ -54,16 +54,23 @@ $mbrId = Request::getInt('mbr_id');
         }
 		$membersObj->setVar('mbr_update', \JANUS\getSqlDate());
         //---------------------------------------------------        
+        $catId = Request::getInt('mbr_cat_id', 0);
+        $qualityId = Request::getInt('mbr_quality_id', 0);
+        $actif = Request::getInt('mbr_actif', 0);
+        
+        
+        $membersObj->setVar('mbr_cat_id', $catId);
+        $membersObj->setVar('mbr_quality_id', $qualityId);
+        $membersObj->setVar('mbr_actif', $actif);
         
         // Set Vars
         $uploaderErrors = '';
-        $membersObj->setVar('mbr_cat_id', Request::getInt('mbr_cat_id', 0));
         $membersObj->setVar('mbr_uid', Request::getInt('mbr_uid', 0));
         $membersObj->setVar('mbr_civilite', Request::getString('mbr_civilite', ''));
         $membersObj->setVar('mbr_firstname', Request::getString('mbr_firstname', ''));
         $membersObj->setVar('mbr_lastname', Request::getString('mbr_lastname', ''));
-        $membersObj->setVar('mbr_sexe', Request::getString('mbr_sexe', ''));
         $membersObj->setVar('mbr_fonctions', Request::getString('mbr_fonctions', ''));
+        
         // Set Var mbr_photo
         require_once \XOOPS_ROOT_PATH . '/class/uploader.php';
         $filename       = $_FILES['mbr_photo']['name'];
@@ -104,8 +111,8 @@ $mbrId = Request::getInt('mbr_id');
         //$memberBirthdayObj = \DateTime::createFromFormat(\_SHORTDATESTRING, Request::getString('mbr_birthday'));
         //$membersObj->setVar('mbr_birthday', $memberBirthdayObj->getTimestamp());
 // 		$memberBirthdayObj = Request::getArray('mbr_birthday');		
-//         $membersObj->setVar('mbr_birthday', \JJD\getSqlDate($memberBirthdayObj));
-        $membersObj->setVar('mbr_birthday', \JJD\getSqlDate(Request::getString('mbr_birthday'), 'Y-m-d', _SHORTDATESTRING));
+//         $membersObj->setVar('mbr_birthday', \JANUS\getSqlDate($memberBirthdayObj));
+        $membersObj->setVar('mbr_birthday', \JANUS\getSqlDate(Request::getString('mbr_birthday'), 'Y-m-d', _SHORTDATESTRING));
         
         $membersObj->setVar('mbr_email', Request::getString('mbr_email', ''));
         $membersObj->setVar('mbr_fixe', Request::getString('mbr_fixe', ''));
@@ -113,7 +120,7 @@ $mbrId = Request::getInt('mbr_id');
         $membersObj->setVar('mbr_status', Request::getString('mbr_status', ''));
         $membersObj->setVar('mbr_address', Request::getString('mbr_address', ''));
         $membersObj->setVar('mbr_comments', Request::getString('mbr_comments', ''));
-        $membersObj->setVar('mbr_actif', Request::getInt('mbr_actif', 0));
+
         
                 
         // Insert Data
@@ -121,11 +128,14 @@ $mbrId = Request::getInt('mbr_id');
             if ('' !== $uploaderErrors) {
                   \redirect_header('members.php?op=edit&mbr_id=' . $mbrId, 5, $uploaderErrors);
             } else {
+                $contexte = "cat_id={$catId}&quality_id={$qualityId}&quality_actif={$actif}&start={$start}&limit={$limit}";
                 if ($office == "frontoffice")
                 {
-                  \redirect_header("members.php?op=list&mbr_id={$mbrId}&start={$start}&limit={$limit}" , 2, _AM_TROMBINOSCOPE_FORM_OK);
+                  \redirect_header("members.php?op=list&mbr_id={$mbrId}&" . $contexte , 2, _AM_TROMBINOSCOPE_FORM_OK);
                 }else{
-                  \redirect_header("members.php?op=list&start={$start}&limit={$limit}" , 2, _AM_TROMBINOSCOPE_FORM_OK);
+                  \redirect_header("members.php?op=list&" .$contexte , 2, _AM_TROMBINOSCOPE_FORM_OK);
+                  
+
                   //\redirect_header('members.php?op=list&amp;start=' . $start . '&amp;limit=' . $limit, 2, _AM_TROMBINOSCOPE_FORM_OK);
                 }
 

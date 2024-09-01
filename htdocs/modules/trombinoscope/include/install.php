@@ -100,11 +100,25 @@ function xoops_module_install_trombinoscope(\XoopsModule $module)
 INSERT INTO `"  . $GLOBALS['xoopsDB']->prefix('trombinoscope_categories') . "` (`cat_id`, `cat_parent_id`, `cat_name`, `cat_weight`, `cat_theme`) VALUES
 (1, 0, '" . _MI_TROMBINOSCOPE_CATEGORY_MEMBRES . "', 0, ''),
 (2, 0, '" . _MI_TROMBINOSCOPE_CATEGORY_DONATEURS . "', 10, ''),
-(3, 0, '" . _MI_TROMBINOSCOPE_CATEGORY_PARTENAIRES . "', 20, '');
-";
+(3, 0, '" . _MI_TROMBINOSCOPE_CATEGORY_PARTENAIRES . "', 20, '');";
 
     // Execute the query using the XOOPS database handler
     $GLOBALS['xoopsDB']->queryF($sql);
+    //-------------------------------------------------
+    $sql = "
+INSERT INTO `"  . $GLOBALS['xoopsDB']->prefix('trombinoscope_qualities') . "` (`quality_id`, `quality_name`, `quality_weight`) VALUES
+(1, '" . _MI_TROMBINOSCOPE_QUALITY_HOMME . "', 10),
+(2, '" . _MI_TROMBINOSCOPE_QUALITY_FEMME . "', 20),
+(3, '" . _MI_TROMBINOSCOPE_QUALITY_ASSOCIATION . "', 30),
+(4, '" . _MI_TROMBINOSCOPE_QUALITY_SOCIETE . "', 40),
+(5, '" . _MI_TROMBINOSCOPE_QUALITY_COLLECTIVITE . "', 50),
+(6, '" . _MI_TROMBINOSCOPE_QUALITY_MUNICIPALITE . "', 60),
+(7, '" . _MI_TROMBINOSCOPE_QUALITY_AUTRE . "', 100);";
+
+    // Execute the query using the XOOPS database handler
+    $GLOBALS['xoopsDB']->queryF($sql);
+
+
 //exit;
     return true;
 }

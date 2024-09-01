@@ -43,7 +43,7 @@
                 <td class='col_width<{$numb_col}> top center'>
                     <{include file='db:trombinoscope_categories_list.tpl' category=$category}>
                 </td>
-                <{if $smarty.foreach.category.iteration is div by $divideby}>
+                <{if $smarty.foreach.category.iteration is div by $numb_col}>
                     </tr><tr>
                 <{/if}>
             <{/foreach}>
@@ -62,7 +62,7 @@
                 <td class='col_width<{$numb_col}> top center'>
                     <{include file='db:trombinoscope_members_list.tpl' member=$member}>
                 </td>
-                <{if $smarty.foreach.member.iteration is div by $divideby}>
+                <{if $smarty.foreach.member.iteration is div by $numb_col}>
                     </tr><tr>
                 <{/if}>
             <{/foreach}>

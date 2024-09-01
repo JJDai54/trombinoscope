@@ -20,6 +20,7 @@
                 <th class="center"><{$smarty.const._CO_TROMBINOSCOPE_MEMBER_CIVILITE}></th>
                 <th class="center"><{$smarty.const._CO_TROMBINOSCOPE_MEMBER_FIRSTNAME}></th>
                 <th class="center"><{$smarty.const._CO_TROMBINOSCOPE_MEMBER_LASTNAME}></th>
+                <th class="center"><{$smarty.const._CO_TROMBINOSCOPE_QUALITY}></th>
                 <th class="center"><{$smarty.const._CO_TROMBINOSCOPE_MEMBER_PHOTO}></th>
                 <th class="center"><{$smarty.const._CO_TROMBINOSCOPE_MEMBER_FONCTION}></th>
                 <th class="center"><{$smarty.const._CO_TROMBINOSCOPE_MEMBER_BIRTHDAY}></th>
@@ -52,6 +53,9 @@
                                     
                 
                 </td>
+                <td class='left'>
+                    <{$member.quality}>
+                </td>
                 <td class='center'>
                   <div style='visibility:hidden;'><{$member.lastname}></div>
                   <{if $member.photo == ''}>
@@ -75,9 +79,9 @@
                 </td>
                 <td class='center'><{$member.creation}><br><{$member.update}></td>
                 <td class="center  width5">
-                    <a href="members.php?op=edit&amp;mbr_id=<{$member.id}>&amp;start=<{$start}>&amp;limit=<{$limit}>" title="<{$smarty.const._EDIT}>"><img src="<{xoModuleIcons16 'edit.png'}>" alt="<{$smarty.const._EDIT}> members" ></a>
-                    <a href="members.php?op=clone&amp;mbr_id_source=<{$member.id}>" title="<{$smarty.const._CLONE}>"><img src="<{xoModuleIcons16 'editcopy.png'}>" alt="<{$smarty.const._CLONE}> members" ></a>
-                    <a href="members.php?op=delete&amp;mbr_id=<{$member.id}>" title="<{$smarty.const._DELETE}>"><img src="<{xoModuleIcons16 'delete.png'}>" alt="<{$smarty.const._DELETE}> members" ></a>
+                    <a href="members.php?op=edit&amp;mbr_id=<{$member.id}>&amp;start=<{$start}>&amp;limit=<{$limit}>" title="<{$smarty.const._EDIT}>"><img src="<{xoModuleIcons16}>/edit.png" alt="<{$smarty.const._EDIT}> members" ></a>
+                    <a href="members.php?op=clone&amp;mbr_id_source=<{$member.id}>" title="<{$smarty.const._CLONE}>"><img src="<{xoModuleIcons16}>/editcopy.png" alt="<{$smarty.const._CLONE}> members" ></a>
+                    <a href="members.php?op=delete&amp;mbr_id=<{$member.id}>" title="<{$smarty.const._DELETE}>"><img src="<{xoModuleIcons16}>/delete.png" alt="<{$smarty.const._DELETE}> members" ></a>
                 </td>
             </tr>
             <{/foreach}>

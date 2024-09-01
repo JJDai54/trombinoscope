@@ -29,6 +29,7 @@ define('_MI_TROMBINOSCOPE_ADMENU1', "Dashboard");
 define('_MI_TROMBINOSCOPE_ADMENU2', "Categories");
 define('_MI_TROMBINOSCOPE_ADMENU3', "Members");
 define('_MI_TROMBINOSCOPE_ADMENU6', "Feedback");
+define('_MI_TROMBINOSCOPE_ADMENU7', "Qualities");
 define('_MI_TROMBINOSCOPE_ABOUT', "About");
 define('_MI_TROMBINOSCOPE_ADMIN_PAGER', "Admin pager");
 define('_MI_TROMBINOSCOPE_ADMIN_PAGER_DESC', "Admin per page list");

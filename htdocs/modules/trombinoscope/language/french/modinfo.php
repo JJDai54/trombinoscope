@@ -29,6 +29,7 @@ define('_MI_TROMBINOSCOPE_ADMENU1', "Tableau de bord");
 define('_MI_TROMBINOSCOPE_ADMENU2', "Catégories");
 define('_MI_TROMBINOSCOPE_ADMENU3', "Membres");
 define('_MI_TROMBINOSCOPE_ADMENU6', "Retour d'expérience");
+define('_MI_TROMBINOSCOPE_ADMENU7', "Qualités");
 define('_MI_TROMBINOSCOPE_ABOUT', "À propos");
 define('_MI_TROMBINOSCOPE_ADMIN_PAGER', "Pagination dans l'admin");
 define('_MI_TROMBINOSCOPE_ADMIN_PAGER_DESC', "Nombre de lignes par page");
@@ -88,3 +89,12 @@ define('_MI_TROMBINOSCOPE_BOOKMARKS_DESC', "Afficher les signets sociaux sur une
 define('_MI_TROMBINOSCOPE_CATEGORY_MEMBRES', 'Membres');
 define('_MI_TROMBINOSCOPE_CATEGORY_DONATEURS', 'Donateurs');
 define('_MI_TROMBINOSCOPE_CATEGORY_PARTENAIRES', 'Partenaires');
+
+define('_MI_TROMBINOSCOPE_QUALITY_HOMME', "Homme");
+define('_MI_TROMBINOSCOPE_QUALITY_FEMME', "Femme");
+define('_MI_TROMBINOSCOPE_QUALITY_ASSOCIATION', "Association");
+define('_MI_TROMBINOSCOPE_QUALITY_SOCIETE', "Société");
+define('_MI_TROMBINOSCOPE_QUALITY_COLLECTIVITE', "Collectivité");
+define('_MI_TROMBINOSCOPE_QUALITY_MUNICIPALITE', "Municipalité");
+define('_MI_TROMBINOSCOPE_QUALITY_AUTRE', "Autre");
+

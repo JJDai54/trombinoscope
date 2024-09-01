@@ -61,9 +61,14 @@ define('_CO_TROMBINOSCOPE_MEMBER_ADDRESS', "Adresse");
 define('_CO_TROMBINOSCOPE_MEMBER_CIVILITE', "Civilité");
 define('_CO_TROMBINOSCOPE_MEMBER_TEL', "Téléphones");
 define('_AM_TROMBINOSCOPE_MEMBER_PHOTO', "Photo");
-define('_CO_TROMBINOSCOPE_MEMBER_SEXE', "Sexe");
-define('_CO_TROMBINOSCOPE_MEMBER_HOMME', "Homme");
-define('_CO_TROMBINOSCOPE_MEMBER_FEMME', "Femme");
+define('_CO_TROMBINOSCOPE_QUALITY', "Qualité");
+define('_CO_TROMBINOSCOPE_QUALITY_HOMME', "Homme");
+define('_CO_TROMBINOSCOPE_QUALITY_FEMME', "Femme");
+define('_CO_TROMBINOSCOPE_QUALITY_ASSOCIATION', "Association");
+define('_CO_TROMBINOSCOPE_QUALITY_SOCIETE', "Societé");
+define('_CO_TROMBINOSCOPE_QUALITY_COLLECTIVITE', "Collectivité");
+define('_CO_TROMBINOSCOPE_QUALITY_MUNICIPALITE', "Municipalité");
+define('_CO_TROMBINOSCOPE_QUALITY_AUTRE', "Autre");
 
 define('_CO_TROMBINOSCOPE_MEMBER_ADD', "Ajouter un membre");
 define('_CO_TROMBINOSCOPE_MEMBER_EDIT', "Modifier le membre");

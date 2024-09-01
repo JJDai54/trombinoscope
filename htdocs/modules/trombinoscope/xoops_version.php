@@ -29,14 +29,14 @@ $moduleDirNameUpper = \mb_strtoupper($moduleDirName);
 // ------------------- Informations ------------------- //
 $modversion = [
     'name'                => \_MI_TROMBINOSCOPE_NAME,
-    'version'             => 2.0,
+    'version'             => 1.9,
     'module_status'       => 'Beta 1',
-    'release_date'        => '20224/05/22',
+    'release_date'        => '20224/09/01',
     'description'         => \_MI_TROMBINOSCOPE_DESC,
     'author'              => 'JJDai (Jean-Jacques Delalandre)',
     'author_mail'         => 'jjdelalandre@orange.fr',
-    'author_website_url'  => 'http://oritheque.fr',
-    'author_website_name' => 'Oritheque',
+    'author_website_url'  => 'http://xoopsfr.kiolo.fr',
+    'author_website_name' => 'XoopsFr',
     'credits'             => 'XOOPS Development Team',
     'license'             => 'GPL 2.0 or later',
     'license_url'         => 'https://www.gnu.org/licenses/gpl-3.0.en.html',
@@ -80,6 +80,7 @@ $modversion['templates'] = [
     ['file' => 'trombinoscope_admin_index.tpl', 'description' => '', 'type' => 'admin'],
     ['file' => 'trombinoscope_admin_members.tpl', 'description' => '', 'type' => 'admin'],
     ['file' => 'trombinoscope_admin_categories.tpl', 'description' => '', 'type' => 'admin'],
+    ['file' => 'trombinoscope_admin_qualities.tpl', 'description' => '', 'type' => 'admin'],
     ['file' => 'trombinoscope_admin_clone.tpl', 'description' => '', 'type' => 'admin'],
     ['file' => 'trombinoscope_admin_footer.tpl', 'description' => '', 'type' => 'admin'],
     // User templates
@@ -102,6 +103,7 @@ $modversion['sqlfile']['mysql'] = 'sql/mysql.sql';
 $modversion['tables'] = [
     'trombinoscope_members',
     'trombinoscope_categories',
+    'trombinoscope_qualities',
 ];
 // ------------------- Search ------------------- //
 $modversion['hasSearch'] = 1;
@@ -333,26 +335,17 @@ $modversion['config'][] = [
     'description' => '\_MI_TROMBINOSCOPE_NUMB_COL_DESC',
     'formtype'    => 'select',
     'valuetype'   => 'int',
-    'default'     => 1,
-    'options'     => [1 => '1', 2 => '2', 3 => '3', 4 => '4', 5 => '5'],
+    'default'     => 3,
+    'options'     => [1 => '1', 2 => '2', 3 => '3', 4 => '4', 5 => '5', 6 => '6', 7 => '7', 8 => '8'],
 ];
-// Divide by
-$modversion['config'][] = [
-    'name'        => 'divideby',
-    'title'       => '\_MI_TROMBINOSCOPE_DIVIDEBY',
-    'description' => '\_MI_TROMBINOSCOPE_DIVIDEBY_DESC',
-    'formtype'    => 'select',
-    'valuetype'   => 'int',
-    'default'     => 1,
-    'options'     => [1 => '1', 2 => '2', 3 => '3', 4 => '4', 5 => '5'],
-];
+
 // Table type
 $modversion['config'][] = [
     'name'        => 'table_type',
     'title'       => '\_MI_TROMBINOSCOPE_TABLE_TYPE',
-    'description' => '\_MI_TROMBINOSCOPE_DIVIDEBY_DESC',
+    'description' => '',
     'formtype'    => 'select',
-    'valuetype'   => 'int',
+    'valuetype'   => 'text',
     'default'     => 'bordered',
     'options'     => ['bordered' => 'bordered', 'striped' => 'striped', 'hover' => 'hover', 'condensed' => 'condensed'],
 ];

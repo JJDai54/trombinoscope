@@ -1,11 +1,15 @@
 ==============================================================
-2.0 Beta 1 [2024/05/22] - (JJDai - jjdelalandre@orange.fr) 
+1.9 Beta 2 [2024/09/01] (JJDai : jjdelalandre@orange.fr)
 ==============================================================
+Ajout de la table trombinoscope_qualities
+renomage de mbr_sexe en mbr_quality_id
+Ajout du filtre "quality" dans "admin/members.php" list
+Suppression dans xoopsVersion.php de 'div_by' et remplacement par 'numb_col'
 
 ==============================================================
-1.81 Beta 2 [2024/05/22] 
+1.81 Beta 2 [2024/05/22] (JJDai : jjdelalandre@orange.fr) 
 ==============================================================
-jjdelalandre@orange.fr
+
 - Ajout des constantes de langues manquantes
 - Correction fonction "edit" dans "trombinoscope_admin_categories.tpl"
 - remplacement de _CO_TROMBINOSCOPE_FORMAT_DATE_SHORT par _SHORTDATESTRING
@@ -15,7 +19,7 @@ mambax7@gmail.com
 - fichier 'install.php' remplacement des valeurs en dur par des constantes de langues
 
 ==============================================================
-1.81 [2022/10/03 19:04:00]
+1.81 [2022/10/03 19:04:00] (JJDai : jjdelalandre@orange.fr)
 ==============================================================
 - Gestion du poids des catégories
 - Gestion d'une catégorie par défaut
@@ -24,9 +28,9 @@ mambax7@gmail.com
 - Activation de la gestion des catégories
 
 ==============================================================
-1.00 [2021/10/27 17:59:19]
+1.00 [2021/10/27 17:59:19] (JJDai : jjdelalandre@orange.fr)
 ==============================================================
- - Original release trombinoscope (JJDai)
+ - Original release trombinoscope 
  ------------------------------------------
  Module pour association ou autre groupe désirant présenter un trombinoscope
  de ses membres et de leurs fonctions.

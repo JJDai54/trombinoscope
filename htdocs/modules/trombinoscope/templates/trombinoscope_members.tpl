@@ -22,7 +22,7 @@
     <table class='table table-<{$table_type|default:false}>'>
         <thead>
             <tr class='head'>
-                <th colspan='<{$divideby|default:false}>'><{$smarty.const._MA_TROMBINOSCOPE_MEMBERS_TITLE}></th>
+                <th colspan='<{$numb_col|default:false}>'><{$smarty.const._MA_TROMBINOSCOPE_MEMBERS_TITLE}></th>
             </tr>
         </thead>
         <tbody>
@@ -37,7 +37,7 @@
                         <{/if}>
                     </div>
                 </td>
-                <{if $smarty.foreach.memberName.iteration is div by $divideby}>
+                <{if $smarty.foreach.memberName.iteration is div by $numb_col}>
                     </tr><tr>
                 <{/if}>
                 <{/foreach}>
