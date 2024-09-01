@@ -54,7 +54,7 @@ span.title{
     <{* <span class='block-pie justify'><{$smarty.const._MA_TROMBINOSCOPE_MEMBER_EMAIL}>: <{$member.email}></span> *}>
     <div class='col-sm-12 right'>
         <{if $showItem|default:''}>
-            <a class='btn btn-success right' href='members.php?op=list&amp;start=<{$start}>&amp;limit=<{$limit}>#mbrId_<{$member.mbr_id}>' title='<{$smarty.const._MA_TROMBINOSCOPE_MEMBERS_LIST}>'><{$smarty.const._MA_TROMBINOSCOPE_MEMBERS_LIST}></a>
+            <a class='btn btn-success right' href='members.php?op=list&cat_id=<{$member.mbr_cat_id}>&amp;start=<{$start}>&amp;limit=<{$limit}>#mbrId_<{$member.mbr_id}>' title='<{$smarty.const._MA_TROMBINOSCOPE_MEMBERS_LIST}>'><{$smarty.const._MA_TROMBINOSCOPE_MEMBERS_LIST}></a>
         <{else}>
             <a class='btn btn-success right' href='members.php?op=show&amp;mbr_id=<{$member.mbr_id}>&amp;start=<{$start}>&amp;limit=<{$limit}>' title='<{$smarty.const._MA_TROMBINOSCOPE_DETAILS}>'><{$smarty.const._MA_TROMBINOSCOPE_DETAILS}></a>
         <{/if}>
@@ -64,7 +64,7 @@ span.title{
             <a class='btn btn-primary right' href='members.php?op=clone&amp;mbr_id_source=<{$member.mbr_id}>' title='<{$smarty.const._CLONE}>'><{$smarty.const._CLONE}></a>
             *}>
             <{if $member.actif == 1 || $member.actif}>
-                <a class='btn btn-danger right' href='members.php?op=change_etat&field=mbr_actif&mbr_id=<{$member.mbr_id}>' title='<{$smarty.const._UNACTIVATE}>'><{$smarty.const._CO_TROMBINOSCOPE_UNACTIVATE}></a>             
+                <a class='btn btn-danger right' href='members.php?op=change_etat&field=mbr_actif&mbr_id=<{$member.mbr_id}>' title='<{$smarty.const._CO_TROMBINOSCOPE_UNACTIVATE}>'><{$smarty.const._CO_TROMBINOSCOPE_UNACTIVATE}></a>             
             <{else}>
             <{/if}>
             <{*

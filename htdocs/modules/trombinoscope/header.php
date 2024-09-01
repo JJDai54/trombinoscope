@@ -32,6 +32,8 @@ $xoBreadcrumbs = [];
 $helper = \XoopsModules\Trombinoscope\Helper::getInstance();
 $membersHandler = $helper->getHandler('Members');
 $categoriesHandler = $helper->getHandler('Categories');
+$qualitiesHandler = $helper->getHandler('Qualities');
+
 // 
 $myts = MyTextSanitizer::getInstance();
 // Default Css Style
