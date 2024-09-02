@@ -47,7 +47,7 @@ $adminmenu[] = [
 $adminmenu[] = [
     'title' => \_MI_TROMBINOSCOPE_ADMENU7,
     'link' => 'admin/qualities.php',
-    'icon' => 'assets/icons/32/attach.png',
+    'icon' => $sysPathIcon32 . '/attach.png',
 ];
 $adminmenu[] = [
     'title' => \_MI_TROMBINOSCOPE_ADMENU6,

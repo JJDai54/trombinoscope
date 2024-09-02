@@ -92,5 +92,6 @@ define('_MI_TROMBINOSCOPE_SMNAME5', "Submit Categories");
 define('_MI_TROMBINOSCOPE_TABLE_TYPE', "Table Type");
 define('_MI_TROMBINOSCOPE_USER_PAGER', "User pager");
 define('_MI_TROMBINOSCOPE_USER_PAGER_DESC', "User per page list");
+define('_MI_TROMBINOSCOPE_QUALITY_SHOPKEEPER', "Shopkeeper");
 
 ?>

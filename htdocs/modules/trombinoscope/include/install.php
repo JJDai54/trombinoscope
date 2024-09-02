@@ -109,11 +109,12 @@ INSERT INTO `"  . $GLOBALS['xoopsDB']->prefix('trombinoscope_categories') . "` (
 INSERT INTO `"  . $GLOBALS['xoopsDB']->prefix('trombinoscope_qualities') . "` (`quality_id`, `quality_name`, `quality_weight`) VALUES
 (1, '" . _MI_TROMBINOSCOPE_QUALITY_HOMME . "', 10),
 (2, '" . _MI_TROMBINOSCOPE_QUALITY_FEMME . "', 20),
-(3, '" . _MI_TROMBINOSCOPE_QUALITY_ASSOCIATION . "', 30),
-(4, '" . _MI_TROMBINOSCOPE_QUALITY_SOCIETE . "', 40),
-(5, '" . _MI_TROMBINOSCOPE_QUALITY_COLLECTIVITE . "', 50),
-(6, '" . _MI_TROMBINOSCOPE_QUALITY_MUNICIPALITE . "', 60),
-(7, '" . _MI_TROMBINOSCOPE_QUALITY_AUTRE . "', 100);";
+(3, '" . _MI_TROMBINOSCOPE_QUALITY_AUTRE . "', 100),
+(4, '" . _MI_TROMBINOSCOPE_QUALITY_ASSOCIATION . "', 30),
+(5, '" . _MI_TROMBINOSCOPE_QUALITY_SOCIETE . "', 40),
+(6, '" . _MI_TROMBINOSCOPE_QUALITY_COLLECTIVITE . "', 50),
+(7, '" . _MI_TROMBINOSCOPE_QUALITY_MUNICIPALITE . "', 60)
+(7, '" . _MI_TROMBINOSCOPE_QUALITY_SHOPKEEPER . "', 70);";
 
     // Execute the query using the XOOPS database handler
     $GLOBALS['xoopsDB']->queryF($sql);

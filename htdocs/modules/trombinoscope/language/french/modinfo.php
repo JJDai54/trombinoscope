@@ -92,5 +92,7 @@ define('_MI_TROMBINOSCOPE_SMNAME5', "Soumettre les catégories");
 define('_MI_TROMBINOSCOPE_TABLE_TYPE', "Type de table");
 define('_MI_TROMBINOSCOPE_USER_PAGER', "Pagination utilisateur");
 define('_MI_TROMBINOSCOPE_USER_PAGER_DESC', "Nombre de lignes par page");
+define('_MI_TROMBINOSCOPE_QUALITY_SHOPKEEPER', "Commerçant");
+
 
 ?>
