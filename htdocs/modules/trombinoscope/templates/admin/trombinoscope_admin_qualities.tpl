@@ -5,9 +5,9 @@
     <table class='table table-bordered'>
         <thead>
             <tr class='head'>
-                <th class="center"><{$smarty.const._AM_TROMBINOSCOPE_QUALITY_ID}></th>
-                <th class="center"><{$smarty.const._AM_TROMBINOSCOPE_QUALITY_NAME}></th>
-                <th class="center"><{$smarty.const._AM_TROMBINOSCOPE_QUALITY_WEIGHT}></th>
+                <th class="center"><{$smarty.const._AM_TROMBINOSCOPE_ID}></th>
+                <th class="center"><{$smarty.const._AM_TROMBINOSCOPE_NAME}></th>
+                <th class="center"><{$smarty.const._AM_TROMBINOSCOPE_WEIGHT}></th>
 
                 <th class="center width5"><{$smarty.const._CO_TROMBINOSCOPE_FORM_ACTION}></th>
             </tr>

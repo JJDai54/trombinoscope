@@ -10,7 +10,7 @@
     <span class='col-sm-9 justify'><{$member.firstname}></span>
     <span class='col-sm-9 justify'><{$member.lastname}></span>
     <span class='col-sm-9 justify'><{$member.fonctions}></span>
-    <span class='col-sm-3'><img src='<{$trombinoscope_upload_url|default:false}>/images/members/<{$member.photo}>' alt='members' ></span>
+    <span class='col-sm-3'><img src='<{$trombinoscope_upload_url|default:false}>/images/members/<{$member.photo}>' photos alt='members' ></span>
     <span class='col-sm-9 justify'><{$member.birthday}></span>
     <span class='col-sm-9 justify'><{$member.email}></span>
     <span class='col-sm-9 justify'><{$member.fixe}></span>

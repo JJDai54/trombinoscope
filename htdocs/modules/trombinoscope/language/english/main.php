@@ -20,48 +20,45 @@
  * @version {version}
  * Traduction:  
  */
+ 
+defined( 'XOOPS_ROOT_PATH' ) or die( 'Accès restreint' );
 
-defined( 'XOOPS_ROOT_PATH' ) or die( 'Restricted access' );
-
-define('_MA_TROMBINOSCOPE_INDEX', "Group Photo Overview");
-define('_MA_TROMBINOSCOPE_TITLE', "Group Photo");
-define('_MA_TROMBINOSCOPE_DESC', "Module for presenting a Group Photo, and for tracking birthdays");
-define('_MA_TROMBINOSCOPE_INDEX_DESC', "Welcome to the homepage of your new Trombinoscope (Group Photo) module!<br>
-
-
-As you can see, you have created a page with a list of links at the top to navigate between the pages of your module. This description is only visible on the homepage of this module, the other pages you will see the content you created when you built this module with the module ModuleBuilder, and after creating new content in admin of this module. In order to expand this module with other resources, just add the code you need to extend the functionality of the same. The files are grouped by type, from the header to the footer to see how divided the source code.<br><br>If you see this message, it is because you have not created content for this module. Once you have created any type of content, you will not see this message.<br><br>If you liked the module ModuleBuilder and thanks to the long process for giving the opportunity to the new module to be created in a moment, consider making a donation to keep the module ModuleBuilder and make a donation using this button <a href='https://xoops.org/modules/xdonations/index.php' title='Donation To Txmod Xoops'><img src=' https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif' alt='Button Donations' ></a><br>Thanks!<br><br>Use the link below to go to the admin and create content.");
-define('_MA_TROMBINOSCOPE_DETAILS', "Show details");
-define('_MA_TROMBINOSCOPE_MEMBER', "Member");
-define('_MA_TROMBINOSCOPE_MEMBER_ADD', "Add Member");
-define('_MA_TROMBINOSCOPE_MEMBER_EDIT', "Edit Member");
-define('_MA_TROMBINOSCOPE_MEMBER_DELETE', "Delete Member");
-define('_MA_TROMBINOSCOPE_MEMBER_CLONE', "Clone Member");
-define('_MA_TROMBINOSCOPE_MEMBERS', "Members");
-define('_MA_TROMBINOSCOPE_MEMBERS_LIST', "List of Members");
-define('_MA_TROMBINOSCOPE_MEMBERS_TITLE', "Members title");
-define('_MA_TROMBINOSCOPE_MEMBERS_DESC', "Members description");
-define('_MA_TROMBINOSCOPE_MEMBER_FONCTION', "Function");
-define('_MA_TROMBINOSCOPE_MEMBER_BIRTHDAY', "Birthday");
-define('_MA_TROMBINOSCOPE_MEMBER_EMAIL', "Email");
-define('_MA_TROMBINOSCOPE_MEMBER_FIXED', "Fixed");
-define('_MA_TROMBINOSCOPE_MEMBER_MOBILE', "Mobile");
-define('_MA_TROMBINOSCOPE_MEMBER_STATUS', "Status");
-define('_MA_TROMBINOSCOPE_MEMBER_COMMENTS', "Comments");
-define('_MA_TROMBINOSCOPE_MEMBER_ACTIF', "Active");
-define('_MA_TROMBINOSCOPE_CATEGORY', "Category");
-define('_MA_TROMBINOSCOPE_CATEGORY_ADD', "Add Category");
-define('_MA_TROMBINOSCOPE_CATEGORY_EDIT', "Edit Category");
-define('_MA_TROMBINOSCOPE_CATEGORY_DELETE', "Delete Category");
-define('_MA_TROMBINOSCOPE_CATEGORY_CLONE', "Clone Category");
+define('_MA_TROMBINOSCOPE_ADMIN', "Admin");
 define('_MA_TROMBINOSCOPE_CATEGORIES', "Categories");
+define('_MA_TROMBINOSCOPE_CATEGORIES_DESC', "Categories description");
 define('_MA_TROMBINOSCOPE_CATEGORIES_LIST', "List of Categories");
 define('_MA_TROMBINOSCOPE_CATEGORIES_TITLE', "Categories title");
-define('_MA_TROMBINOSCOPE_CATEGORIES_DESC', "Categories description");
-define('_MA_TROMBINOSCOPE_FORM_OK', "Successfully saved");
+define('_MA_TROMBINOSCOPE_CATEGORY_ADD', "Add Category");
+define('_MA_TROMBINOSCOPE_CATEGORY_CLONE', "Clone Category");
+define('_MA_TROMBINOSCOPE_CATEGORY_DELETE', "Delete Category");
+define('_MA_TROMBINOSCOPE_CATEGORY_EDIT', "Edit Category");
+define('_MA_TROMBINOSCOPE_DESC', "Module for presenting a Group Photo, and for tracking birthdays");
+define('_MA_TROMBINOSCOPE_DETAILS', "Show details");
 define('_MA_TROMBINOSCOPE_FORM_DELETE_OK', "Successfully deleted");
+define('_MA_TROMBINOSCOPE_FORM_OK', "Successfully saved");
 define('_MA_TROMBINOSCOPE_FORM_SURE_DELETE', "Are you sure to delete: <b><span style='color: Red;'>%s </span></b>");
-define('_MA_TROMBINOSCOPE_INVALID_PARAM', "Invalid parameter");
-define('_MA_TROMBINOSCOPE_ADMIN', "Admin");
-define('_MA_TROMBINOSCOPE_INDEX_THEREARE', "There are %s events");
+define('_MA_TROMBINOSCOPE_INDEX', "Group Photo Overview");
+define('_MA_TROMBINOSCOPE_INDEX_DESC', "Welcome to the homepage of your new Trombinoscope (Group Photo) module!<br>
+As you can see, you have created a page with a list of links at the top to navigate between the pages of your module. This description is only visible on the homepage of this module, the other pages you will see the content you created when you built this module with the module ModuleBuilder, and after creating new content in admin of this module. In order to expand this module with other resources, just add the code you need to extend the functionality of the same. The files are grouped by type, from the header to the footer to see how divided the source code.<br><br>If you see this message, it is because you have not created content for this module. Once you have created any type of content, you will not see this message.<br><br>If you liked the module ModuleBuilder and thanks to the long process for giving the opportunity to the new module to be created in a moment, consider making a donation to keep the module ModuleBuilder and make a donation using this button <a href='https://xoops.org/modules/xdonations/index.php' title='Donation To Txmod Xoops'><img src=' https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif' alt='Button Donations' ></a><br>Thanks!<br><br>Use the link below to go to the admin and create content.");
 define('_MA_TROMBINOSCOPE_INDEX_LATEST_LIST', "Last Group Photo");
+define('_MA_TROMBINOSCOPE_INDEX_THEREARE', "There are %s events");
+define('_MA_TROMBINOSCOPE_INVALID_PARAM', "Invalid parameter");
+define('_MA_TROMBINOSCOPE_LIST_OF', "List of");
+define('_MA_TROMBINOSCOPE_MEMBER_ACTIF', "Active");
+define('_MA_TROMBINOSCOPE_MEMBER_ADD', "Add Member");
+define('_MA_TROMBINOSCOPE_MEMBER_BIRTHDAY', "Birthday");
+define('_MA_TROMBINOSCOPE_MEMBER_CLONE', "Clone Member");
+define('_MA_TROMBINOSCOPE_MEMBER_COMMENTS', "Comments");
+define('_MA_TROMBINOSCOPE_MEMBER_DELETE', "Delete Member");
+define('_MA_TROMBINOSCOPE_MEMBER_EDIT', "Edit Member");
+define('_MA_TROMBINOSCOPE_MEMBER_EMAIL', "Email");
+define('_MA_TROMBINOSCOPE_MEMBER_FIXE', "Fixed");
 define('_MA_TROMBINOSCOPE_MEMBER_FONCTIONS', "Functions");
+define('_MA_TROMBINOSCOPE_MEMBER_MOBILE', "Mobile");
+define('_MA_TROMBINOSCOPE_MEMBER_STATUS', "Status");
+define('_MA_TROMBINOSCOPE_MEMBERS', "Members");
+define('_MA_TROMBINOSCOPE_MEMBERS_DESC', "Members description");
+define('_MA_TROMBINOSCOPE_MEMBERS_TITLE', "Members title");
+define('_MA_TROMBINOSCOPE_TITLE', "Group Photo");
+
+?>

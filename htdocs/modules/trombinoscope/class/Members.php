@@ -211,7 +211,7 @@ class Members extends \XoopsObject
         // Form Select mbrStatus
         $mbrStatusSelect = new \XoopsFormSelect(_CO_TROMBINOSCOPE_MEMBER_STATUS, 'mbr_status', $this->getVar('mbr_status'), 5);
         $mbrStatusSelect->addOption('0', \_NONE);
-        $mbrStatusSelect->addOption('1', _AM_TROMBINOSCOPE_LIST_1);
+        $mbrStatusSelect->addOption('1', _CO_TROMBINOSCOPE_QUALITY);
         $mbrStatusSelect->addOption('2', _AM_TROMBINOSCOPE_LIST_2);
         $mbrStatusSelect->addOption('3', _AM_TROMBINOSCOPE_LIST_3);
         $form->addElement($mbrStatusSelect, true);

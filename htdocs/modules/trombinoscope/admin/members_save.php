@@ -90,7 +90,9 @@ $mbrId = Request::getInt('mbr_id');
                 $maxheight = (int)$helper->getConfig('maxheight_image');
                 if ($maxwidth > 0 && $maxheight > 0) {
                     // Resize image
-                    $imgHandler                = new Trombinoscope\Common\Resizer();
+include_once XOOPS_ROOT_PATH . "/Frameworks/janus/Goffy/class/Resizer.php";     
+               
+                    $imgHandler                = new Resizer();
                     $imgHandler->sourceFile    = \TROMBINOSCOPE_UPLOAD_IMAGE_PATH . '/members/' . $savedFilename;
                     $imgHandler->endFile       = \TROMBINOSCOPE_UPLOAD_IMAGE_PATH . '/members/' . $savedFilename;
                     $imgHandler->imageMimetype = $imgMimetype;
@@ -129,16 +131,7 @@ $mbrId = Request::getInt('mbr_id');
                   \redirect_header('members.php?op=edit&mbr_id=' . $mbrId, 5, $uploaderErrors);
             } else {
                 $contexte = "cat_id={$catId}&quality_id={$qualityId}&quality_actif={$actif}&start={$start}&limit={$limit}";
-                if ($office == "frontoffice")
-                {
-                  \redirect_header("members.php?op=list&mbr_id={$mbrId}&" . $contexte , 2, _AM_TROMBINOSCOPE_FORM_OK);
-                }else{
-                  \redirect_header("members.php?op=list&" .$contexte , 2, _AM_TROMBINOSCOPE_FORM_OK);
-                  
-
-                  //\redirect_header('members.php?op=list&amp;start=' . $start . '&amp;limit=' . $limit, 2, _AM_TROMBINOSCOPE_FORM_OK);
-                }
-
+                \redirect_header("members.php?op=list&" .$contexte , 2, _CO_TROMBINOSCOPE_FORM_OK);
             }
         }
 

@@ -45,7 +45,7 @@ switch ($op) {
         $GLOBALS['xoTheme']->addStylesheet($style, null);
         $templateMain = 'trombinoscope_admin_qualities.tpl';
         $GLOBALS['xoopsTpl']->assign('navigation', $adminObject->displayNavigation('qualities.php'));
-        $adminObject->addItemButton(_AM_TROMBINOSCOPE_ADD_QUALITY, 'qualities.php?op=new', 'add');
+        $adminObject->addItemButton(_CO_TROMBINOSCOPE_QUALITY_ADD, 'qualities.php?op=new', 'add');
         $GLOBALS['xoopsTpl']->assign('buttons', $adminObject->displayButton('left'));
         $qualitiesCount = $qualitiesHandler->getCountQualities();
         $qualitiesAll = $qualitiesHandler->getAllQualities($start, $limit);
@@ -72,7 +72,7 @@ switch ($op) {
     case 'new':
         $templateMain = 'trombinoscope_admin_qualities.tpl';
         $GLOBALS['xoopsTpl']->assign('navigation', $adminObject->displayNavigation('qualities.php'));
-        $adminObject->addItemButton(_AM_TROMBINOSCOPE_LIST_QUALITIES, 'qualities.php', 'list');
+        $adminObject->addItemButton(_AM_TROMBINOSCOPE_QUALITIES_LIST, 'qualities.php', 'list');
         $GLOBALS['xoopsTpl']->assign('buttons', $adminObject->displayButton('left'));
         // Form Create
         $qualitiesObj = $qualitiesHandler->create();
@@ -83,8 +83,8 @@ switch ($op) {
     case 'clone':
         $templateMain = 'trombinoscope_admin_qualities.tpl';
         $GLOBALS['xoopsTpl']->assign('navigation', $adminObject->displayNavigation('qualities.php'));
-        $adminObject->addItemButton(_AM_TROMBINOSCOPE_LIST_QUALITIES, 'qualities.php', 'list');
-        $adminObject->addItemButton(_AM_TROMBINOSCOPE_ADD_QUALITY, 'qualities.php?op=new', 'add');
+        $adminObject->addItemButton(_AM_TROMBINOSCOPE_QUALITIES_LIST, 'qualities.php', 'list');
+        $adminObject->addItemButton(_CO_TROMBINOSCOPE_QUALITY_ADD, 'qualities.php?op=new', 'add');
         $GLOBALS['xoopsTpl']->assign('buttons', $adminObject->displayButton('left'));
         // Request source
         $qualityIdSource = Request::getInt('quality_id_source');
@@ -120,8 +120,8 @@ switch ($op) {
     case 'edit':
         $templateMain = 'trombinoscope_admin_qualities.tpl';
         $GLOBALS['xoopsTpl']->assign('navigation', $adminObject->displayNavigation('qualities.php'));
-        $adminObject->addItemButton(_AM_TROMBINOSCOPE_ADD_QUALITY, 'qualities.php?op=new', 'add');
-        $adminObject->addItemButton(_AM_TROMBINOSCOPE_LIST_QUALITIES, 'qualities.php', 'list');
+        $adminObject->addItemButton(_CO_TROMBINOSCOPE_QUALITY_ADD, 'qualities.php?op=new', 'add');
+        $adminObject->addItemButton(_AM_TROMBINOSCOPE_QUALITIES_LIST, 'qualities.php', 'list');
         $GLOBALS['xoopsTpl']->assign('buttons', $adminObject->displayButton('left'));
         // Get Form
         $qualitiesObj = $qualitiesHandler->get($qualityId);

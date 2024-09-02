@@ -44,6 +44,7 @@ $GLOBALS['xoopsTpl']->assign('limit', $limit);
 //  echo "<hr>_GET/_POST<pre>" . print_r($gp, true) . "</pre><hr>";
 
 //----------------------------------------------------
+$office = 0;
 
 switch ($op) {
     case 'list':
@@ -52,93 +53,28 @@ switch ($op) {
         $GLOBALS['xoTheme']->addStylesheet($style, null);
         $templateMain = 'trombinoscope_admin_members.tpl';
         $GLOBALS['xoopsTpl']->assign('navigation', $adminObject->displayNavigation('members.php'));
-        $adminObject->addItemButton(_AM_TROMBINOSCOPE_ADD_MEMBER, 'members.php?op=new', 'add');
+        $adminObject->addItemButton(_CO_TROMBINOSCOPE_MEMBER_ADD, 'members.php?op=new', 'add');
         $GLOBALS['xoopsTpl']->assign('buttons', $adminObject->displayButton('left'));
-        
-        //-----------------------------------
-        $qualitiesList = $qualitiesHandler->getList();
-       // ----- /Listes de selection pour filtrage -----        
-        $filters = array();
-  //echo "<hr>Categories<pre>" . print_r($categoriesHandler->getList(), true) . "</pre><hr>";
-        $inpCat = new \XoopsFormSelect(_AM_TROMBINOSCOPE_CATEGORY, 'cat_id', $catId);
-        $inpCat->addOption(0, _AM_TROMBINOSCOPE_ALL);
-        $inpCat->addOptionArray($categoriesHandler->getList());
-        $inpCat->setExtra('onchange="document.trombinoscope_filter.submit();"');
-        $filters['categories']['input'] = $inpCat->render();
-        $filters['categories']['caption'] = _AM_TROMBINOSCOPE_CATEGORY;
-        
-        $inpQuality = new \XoopsFormSelect(_AM_TROMBINOSCOPE_QUALITY, 'quality_id', $qualityId);
-        $inpQuality->addOption(0, _AM_TROMBINOSCOPE_ALL);
-        $inpQuality->addOptionArray($qualitiesList);        
-        $inpQuality->setExtra('onchange="document.trombinoscope_filter.submit();"');
-        $filters['qualities']['input'] = $inpQuality->render();
-        $filters['qualities']['caption'] = _AM_TROMBINOSCOPE_QUALITY;
-        
-        $inpActif = new \XoopsFormSelect(_AM_TROMBINOSCOPE_ACTIF, 'mbr_actif', $actif);
-        $inpActif->addOption(0, _AM_TROMBINOSCOPE_ALL);
-        $inpActif->addOption(1, _NO);
-        $inpActif->addOption(2, _YES);
-        $inpActif->setExtra('onchange="document.trombinoscope_filter.submit();"');
-        $filters['actif']['input'] = $inpActif->render();
-        $filters['actif']['caption'] = _AM_TROMBINOSCOPE_ACTIF;
-
-  	    $GLOBALS['xoopsTpl']->assign('filters', $filters);
-        
-
-        //-----------------------------------
-        $criteria = new \CriteriaCompo();
-        if($catId > 0) $criteria->add(new \Criteria('mbr_cat_id', $catId,'='));
-        if($qualityId > 0) $criteria->add(new \Criteria('mbr_quality_id', $qualityId,'='));
-        if($actif > 0) $criteria->add(new \Criteria('mbr_actif', $actif-1,'='));
-        
-        
-        
-        $membersCount = $membersHandler->getCountMembers($criteria);
-        $membersAll = $membersHandler->getAllMembers($criteria, $start, $limit, 'mbr_firstname,mbr_lastname,mbr_id');
-        $GLOBALS['xoopsTpl']->assign('members_count', $membersCount);
-        $GLOBALS['xoopsTpl']->assign('trombinoscope_url', \TROMBINOSCOPE_URL);
-        $GLOBALS['xoopsTpl']->assign('trombinoscope_upload_url', \TROMBINOSCOPE_UPLOAD_URL);
-        
- //echoArray($qualitiesList);       
-        
-        // Table view members
-        if ($membersCount > 0) {
-            foreach (\array_keys($membersAll) as $i) {
-                $member = $membersAll[$i]->getValuesMembers();
-                $member['quality'] = $qualitiesList[$member['mbr_quality_id']];
-                
-                $GLOBALS['xoopsTpl']->append('members_list', $member);
-                unset($member);
-            }
-            // Display Navigation
-            if ($membersCount > $limit) {
-                require_once \XOOPS_ROOT_PATH . '/class/pagenav.php';
-                $pagenav = new \XoopsPageNav($membersCount, $limit, $start, 'start', 'op=list&limit=' . $limit);
-                $GLOBALS['xoopsTpl']->assign('pagenav', $pagenav->renderNav(4));
-            }
-        } else {
-            $GLOBALS['xoopsTpl']->assign('error', _AM_TROMBINOSCOPE_THEREARENT_MEMBERS);
-        }
+    
+        $templateMain = 'trombinoscope_admin_members.tpl';
+        include_once 'members_list.php';
         break;
+        
         
     case 'new':
         $templateMain = 'trombinoscope_admin_members.tpl';
         $GLOBALS['xoopsTpl']->assign('navigation', $adminObject->displayNavigation('members.php'));
-        $adminObject->addItemButton(_AM_TROMBINOSCOPE_LIST_MEMBERS, 'members.php', 'list');
+        $adminObject->addItemButton(_AM_TROMBINOSCOPE_MEMBERS_LIST, 'members.php', 'list');
         $GLOBALS['xoopsTpl']->assign('buttons', $adminObject->displayButton('left'));
         // Form Create
-        $membersObj = $membersHandler->create();
-        $membersObj->setVar('mbr_cat_id', $categoriesHandler->getDefault());
-        $membersObj->setVar('mbr_submitter', $xoopsUser->uid());
-        $form = $membersObj->getFormMembers();
-        $GLOBALS['xoopsTpl']->assign('form', $form->render());
+        include_once 'members_new.php';
         break;
         
     case 'clone':
         $templateMain = 'trombinoscope_admin_members.tpl';
         $GLOBALS['xoopsTpl']->assign('navigation', $adminObject->displayNavigation('members.php'));
-        $adminObject->addItemButton(_AM_TROMBINOSCOPE_LIST_MEMBERS, 'members.php', 'list');
-        $adminObject->addItemButton(_AM_TROMBINOSCOPE_ADD_MEMBER, 'members.php?op=new', 'add');
+        $adminObject->addItemButton(_AM_TROMBINOSCOPE_MEMBERS_LIST, 'members.php', 'list');
+        $adminObject->addItemButton(_AM_TROMBINOSCOPE_MEMBER_ADD, 'members.php?op=new', 'add');
         $GLOBALS['xoopsTpl']->assign('buttons', $adminObject->displayButton('left'));
         // Request source
         $mbrIdSource = Request::getInt('mbr_id_source');
@@ -156,16 +92,7 @@ switch ($op) {
         
     case 'edit':
         $templateMain = 'trombinoscope_admin_members.tpl';
-        $GLOBALS['xoopsTpl']->assign('navigation', $adminObject->displayNavigation('members.php'));
-        $adminObject->addItemButton(_AM_TROMBINOSCOPE_ADD_MEMBER, 'members.php?op=new', 'add');
-        $adminObject->addItemButton(_AM_TROMBINOSCOPE_LIST_MEMBERS, 'members.php', 'list');
-        $GLOBALS['xoopsTpl']->assign('buttons', $adminObject->displayButton('left'));
-        // Get Form
-        $membersObj = $membersHandler->get($mbrId);
-        $membersObj->start = $start;
-        $membersObj->limit = $limit;
-        $form = $membersObj->getFormMembers();
-        $GLOBALS['xoopsTpl']->assign('form', $form->render());
+        include_once 'members_edit.php';
         break;
         
     case 'delete':

@@ -49,5 +49,7 @@ $modPathIcon32 = $GLOBALS['xoopsModule']->getInfo('modicons16');
 \xoops_loadLanguage('modinfo');
 \xoops_loadLanguage('common', $moduleDirName);
 
+$style = \TROMBINOSCOPE_URL . '/assets/css/style.css';
+//$GLOBALS['xoTheme']->addStylesheet($style, null);
 //$xoTheme->addScript(XOOPS_URL . '/Frameworks/trierTableauHTML/trierTableau.js');
 include_once (XOOPS_ROOT_PATH . "/Frameworks/janus/back_office.php");

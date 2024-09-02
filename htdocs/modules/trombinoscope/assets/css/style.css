@@ -40,3 +40,35 @@ ul.menu > li + li:before {
 img {
     max-width: 300px;
 }
+
+img[photos]{
+    width:150px;
+    box-shadow: 5px 5px 5px grey;
+  -moz-border-radius: 8px 8px 8px 8px;
+  -webkit-border-radius: 8px 8px 8px 8px;
+  -khtml-border-radius: 8px 8px 8px 8px;
+  border-radius: 8px 8px 8px 8px;
+    opacity:0.8;
+    filter:alpha(opacity=80);
+    padding:0px;
+    background-color:transparent;
+}
+img[photos]:hover{
+
+    opacity:1;
+    filter:alpha(opacity=100);
+}
+
+table[noborder]{
+    border: 0px solid red;
+}
+table[noborder] td{
+    border: 0px solid red;
+}
+div[photos]{
+ background-color: transparent;
+  -moz-border-radius: 8px 8px 8px 8px;
+  -webkit-border-radius: 8px 8px 8px 8px;
+  -khtml-border-radius: 8px 8px 8px 8px;
+  border-radius: 8px 8px 8px 8px;
+}

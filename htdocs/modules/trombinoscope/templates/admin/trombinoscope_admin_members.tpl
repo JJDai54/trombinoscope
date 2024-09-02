@@ -16,7 +16,7 @@
             <tr class='head'>
                 <th class="center"><{$smarty.const._CO_TROMBINOSCOPE_MEMBER_ID}></th>
                 <th class="center"><{$smarty.const._CO_TROMBINOSCOPE_MEMBER_CAT_ID}></th>
-                <th class="center"><{$smarty.const._CO_TROMBINOSCOPE_MEMBER_UID}></th>
+                <th class="center"><{$smarty.const._CO_TROMBINOSCOPE_MEMBER_PSEUDO}></th>
                 <th class="center"><{$smarty.const._CO_TROMBINOSCOPE_MEMBER_CIVILITE}></th>
                 <th class="center"><{$smarty.const._CO_TROMBINOSCOPE_MEMBER_FIRSTNAME}></th>
                 <th class="center"><{$smarty.const._CO_TROMBINOSCOPE_MEMBER_LASTNAME}></th>
@@ -26,14 +26,14 @@
                 <th class="center"><{$smarty.const._CO_TROMBINOSCOPE_MEMBER_BIRTHDAY}></th>
                 <th class="center"><{$smarty.const._CO_TROMBINOSCOPE_MEMBER_EMAIL}></th>
                 <th class="center"><{$smarty.const._CO_TROMBINOSCOPE_MEMBER_TEL}></th>
-                <th class="center"><{$smarty.const._CO_TROMBINOSCOPE_MEMBER_STATUS}></th>
+                <{* <th class="center"><{$smarty.const._CO_TROMBINOSCOPE_MEMBER_STATUS}></th> *}>
                 <{* <th class="center"><{$smarty.const._CO_TROMBINOSCOPE_MEMBER_COMMENTS}></th> *}>
                 <th class="center"><{$smarty.const._CO_TROMBINOSCOPE_MEMBER_ACTIF}></th>
                 <th class="center"><{$smarty.const._CO_TROMBINOSCOPE_MEMBER_CREATION}></th>
                 <th class="center width5"><{$smarty.const._CO_TROMBINOSCOPE_FORM_ACTION}></th>
             </tr>
         </thead>
-        <{if $members_count|default:''}>
+        <{if $membersCount|default:''}>
         <tbody>
             <{foreach item=member from=$members_list}>
             <tr class='<{cycle values='odd, even'}>'>
@@ -67,17 +67,17 @@
                 <td class='left'><{$member.fonctionsTA}></td>
                 <td class='center'><{$member.birthday}></td>
                 <td class='left'><{$member.email}></td>
-                <td class='center'><{$member.fixe}><br><{$member.mobile}></td>
-                <td class='left'><{$member.status}></td>
+                <td class='center width10'><{$member.fixe}><br><{$member.mobile}></td>
+                <{* <td class='left'><{$member.status}></td> *}>
                 <{* <td class='left'><{$member.comments_short}></td> *}>
                 <td class='center'>
                     <div style='visibility:hidden;'><{$member.mbr_actif}></div>
                     <a href="members.php?op=change_etat&cat_id=<{$member.cat_id}>&mbr_id=<{$member.id}>&field=mbr_actif" >
-                        <img src="<{xoModuleIcons16}><{$member.mbr_actif}>.png" alt="member" title='<{$smarty.const._AM_TROMBINOSCOPER_IS_ACTIF}>' />
+                        <img src="<{xoModuleIcons16}><{$member.mbr_actif}>.png" alt="member" title='<{$smarty.const._AM_TROMBINOSCOPE_ACTIVATE_DESACTIVATE}>' />
                         </a>
                 
                 </td>
-                <td class='center'><{$member.creation}><br><{$member.update}></td>
+                <td class='center width10'><{$member.creation}><br><{$member.update}></td>
                 <td class="center  width5">
                     <a href="members.php?op=edit&amp;mbr_id=<{$member.id}>&amp;start=<{$start}>&amp;limit=<{$limit}>" title="<{$smarty.const._EDIT}>"><img src="<{xoModuleIcons16}>/edit.png" alt="<{$smarty.const._EDIT}> members" ></a>
                     <a href="members.php?op=clone&amp;mbr_id_source=<{$member.id}>" title="<{$smarty.const._CLONE}>"><img src="<{xoModuleIcons16}>/editcopy.png" alt="<{$smarty.const._CLONE}> members" ></a>

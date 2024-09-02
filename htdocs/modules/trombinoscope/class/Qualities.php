@@ -98,11 +98,11 @@ class Qualities extends \XoopsObject
         if($isNew){
           // Title
           $qualityId = 0;
-          $title = _AM_TROMBINOSCOPE_QUALITY_ADD ;
+          $title = _CO_TROMBINOSCOPE_QUALITY_ADD ;
         }else{
         // Title
           $qualityId = $this->getVar('quality_id');
-          $title = _AM_TROMBINOSCOPE_QUALITY_EDIT;
+          $title = _CO_TROMBINOSCOPE_QUALITY_EDIT;
         }
         
 
@@ -113,10 +113,10 @@ class Qualities extends \XoopsObject
         //-------------------------------
   //exit("qualityId = {$qualityId}")      ;
         // Form Text quality_name
-        $form->addElement(new \XoopsFormText(_AM_TROMBINOSCOPE_QUALITY_NAME, 'quality_name', 50, 255, $this->getVar('quality_name')), true);
+        $form->addElement(new \XoopsFormText(_AM_TROMBINOSCOPE_NAME, 'quality_name', 50, 255, $this->getVar('quality_name')), true);
         // Form Text quality_weight
         $qualityWeight = $this->isNew() ? '0' : $this->getVar('quality_weight');
-        $form->addElement(new \XoopsFormText(_AM_TROMBINOSCOPE_QUALITY_WEIGHT, 'quality_weight', 20, 150, $qualityWeight));
+        $form->addElement(new \XoopsFormText(_AM_TROMBINOSCOPE_WEIGHT, 'quality_weight', 20, 150, $qualityWeight));
 
         // To Save
         $form->addElement(new \XoopsFormHidden('op', 'save'));

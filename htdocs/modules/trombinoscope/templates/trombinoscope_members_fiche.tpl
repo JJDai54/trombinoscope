@@ -11,10 +11,10 @@ span.title{
 <div class='panel-heading'>
 </div>
 
-<table>
+<table noborder>
     <tr>
         <td>
-            <img src='<{$trombinoscope_upload_url|default:false}>/images/members/<{$member.photo}>' alt='members' width="150px">
+            <img src='<{$trombinoscope_upload_url|default:false}>/images/members/<{$member.photo}>' photos alt='members'>
         </td>
         <td>
 <div class='panel-body'>
@@ -54,21 +54,22 @@ span.title{
     <{* <span class='block-pie justify'><{$smarty.const._MA_TROMBINOSCOPE_MEMBER_EMAIL}>: <{$member.email}></span> *}>
     <div class='col-sm-12 right'>
         <{if $showItem|default:''}>
-            <a class='btn btn-success right' href='members.php?op=list&cat_id=<{$member.mbr_cat_id}>&amp;start=<{$start}>&amp;limit=<{$limit}>#mbrId_<{$member.mbr_id}>' title='<{$smarty.const._MA_TROMBINOSCOPE_MEMBERS_LIST}>'><{$smarty.const._MA_TROMBINOSCOPE_MEMBERS_LIST}></a>
+            <a class='btn btn-success right' href='members.php?op=list&cat_id=<{$member.mbr_cat_id}>&amp;start=<{$start}>&amp;limit=<{$limit}>#mbrId_<{$member.mbr_id}>' title=''><{$smarty.const._MA_TROMBINOSCOPE_LIST_OF}>&nbsp;<{$member.cat_name}></a>
         <{else}>
-            <a class='btn btn-success right' href='members.php?op=show&amp;mbr_id=<{$member.mbr_id}>&amp;start=<{$start}>&amp;limit=<{$limit}>' title='<{$smarty.const._MA_TROMBINOSCOPE_DETAILS}>'><{$smarty.const._MA_TROMBINOSCOPE_DETAILS}></a>
+            <a class='btn btn-success right' href='members.php?op=show&amp;mbr_id=<{$member.mbr_id}>&amp;start=<{$start}>&amp;limit=<{$limit}>' title=''><{$smarty.const._MA_TROMBINOSCOPE_DETAILS}></a>
         <{/if}>
         <{if $permEdit|default:''}>
-            <a class='btn btn-primary right' href='members.php?op=edit&amp;mbr_id=<{$member.mbr_id}>&amp;start=<{$start}>&amp;limit=<{$limit}>' title='<{$smarty.const._EDIT}>'><{$smarty.const._EDIT}></a>
+            <a class='btn btn-primary right' href='members.php?op=edit&amp;mbr_id=<{$member.mbr_id}>&amp;start=<{$start}>&amp;limit=<{$limit}>' title=''><{$smarty.const._EDIT}></a>
             <{* on ne clone pas encore les humains :-)
-            <a class='btn btn-primary right' href='members.php?op=clone&amp;mbr_id_source=<{$member.mbr_id}>' title='<{$smarty.const._CLONE}>'><{$smarty.const._CLONE}></a>
+            <a class='btn btn-primary right' href='members.php?op=clone&amp;mbr_id_source=<{$member.mbr_id}>' title=''><{$smarty.const._CLONE}></a>
             *}>
-            <{if $member.actif == 1 || $member.actif}>
-                <a class='btn btn-danger right' href='members.php?op=change_etat&field=mbr_actif&mbr_id=<{$member.mbr_id}>' title='<{$smarty.const._CO_TROMBINOSCOPE_UNACTIVATE}>'><{$smarty.const._CO_TROMBINOSCOPE_UNACTIVATE}></a>             
+            <{if $member.mbr_actif == 1 }>
+                <a class='btn btn-danger right' href='members.php?op=change_etat&field=mbr_actif&mbr_id=<{$member.mbr_id}>' title=''><{$smarty.const._CO_TROMBINOSCOPE_DISABLE}></a>             
             <{else}>
+                <a class='btn btn-danger right' href='members.php?op=change_etat&field=mbr_actif&mbr_id=<{$member.mbr_id}>' title=''><{$smarty.const._CO_TROMBINOSCOPE_ACTIVATE}></a>             
             <{/if}>
             <{*
-            <a class='btn btn-danger right' href='members.php?op=delete&amp;mbr_id=<{$member.mbr_id}>' title='<{$smarty.const._DELETE}>'><{$smarty.const._DELETE}></a>
+            <a class='btn btn-danger right' href='members.php?op=delete&amp;mbr_id=<{$member.mbr_id}>' title=''><{$smarty.const._DELETE}></a>
             *}>
         <{/if}>
     </div>

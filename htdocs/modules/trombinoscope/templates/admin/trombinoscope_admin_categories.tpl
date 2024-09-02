@@ -5,12 +5,12 @@
     <table class='table table-bordered'>
         <thead>
             <tr class='head'>
-                <th class="center"><{$smarty.const._AM_TROMBINOSCOPE_CATEGORY_ID}></th>
+                <th class="center"><{$smarty.const._AM_TROMBINOSCOPE_ID}></th>
                 <{* pas utilisé pour l'instant
-                    <th class="center"><{$smarty.const._AM_TROMBINOSCOPE_CATEGORY_PARENT_ID}></th>
+                    <th class="center"><{$smarty.const._AM_TROMBINOSCOPE_PARENT_ID}></th>
                 *}>
-                <th class="center"><{$smarty.const._AM_TROMBINOSCOPE_CATEGORY_NAME}></th>
-                <th class="center"><{$smarty.const._AM_TROMBINOSCOPE_CATEGORY_WEIGHT}></th>
+                <th class="center"><{$smarty.const._AM_TROMBINOSCOPE_NAME}></th>
+                <th class="center"><{$smarty.const._AM_TROMBINOSCOPE_WEIGHT}></th>
                 <th class="center"><{$smarty.const._AM_TROMBINOSCOPE_DEFAULT}></th>
                 <{* pas utilisé pour l'instant
                     <th class="center"><{$smarty.const._AM_TROMBINOSCOPE_CATEGORY_THEME}></th>
@@ -75,7 +75,7 @@
                 <td class='center'>
 
                     <a href="categories.php?op=set_default&cat_id=<{$cat.id}>&field=cat_default&value=1" >
-                        <img src="<{xoModuleIcons16}><{$cat.default}>.png" alt="category" title='<{$smarty.const._AM_TROMBINOSCOPER_DEFAULT}>' />
+                        <img src="<{xoModuleIcons16}><{$cat.default}>.png" alt="category" title='<{$smarty.const._AM_TROMBINOSCOPE_DEFAULT}>' />
                         </a>
                 
                 </td>

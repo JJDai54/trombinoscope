@@ -5,6 +5,10 @@ Ajout de la table trombinoscope_qualities
 renomage de mbr_sexe en mbr_quality_id
 Ajout du filtre "quality" dans "admin/members.php" list
 Suppression dans xoopsVersion.php de 'div_by' et remplacement par 'numb_col'
+Mise à jour des constantes de langue
+Ajout de la fonction "Ajouter un membre" dans le front office si permission ok
+Ajout du filtre "Quality" dans le front office
+amélioration de l'estétique (photos aux coins arrondis, opacity au survol,...)
 
 ==============================================================
 1.81 Beta 2 [2024/05/22] (JJDai : jjdelalandre@orange.fr) 

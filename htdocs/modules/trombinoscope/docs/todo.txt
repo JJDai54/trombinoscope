@@ -32,3 +32,25 @@ UPDATE x251_trombinoscope_members  , x251_users tu
 right join x251_trombinoscope_members tm ON  tm.mbr_email = tu.email
 SET tm.mbr_uid = tu.uid
 
+
+Le répertoire 'D:/_JJD-WorkSpace-D/Wamp-Serveur/Sites/xoops-2511b-fr/htdocs/uploads/trombinoscope' existe
+   Le dossier 'D:/_JJD-WorkSpace-D/Wamp-Serveur/Sites/xoops-2511b-fr/htdocs/uploads/trombinoscope' doit être en chmod '777' (il est maintenant défini en 777).
+
+Le répertoire 'D:/_JJD-WorkSpace-D/Wamp-Serveur/Sites/xoops-2511b-fr/htdocs/uploads/trombinoscope/members' existe
+Le dossier 'D:/_JJD-WorkSpace-D/Wamp-Serveur/Sites/xoops-2511b-fr/htdocs/uploads/trombinoscope/members' doit être en chmod '777' (il est maintenant défini en 777).
+Le répertoire 'D:/_JJD-WorkSpace-D/Wamp-Serveur/Sites/xoops-2511b-fr/htdocs/uploads/trombinoscope/categories' existe
+Le dossier 'D:/_JJD-WorkSpace-D/Wamp-Serveur/Sites/xoops-2511b-fr/htdocs/uploads/trombinoscope/categories' doit être en chmod '777' (il est maintenant défini en 777).
+Le répertoire 'D:/_JJD-WorkSpace-D/Wamp-Serveur/Sites/xoops-2511b-fr/htdocs/uploads/trombinoscope/images' existe
+Le dossier 'D:/_JJD-WorkSpace-D/Wamp-Serveur/Sites/xoops-2511b-fr/htdocs/uploads/trombinoscope/images' doit être en chmod '777' (il est maintenant défini en 777).
+Le répertoire 'D:/_JJD-WorkSpace-D/Wamp-Serveur/Sites/xoops-2511b-fr/htdocs/uploads/trombinoscope/images/members' existe
+Le dossier 'D:/_JJD-WorkSpace-D/Wamp-Serveur/Sites/xoops-2511b-fr/htdocs/uploads/trombinoscope/images/members' doit être en chmod '777' (il est maintenant défini en 777).
+Le répertoire 'D:/_JJD-WorkSpace-D/Wamp-Serveur/Sites/xoops-2511b-fr/htdocs/uploads/trombinoscope/images/categories' existe
+Le dossier 'D:/_JJD-WorkSpace-D/Wamp-Serveur/Sites/xoops-2511b-fr/htdocs/uploads/trombinoscope/images/categories' doit être en chmod '777' (il est maintenant défini en 777).
+Le répertoire 'D:/_JJD-WorkSpace-D/Wamp-Serveur/Sites/xoops-2511b-fr/htdocs/uploads/trombinoscope/files' existe
+Le dossier 'D:/_JJD-WorkSpace-D/Wamp-Serveur/Sites/xoops-2511b-fr/htdocs/uploads/trombinoscope/files' doit être en chmod '777' (il est maintenant défini en 777).
+Le répertoire 'D:/_JJD-WorkSpace-D/Wamp-Serveur/Sites/xoops-2511b-fr/htdocs/uploads/trombinoscope/files/members' existe
+Le dossier 'D:/_JJD-WorkSpace-D/Wamp-Serveur/Sites/xoops-2511b-fr/htdocs/uploads/trombinoscope/files/members' doit être en chmod '777' (il est maintenant défini en 777).
+Le répertoire 'D:/_JJD-WorkSpace-D/Wamp-Serveur/Sites/xoops-2511b-fr/htdocs/uploads/trombinoscope/files/categories' existe
+Le dossier 'D:/_JJD-WorkSpace-D/Wamp-Serveur/Sites/xoops-2511b-fr/htdocs/uploads/trombinoscope/files/categories' doit être en chmod '777' (il est maintenant défini en 777).
+Le répertoire 'D:/_JJD-WorkSpace-D/Wamp-Serveur/Sites/xoops-2511b-fr/htdocs/uploads/trombinoscope/temp' existe
+Le dossier 'D:/_JJD-WorkSpace-D/Wamp-Serveur/Sites/xoops-2511b-fr/htdocs/uploads/trombinoscope/temp' doit être en chmod '777' (il est maintenant défini en 777).
