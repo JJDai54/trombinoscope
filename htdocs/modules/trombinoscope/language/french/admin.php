@@ -44,6 +44,7 @@ define('_AM_TROMBINOSCOPE_DOWN', "Descendre");
 define('_AM_TROMBINOSCOPE_FIRST', "Premier");
 define('_AM_TROMBINOSCOPE_FORM_OK', "Enregistré avec succès");
 define('_AM_TROMBINOSCOPE_FORM_SURE_DELETE', "Êtes-vous sûr de supprimer : <b><span style='color : Red;'>%s </span></b>");
+define('_AM_TROMBINOSCOPE_FORM_SURE_DELETE_MEMBER', "Êtes-vous sûr de supprimer le membre : <b><span style='color : Red;'>%s %s [#%s]</span></b>");
 define('_AM_TROMBINOSCOPE_ID', "#");
 define('_AM_TROMBINOSCOPE_LAST', "Last");
 define('_AM_TROMBINOSCOPE_LIST_1', "Valeur de liste d'échantillons 1");

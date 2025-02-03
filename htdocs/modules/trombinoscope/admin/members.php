@@ -99,7 +99,7 @@ switch ($op) {
         $templateMain = 'trombinoscope_admin_members.tpl';
         $GLOBALS['xoopsTpl']->assign('navigation', $adminObject->displayNavigation('members.php'));
         $membersObj = $membersHandler->get($mbrId);
-        $mbrUid = $membersObj->getVar('mbr_uid');
+        //$mbrUid = $membersObj->getVar('mbr_uid');
         if (isset($_REQUEST['ok']) && 1 == $_REQUEST['ok']) {
             if (!$GLOBALS['xoopsSecurity']->check()) {
                 \redirect_header('members.php', 3, \implode(', ', $GLOBALS['xoopsSecurity']->getErrors()));
@@ -113,10 +113,11 @@ switch ($op) {
             $xoopsconfirm = new XoopsConfirm(
                 ['ok' => 1, 'mbr_id' => $mbrId, 'start' => $start, 'limit' => $limit, 'op' => 'delete'],
                 $_SERVER['REQUEST_URI'],
-                \sprintf(_AM_TROMBINOSCOPE_FORM_SURE_DELETE, $membersObj->getVar('mbr_uid')));
+                \sprintf(_AM_TROMBINOSCOPE_FORM_SURE_DELETE_MEMBER, $membersObj->getVar('mbr_firstname'),$membersObj->getVar('mbr_lastname'),$mbrId));
             $form = $xoopsconfirm->getFormXoopsConfirm();
             $GLOBALS['xoopsTpl']->assign('form', $form->render());
         }
+	break;
         
 	case 'change_etat':
         $field = Request::getString('field','mbr_actif');

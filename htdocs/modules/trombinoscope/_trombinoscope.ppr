@@ -197,9 +197,33 @@ _trombinoscope
 		xoops_version.php
 [Open project files]
 0=admin\menu.php
+1=admin\members_list.php
+2=templates\admin\trombinoscope_admin_members.tpl
+3=admin\members.php
+4=sql\mysql.sql
+5=language\french\admin.php
+6=language\english\admin.php
 [Selected Project Files]
 Main=
-Selected=admin\menu.php
+Selected=admin\members.php
 [admin\menu.php]
-TopLine=23
-Caret=34,50
+TopLine=19
+Caret=35,44
+[admin\members_list.php]
+TopLine=1
+Caret=1,1
+[templates\admin\trombinoscope_admin_members.tpl]
+TopLine=58
+Caret=51,84
+[admin\members.php]
+TopLine=41
+Caret=3,44
+[sql\mysql.sql]
+TopLine=1
+Caret=16,39
+[language\french\admin.php]
+TopLine=33
+Caret=53,50
+[language\english\admin.php]
+TopLine=33
+Caret=90,47
