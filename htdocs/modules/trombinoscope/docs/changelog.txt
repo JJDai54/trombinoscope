@@ -9,6 +9,7 @@ Mise à jour des constantes de langue
 Ajout de la fonction "Ajouter un membre" dans le front office si permission ok
 Ajout du filtre "Quality" dans le front office
 amélioration de l'estétique (photos aux coins arrondis, opacity au survol,...)
+Correction suppression des membres, manquait un "break";"
 
 ==============================================================
 1.81 Beta 2 [2024/05/22] (JJDai : jjdelalandre@orange.fr) 

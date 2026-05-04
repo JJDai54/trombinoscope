@@ -34,7 +34,7 @@ $op = Request::getCmd('op', 'list');
 $mbrId = Request::getInt('mbr_id');
 $catId = Request::getInt('cat_id',0);
 $qualityId = Request::getInt('quality_id',0);
-$actif = Request::getInt('mbr_actif',0);
+$actif = Request::getInt('mbr_actif',1);
 $start = Request::getInt('start', 0);
 $limit = Request::getInt('limit', $helper->getConfig('adminpager'));
 $GLOBALS['xoopsTpl']->assign('start', $start);
